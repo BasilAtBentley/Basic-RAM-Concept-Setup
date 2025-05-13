@@ -1,4 +1,8 @@
+# Basic RAM Concept Setup
+
 This is a minimal setup for automating RAM Concept with Python.
+
+## How It Works
 
 You define the path to your RAM Concept model (.cpt), the path to your Python script, and the location of the setup.bat. 
 
@@ -9,3 +13,8 @@ The python itself should handle whatever action you want in RAM Concept—like o
 The intent is to work from a single project folder called "RAM Concept Setup." All your scripts, models, and the Excel file should live in that folder. If you're using this setup for other projects, you should clone or copy the entire folder and place new scripts and models inside it.
 
 You don’t have to manage virtual environments, and you don’t need admin access after the first setup. This is built to be repeatable, portable, and dead simple.
+
+
+## Suggestions?
+
+Feel free to open an issue or submit a pull request.
