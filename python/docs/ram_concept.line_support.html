@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.line_support module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.line_support module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.line_support">
+<span id="ram-concept-line-support-module"></span><h1>ram_concept.line_support module<a class="headerlink" href="#module-ram_concept.line_support" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultLineSupport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.line_support.LineSupport" title="ram_concept.line_support.LineSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineSupport</span></code></a></p>
+<p><cite>DefaultLineSupport</cite> represents a <cite>LineSupport</cite> that stores the default values for future <cite>LineSupport</cite> that are created.</p>
+<p>An <cite>Exception</cite> will be raised if the <cite>location</cite> property of <cite>DefaultLineSupport</cite> is accessed.</p>
+<p>There is only 1 and always 1 <cite>DefaultLineSupport</cite> in the <cite>Model</cite>. It is accessed through <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_line_support" title="ram_concept.cad_manager.CadManager.default_line_support"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_line_support</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>delete</cite> is not available for default objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.set_all_fixities">
+<span class="sig-name descname"><span class="pre">set_all_fixities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.set_all_fixities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the given (uniform) spring stiffness</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fixity</strong> (<em>bool</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.Fr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.Fr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral fixity in r-axis direction (parallel to line)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.Fs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.Fs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in s-axis direction (perpendicular to line)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.Fz">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fz</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.Fz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in z-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.Mr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.Mr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about r-axis (parallel to line)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.Ms">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Ms</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.Ms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about s-axis (perpendicular to line)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.elevation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.elevation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation of the support relative to the soffit of the slab or beam it is applied to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LineSegment2D</span></code></a> location of this <cite>LineSupport</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D">LineSegment2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.DefaultLineSupport.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.line_support.DefaultLineSupport.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LineSupport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.line_support.LineSupport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.rigid_support.html#ram_concept.rigid_support.RigidSupport" title="ram_concept.rigid_support.RigidSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">RigidSupport</span></code></a></p>
+<p><cite>LineSupport</cite> is a logical (on/off) support at a line segment that provides support to slabs.</p>
+<p>The r-axis for the support is defined as along the location segment from start to end. The s-axis is
+horizontal and perpendicular to the location segment.</p>
+<p><cite>LineSupports</cite> are always located on the <a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> (“Mesh Input” layer).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.line_support.LineSupport.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>CadEntity</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.set_all_fixities">
+<span class="sig-name descname"><span class="pre">set_all_fixities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.line_support.LineSupport.set_all_fixities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the given (uniform) spring stiffness</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fixity</strong> (<em>bool</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.Fr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.line_support.LineSupport.Fr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral fixity in r-axis direction (parallel to line)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.Fs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.line_support.LineSupport.Fs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in s-axis direction (perpendicular to line)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.Fz">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fz</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.line_support.LineSupport.Fz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in z-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.Mr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.line_support.LineSupport.Mr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about r-axis (parallel to line)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.Ms">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Ms</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.line_support.LineSupport.Ms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about s-axis (perpendicular to line)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.elevation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.line_support.LineSupport.elevation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation of the support relative to the soffit of the slab or beam it is applied to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.line_support.LineSupport.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LineSegment2D</span></code></a> location of this <cite>LineSupport</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D">LineSegment2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.line_support.LineSupport.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.line_support.LineSupport.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.line_support.LineSupport.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.line_support.LineSupport.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.line_support.LineSupport.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.line_support module</a><ul>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.delete"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.set_all_fixities"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.set_all_fixities()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.Fr"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.Fr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.Fs"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.Fs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.Fz"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.Fz</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.Mr"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.Mr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.Ms"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.Ms</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.elevation"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.elevation</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.location"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.model"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.name"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.number"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.DefaultLineSupport.uid"><code class="docutils literal notranslate"><span class="pre">DefaultLineSupport.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport"><code class="docutils literal notranslate"><span class="pre">LineSupport</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.delete"><code class="docutils literal notranslate"><span class="pre">LineSupport.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.set_all_fixities"><code class="docutils literal notranslate"><span class="pre">LineSupport.set_all_fixities()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.Fr"><code class="docutils literal notranslate"><span class="pre">LineSupport.Fr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.Fs"><code class="docutils literal notranslate"><span class="pre">LineSupport.Fs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.Fz"><code class="docutils literal notranslate"><span class="pre">LineSupport.Fz</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.Mr"><code class="docutils literal notranslate"><span class="pre">LineSupport.Mr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.Ms"><code class="docutils literal notranslate"><span class="pre">LineSupport.Ms</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.elevation"><code class="docutils literal notranslate"><span class="pre">LineSupport.elevation</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.location"><code class="docutils literal notranslate"><span class="pre">LineSupport.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.model"><code class="docutils literal notranslate"><span class="pre">LineSupport.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.name"><code class="docutils literal notranslate"><span class="pre">LineSupport.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.number"><code class="docutils literal notranslate"><span class="pre">LineSupport.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.line_support.LineSupport.uid"><code class="docutils literal notranslate"><span class="pre">LineSupport.uid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.line_support module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

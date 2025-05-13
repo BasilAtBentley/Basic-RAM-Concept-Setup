@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.point_load module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.point_load module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.point_load">
+<span id="ram-concept-point-load-module"></span><h1>ram_concept.point_load module<a class="headerlink" href="#module-ram_concept.point_load" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultPointLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointLoad</span></code></a></p>
+<p><cite>DefaultPointLoad</cite> represents a <cite>PointLoad</cite> that stores the default values for future <cite>PointLoads</cite> that are created.</p>
+<p>An <cite>Exception</cite> will be raised if the <cite>location</cite> property of <cite>DefaultPointLoad</cite> is accessed.</p>
+<p>There is only 1 and always 1 <cite>DefaultPointLoad</cite> in the <cite>Model</cite>. It is accessed through <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_point_load" title="ram_concept.cad_manager.CadManager.default_point_load"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_point_load</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>delete</cite> is not available for default objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.zero_load_values">
+<span class="sig-name descname"><span class="pre">zero_load_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.zero_load_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets all load values to zero</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.Fx">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fx</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.Fx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the x-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.Fy">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.Fy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the y-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.Fz">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fz</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.Fz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the z-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.Mx">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mx</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.Mx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the x-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.My">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">My</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.My" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the y-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.elevation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.elevation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation of the load relative to the surface of the slab or beam it is applied to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.point_2D.html#ram_concept.point_2D.Point2D" title="ram_concept.point_2D.Point2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Point2D</span></code></a> location of this <cite>PointLoad</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.point_2D.html#ram_concept.point_2D.Point2D" title="ram_concept.point_2D.Point2D">Point2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.DefaultPointLoad.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.point_load.DefaultPointLoad.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PointLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.point_load.PointLoad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.force_load.html#ram_concept.force_load.ForceLoad" title="ram_concept.force_load.ForceLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoad</span></code></a></p>
+<p><cite>PointLoad</cite> is a load at a point that is applied to slabs.</p>
+<p><cite>PointLoads</cite> are always located on a <cite>ForceLoadingLayer</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.point_load.PointLoad.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>CadEntity</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.zero_load_values">
+<span class="sig-name descname"><span class="pre">zero_load_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.point_load.PointLoad.zero_load_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets all load values to zero</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.Fx">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fx</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.PointLoad.Fx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the x-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.Fy">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.PointLoad.Fy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the y-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.Fz">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fz</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.PointLoad.Fz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the z-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.Mx">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mx</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.PointLoad.Mx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the x-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.My">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">My</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.PointLoad.My" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the y-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.elevation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.point_load.PointLoad.elevation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation of the load relative to the surface of the slab or beam it is applied to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.point_load.PointLoad.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.point_2D.html#ram_concept.point_2D.Point2D" title="ram_concept.point_2D.Point2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Point2D</span></code></a> location of this <cite>PointLoad</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.point_2D.html#ram_concept.point_2D.Point2D" title="ram_concept.point_2D.Point2D">Point2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.point_load.PointLoad.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.point_load.PointLoad.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.point_load.PointLoad.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.point_load.PointLoad.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.point_load.PointLoad.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.point_load module</a><ul>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.delete"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.zero_load_values"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.zero_load_values()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.Fx"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.Fx</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.Fy"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.Fy</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.Fz"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.Fz</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.Mx"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.Mx</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.My"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.My</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.elevation"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.elevation</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.location"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.model"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.name"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.number"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.DefaultPointLoad.uid"><code class="docutils literal notranslate"><span class="pre">DefaultPointLoad.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad"><code class="docutils literal notranslate"><span class="pre">PointLoad</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.delete"><code class="docutils literal notranslate"><span class="pre">PointLoad.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.zero_load_values"><code class="docutils literal notranslate"><span class="pre">PointLoad.zero_load_values()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.Fx"><code class="docutils literal notranslate"><span class="pre">PointLoad.Fx</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.Fy"><code class="docutils literal notranslate"><span class="pre">PointLoad.Fy</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.Fz"><code class="docutils literal notranslate"><span class="pre">PointLoad.Fz</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.Mx"><code class="docutils literal notranslate"><span class="pre">PointLoad.Mx</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.My"><code class="docutils literal notranslate"><span class="pre">PointLoad.My</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.elevation"><code class="docutils literal notranslate"><span class="pre">PointLoad.elevation</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.location"><code class="docutils literal notranslate"><span class="pre">PointLoad.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.model"><code class="docutils literal notranslate"><span class="pre">PointLoad.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.name"><code class="docutils literal notranslate"><span class="pre">PointLoad.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.number"><code class="docutils literal notranslate"><span class="pre">PointLoad.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.point_load.PointLoad.uid"><code class="docutils literal notranslate"><span class="pre">PointLoad.uid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.point_load module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

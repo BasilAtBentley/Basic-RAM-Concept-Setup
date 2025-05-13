@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.enums module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.enums module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.enums">
+<span id="ram-concept-enums-module"></span><h1>ram_concept.enums module<a class="headerlink" href="#module-ram_concept.enums" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.enums.ElevationReference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ElevationReference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.enums.ElevationReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>For specifying where elevations are measured from.</p>
+<p>The available values are:</p>
+<ul class="simple">
+<li><p>ABSOLUTE: elevation values are absolute (no adjustment needed)</p></li>
+<li><p>ABOVE_SOFFIT: elevation values are relative to slab soffit (add to soffit elevation)</p></li>
+<li><p>ABOVE_SURFACE: elevation values are relative to slab surface (add to surface elevation)</p></li>
+<li><p>ABOVE_TOP_COVER: elevation values are relative to top cover elevation (add to top cover elevation)</p></li>
+<li><p>ABOVE_BOTTOM_COVER: elevation values are relative to bottom cover elevation (add to bottom cover elevation)</p></li>
+<li><p>ABOVE_MID_DEPTH: elevation values are relative to mid-depth elevation (add to (surface + soffit)/2)</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.enums.ElevationReference.ABOVE_BOTTOM_COVER">
+<span class="sig-name descname"><span class="pre">ABOVE_BOTTOM_COVER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#ram_concept.enums.ElevationReference.ABOVE_BOTTOM_COVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.enums.ElevationReference.ABOVE_MID_DEPTH">
+<span class="sig-name descname"><span class="pre">ABOVE_MID_DEPTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#ram_concept.enums.ElevationReference.ABOVE_MID_DEPTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.enums.ElevationReference.ABOVE_SOFFIT">
+<span class="sig-name descname"><span class="pre">ABOVE_SOFFIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#ram_concept.enums.ElevationReference.ABOVE_SOFFIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.enums.ElevationReference.ABOVE_SURFACE">
+<span class="sig-name descname"><span class="pre">ABOVE_SURFACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#ram_concept.enums.ElevationReference.ABOVE_SURFACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.enums.ElevationReference.ABOVE_TOP_COVER">
+<span class="sig-name descname"><span class="pre">ABOVE_TOP_COVER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#ram_concept.enums.ElevationReference.ABOVE_TOP_COVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.enums.ElevationReference.ABSOLUTE">
+<span class="sig-name descname"><span class="pre">ABSOLUTE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#ram_concept.enums.ElevationReference.ABSOLUTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.enums.GeneratedBy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GeneratedBy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.enums.GeneratedBy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>For specifying the whether the user or program generated information.</p>
+<p>The available values are:</p>
+<ul class="simple">
+<li><p>PROGRAM: for the generated tendon layer</p></li>
+<li><p>USER:    for the manual tendon layer</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.enums.GeneratedBy.PROGRAM">
+<span class="sig-name descname"><span class="pre">PROGRAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'program'</span></em><a class="headerlink" href="#ram_concept.enums.GeneratedBy.PROGRAM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.enums.GeneratedBy.USER">
+<span class="sig-name descname"><span class="pre">USER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'user'</span></em><a class="headerlink" href="#ram_concept.enums.GeneratedBy.USER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.enums.SpanSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SpanSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.enums.SpanSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>For specifying the latitude-vs-longitude direction of a span (or span-related items).</p>
+<p>The available values are:</p>
+<ul class="simple">
+<li><p>LATITUDE: the “latitude” direction</p></li>
+<li><p>LONGITUDE: the “longitude” direction</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.enums.SpanSet.LATITUDE">
+<span class="sig-name descname"><span class="pre">LATITUDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'latitude'</span></em><a class="headerlink" href="#ram_concept.enums.SpanSet.LATITUDE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.enums.SpanSet.LONGITUDE">
+<span class="sig-name descname"><span class="pre">LONGITUDE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'longitude'</span></em><a class="headerlink" href="#ram_concept.enums.SpanSet.LONGITUDE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.enums module</a><ul>
+<li><a class="reference internal" href="#ram_concept.enums.ElevationReference"><code class="docutils literal notranslate"><span class="pre">ElevationReference</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.enums.ElevationReference.ABOVE_BOTTOM_COVER"><code class="docutils literal notranslate"><span class="pre">ElevationReference.ABOVE_BOTTOM_COVER</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.enums.ElevationReference.ABOVE_MID_DEPTH"><code class="docutils literal notranslate"><span class="pre">ElevationReference.ABOVE_MID_DEPTH</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.enums.ElevationReference.ABOVE_SOFFIT"><code class="docutils literal notranslate"><span class="pre">ElevationReference.ABOVE_SOFFIT</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.enums.ElevationReference.ABOVE_SURFACE"><code class="docutils literal notranslate"><span class="pre">ElevationReference.ABOVE_SURFACE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.enums.ElevationReference.ABOVE_TOP_COVER"><code class="docutils literal notranslate"><span class="pre">ElevationReference.ABOVE_TOP_COVER</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.enums.ElevationReference.ABSOLUTE"><code class="docutils literal notranslate"><span class="pre">ElevationReference.ABSOLUTE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.enums.GeneratedBy"><code class="docutils literal notranslate"><span class="pre">GeneratedBy</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.enums.GeneratedBy.PROGRAM"><code class="docutils literal notranslate"><span class="pre">GeneratedBy.PROGRAM</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.enums.GeneratedBy.USER"><code class="docutils literal notranslate"><span class="pre">GeneratedBy.USER</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.enums.SpanSet"><code class="docutils literal notranslate"><span class="pre">SpanSet</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.enums.SpanSet.LATITUDE"><code class="docutils literal notranslate"><span class="pre">SpanSet.LATITUDE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.enums.SpanSet.LONGITUDE"><code class="docutils literal notranslate"><span class="pre">SpanSet.LONGITUDE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.enums module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

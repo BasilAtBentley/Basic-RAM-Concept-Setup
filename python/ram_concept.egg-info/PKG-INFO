@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: ram_concept
+Version: 24.0.0
+Summary: This package provides an interop API for RAM Concept.
+Author: Bentley Systems, Inc.
+Requires-Python: >=3.8
+Requires-Dist: requests>=2.23
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

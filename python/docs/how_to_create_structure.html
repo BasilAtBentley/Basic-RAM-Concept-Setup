@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>How to Create a Structure &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Create a Structure</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="how-to-create-a-structure">
+<span id="how-to-create-structure"></span><h1>How to Create a Structure<a class="headerlink" href="#how-to-create-a-structure" title="Permalink to this heading">¶</a></h1>
+<section id="the-cad-manager">
+<h2>The CAD Manager<a class="headerlink" href="#the-cad-manager" title="Permalink to this heading">¶</a></h2>
+<p>Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains a single <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> instance which manages RAM Concept’s CAD layer system.</p>
+<p>In addition to managing the layers, <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> manages the <cite>default items</cite> that contain settings for the CAD items that will be created.
+For example the <cite>default_slab_area</cite> property contains the settings for any future <a class="reference internal" href="ram_concept.slab_area.html#ram_concept.slab_area.SlabArea" title="ram_concept.slab_area.SlabArea"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlabArea</span></code></a> that will be created.</p>
+</section>
+<section id="the-structure-layer">
+<h2>The Structure Layer<a class="headerlink" href="#the-structure-layer" title="Permalink to this heading">¶</a></h2>
+<p>Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains a single <a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> instance (displayed as the “Mesh Input” layer in the UI)
+which contains the items that define the structure:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.beam.html#ram_concept.beam.Beam" title="ram_concept.beam.Beam"><code class="xref py py-class docutils literal notranslate"><span class="pre">Beam</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.column.html#ram_concept.column.Column" title="ram_concept.column.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a> (tracked by above/below slab)</p></li>
+<li><p><a class="reference internal" href="ram_concept.slab_area.html#ram_concept.slab_area.SlabArea" title="ram_concept.slab_area.SlabArea"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlabArea</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.slab_opening.html#ram_concept.slab_opening.SlabOpening" title="ram_concept.slab_opening.SlabOpening"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlabOpening</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.wall.html#ram_concept.wall.Wall" title="ram_concept.wall.Wall"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wall</span></code></a>  (tracked by above/below slab)</p></li>
+<li><p><a class="reference internal" href="ram_concept.point_spring.html#ram_concept.point_spring.PointSpring" title="ram_concept.point_spring.PointSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointSpring</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.line_spring.html#ram_concept.line_spring.LineSpring" title="ram_concept.line_spring.LineSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineSpring</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.area_spring.html#ram_concept.area_spring.AreaSpring" title="ram_concept.area_spring.AreaSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">AreaSpring</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.point_support.html#ram_concept.point_support.PointSupport" title="ram_concept.point_support.PointSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointSupport</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.line_support.html#ram_concept.line_support.LineSupport" title="ram_concept.line_support.LineSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineSupport</span></code></a></p></li>
+</ul>
+<section id="adding-new-items">
+<h3>Adding New Items<a class="headerlink" href="#adding-new-items" title="Permalink to this heading">¶</a></h3>
+<p>The <a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> has methods available to add all of the items that it can contain. For example, there is an <cite>add_slab_area()</cite>
+for adding <a class="reference internal" href="ram_concept.slab_area.html#ram_concept.slab_area.SlabArea" title="ram_concept.slab_area.SlabArea"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlabArea</span></code></a> s.</p>
+</section>
+<section id="existing-items">
+<h3>Existing Items<a class="headerlink" href="#existing-items" title="Permalink to this heading">¶</a></h3>
+<p>The <a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> has properties available to access all of the items that it can contain. For example, there is a <cite>walls_below</cite>
+property for accessing the <a class="reference internal" href="ram_concept.wall.html#ram_concept.wall.Wall" title="ram_concept.wall.Wall"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wall</span></code></a> s below the slab.</p>
+</section>
+</section>
+<section id="meshing">
+<h2>Meshing<a class="headerlink" href="#meshing" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt>The <cite>Model.generate_mesh()</cite> method will take the structure definition in the <a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> and create the</dt><dd><p><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.Element" title="ram_concept.elements.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> s on the <a class="reference internal" href="ram_concept.element_layer.html#ram_concept.element_layer.ElementLayer" title="ram_concept.element_layer.ElementLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElementLayer</span></code></a>.</p>
+</dd>
+</dl>
+</section>
+<section id="the-code">
+<h2>The Code<a class="headerlink" href="#the-code" title="Permalink to this heading">¶</a></h2>
+<p>Here’s the code for creating a structure from the Walkthrough example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ram_concept.beam</span> <span class="kn">import</span> <span class="n">Beam</span>
+<span class="kn">from</span> <span class="nn">ram_concept.beam</span> <span class="kn">import</span> <span class="n">DefaultBeam</span>
+<span class="kn">from</span> <span class="nn">ram_concept.beam</span> <span class="kn">import</span> <span class="n">BeamBehavior</span>
+<span class="kn">from</span> <span class="nn">ram_concept.column</span> <span class="kn">import</span> <span class="n">Column</span>
+<span class="kn">from</span> <span class="nn">ram_concept.column</span> <span class="kn">import</span> <span class="n">DefaultColumn</span>
+<span class="kn">from</span> <span class="nn">ram_concept.concrete</span> <span class="kn">import</span> <span class="n">Concrete</span>
+<span class="kn">from</span> <span class="nn">ram_concept.concretes</span> <span class="kn">import</span> <span class="n">Concretes</span>
+<span class="kn">from</span> <span class="nn">ram_concept.line_segment_2D</span> <span class="kn">import</span> <span class="n">LineSegment2D</span>
+<span class="kn">from</span> <span class="nn">ram_concept.model</span> <span class="kn">import</span> <span class="n">DesignCode</span>
+<span class="kn">from</span> <span class="nn">ram_concept.model</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">ram_concept.point_2D</span> <span class="kn">import</span> <span class="n">Point2D</span>
+<span class="kn">from</span> <span class="nn">ram_concept.polygon_2D</span> <span class="kn">import</span> <span class="n">Polygon2D</span>
+<span class="kn">from</span> <span class="nn">ram_concept.slab_area</span> <span class="kn">import</span> <span class="n">SlabArea</span>
+<span class="kn">from</span> <span class="nn">ram_concept.slab_area</span> <span class="kn">import</span> <span class="n">DefaultSlabArea</span>
+<span class="kn">from</span> <span class="nn">ram_concept.slab_area</span> <span class="kn">import</span> <span class="n">SlabAreaBehavior</span>
+<span class="kn">from</span> <span class="nn">ram_concept.wall</span> <span class="kn">import</span> <span class="n">Wall</span>
+<span class="kn">from</span> <span class="nn">ram_concept.wall</span> <span class="kn">import</span> <span class="n">DefaultWall</span>
+
+<span class="k">def</span> <span class="nf">add_structure</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a 16m x 16m structure with 8m spans.&quot;&quot;&quot;</span>
+
+    <span class="c1"># The structure created is a simple 16m x 16m square, with 8m spans:</span>
+
+    <span class="c1">#  cbbbbbbbcbbbbbbbc</span>
+    <span class="c1">#  |               |</span>
+    <span class="c1">#  |               |</span>
+    <span class="c1">#  w       c       w</span>
+    <span class="c1">#  w               w</span>
+    <span class="c1">#  w               w</span>
+    <span class="c1">#  wwwwwwwwwwwwwwwww</span>
+
+    <span class="c1"># for convenience we&#39;ll use the concrete mix we defined earlier</span>
+    <span class="n">concretes</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">concretes</span>
+    <span class="n">concrete_45</span> <span class="o">=</span> <span class="n">concretes</span><span class="o">.</span><span class="n">concrete</span><span class="p">(</span><span class="s2">&quot;45 MPa&quot;</span><span class="p">)</span>
+
+    <span class="c1"># get the StructureLayer (called &quot;Mesh Input&quot; in the RAM Concept UI)</span>
+    <span class="n">cad_manager</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">cad_manager</span>
+    <span class="n">structure_layer</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">structure_layer</span>
+
+    <span class="c1"># CREATING THE SLAB</span>
+
+    <span class="c1"># we can create the slab and then set the properties, or set the properties of the default slab and then create the slab</span>
+
+    <span class="c1"># set the values for SlabAreas to be added</span>
+    <span class="n">default_slab_area</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">default_slab_area</span>
+    <span class="n">default_slab_area</span><span class="o">.</span><span class="n">thickness</span> <span class="o">=</span> <span class="mf">0.2</span>
+    <span class="n">default_slab_area</span><span class="o">.</span><span class="n">toc</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">default_slab_area</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="n">SlabAreaBehavior</span><span class="o">.</span><span class="n">TWO_WAY_SLAB</span>
+    <span class="n">default_slab_area</span><span class="o">.</span><span class="n">concrete</span> <span class="o">=</span> <span class="n">concrete_45</span>
+    <span class="n">default_slab_area</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">default_slab_area</span><span class="o">.</span><span class="n">r_axis</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="n">slab_location</span> <span class="o">=</span> <span class="n">Polygon2D</span><span class="p">([</span><span class="n">Point2D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">)])</span>
+    <span class="n">slab_area</span> <span class="o">=</span> <span class="n">structure_layer</span><span class="o">.</span><span class="n">add_slab_area</span><span class="p">(</span><span class="n">slab_location</span><span class="p">)</span>
+
+    <span class="c1"># if we had wanted to set the properties of the slab after creation, it would look like this:</span>
+    <span class="c1"># slab_area.thickness = 0.2</span>
+    <span class="c1"># slab_area.toc = 0.0</span>
+    <span class="c1"># slab_area.behavior = SlabAreaBehavior.TWO_WAY_SLAB</span>
+    <span class="c1"># slab_area.concrete = concrete_45</span>
+    <span class="c1"># slab_area.priority = 1</span>
+    <span class="c1"># slab_area.r_axis = 0.0</span>
+
+    <span class="c1"># CREATE WALLS HALF-WAY AROUND THE SLAB</span>
+
+    <span class="c1"># similar to SlabAreas (and almost all CadEntities) we can set the properties for the walls before (using the default) or after creation</span>
+
+    <span class="c1"># set the values for walls to be added</span>
+    <span class="n">default_wall</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">default_wall</span>
+    <span class="n">default_wall</span><span class="o">.</span><span class="n">below_slab</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">default_wall</span><span class="o">.</span><span class="n">compressible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">default_wall</span><span class="o">.</span><span class="n">concrete</span> <span class="o">=</span> <span class="n">concrete_45</span>
+    <span class="n">default_wall</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">default_wall</span><span class="o">.</span><span class="n">fixed_near</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">default_wall</span><span class="o">.</span><span class="n">fixed_far</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">default_wall</span><span class="o">.</span><span class="n">shear_wall</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">default_wall</span><span class="o">.</span><span class="n">thickness</span> <span class="o">=</span> <span class="mf">0.2</span>
+    <span class="n">default_wall</span><span class="o">.</span><span class="n">use_specified_LLR_parameters</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">wall_pt1</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span> <span class="mi">0</span> <span class="o">+</span> <span class="mf">.1</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="n">wall_pt2</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span> <span class="mi">0</span> <span class="o">+</span> <span class="mf">.1</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mf">.1</span><span class="p">)</span>
+    <span class="n">wall_pt3</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">16</span> <span class="o">-</span> <span class="mf">.1</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mf">.1</span><span class="p">)</span>
+    <span class="n">wall_pt4</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">16</span> <span class="o">-</span> <span class="mf">.1</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="n">structure_layer</span><span class="o">.</span><span class="n">add_wall</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">wall_pt1</span><span class="p">,</span><span class="n">wall_pt2</span><span class="p">))</span>
+    <span class="n">structure_layer</span><span class="o">.</span><span class="n">add_wall</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">wall_pt2</span><span class="p">,</span><span class="n">wall_pt3</span><span class="p">))</span>
+    <span class="n">structure_layer</span><span class="o">.</span><span class="n">add_wall</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">wall_pt3</span><span class="p">,</span><span class="n">wall_pt4</span><span class="p">))</span>
+
+    <span class="c1"># CREATE 4 COLUMNS</span>
+
+    <span class="c1"># similar to SlabAreas (and almost all CadEntities) we can set the properties for the columns before (using the default) or after creation</span>
+
+    <span class="c1"># set the values for columns to be added</span>
+    <span class="n">default_column</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">default_column</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">angle</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">below_slab</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">compressible</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">concrete</span> <span class="o">=</span> <span class="n">concrete_45</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mf">0.3</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="mf">0.3</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mf">3.0</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">i_factor</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">fixed_near</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">fixed_far</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">roller</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">default_column</span><span class="o">.</span><span class="n">use_specified_LLR_parameters</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">column_points</span> <span class="o">=</span> <span class="p">[</span><span class="n">Point2D</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">0</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mi">16</span> <span class="o">-</span> <span class="mf">0.15</span><span class="p">),</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span> <span class="o">-</span> <span class="mf">0.15</span><span class="p">),</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">16</span> <span class="o">-</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mi">16</span> <span class="o">-</span> <span class="mf">0.15</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">column_point</span> <span class="ow">in</span> <span class="n">column_points</span><span class="p">:</span>
+        <span class="n">structure_layer</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="n">column_point</span><span class="p">)</span>
+
+    <span class="c1"># ADD 1 BEAM</span>
+
+    <span class="c1"># we could set the default_beam values before adding, but in this case we just add the beam and set the values</span>
+
+    <span class="n">beam</span> <span class="o">=</span> <span class="n">structure_layer</span><span class="o">.</span><span class="n">add_beam</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span> <span class="o">-</span> <span class="mf">0.25</span><span class="p">),</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span> <span class="o">-</span> <span class="mf">0.25</span><span class="p">)))</span>
+
+    <span class="n">beam</span><span class="o">.</span><span class="n">thickness</span> <span class="o">=</span> <span class="mf">0.4</span>
+    <span class="n">beam</span><span class="o">.</span><span class="n">toc</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">beam</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="n">BeamBehavior</span><span class="o">.</span><span class="n">STANDARD_BEAM</span>
+    <span class="n">beam</span><span class="o">.</span><span class="n">concrete</span> <span class="o">=</span> <span class="n">concrete_45</span>
+    <span class="n">beam</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">beam</span><span class="o">.</span><span class="n">mesh_as_slab</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">beam</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+    <span class="c1"># DONE WITH STRUCTURE, SO MESH</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">generate_mesh</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">How to Create a Structure</a><ul>
+<li><a class="reference internal" href="#the-cad-manager">The CAD Manager</a></li>
+<li><a class="reference internal" href="#the-structure-layer">The Structure Layer</a><ul>
+<li><a class="reference internal" href="#adding-new-items">Adding New Items</a></li>
+<li><a class="reference internal" href="#existing-items">Existing Items</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#meshing">Meshing</a></li>
+<li><a class="reference internal" href="#the-code">The Code</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Create a Structure</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

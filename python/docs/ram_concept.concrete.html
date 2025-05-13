@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.concrete module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.concrete module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.concrete">
+<span id="ram-concept-concrete-module"></span><h1>ram_concept.concrete module<a class="headerlink" href="#module-ram_concept.concrete" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Concrete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.concrete.Concrete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<p><cite>Concrete</cite> represents a concrete mix.</p>
+<p>To create a new <cite>Concrete</cite>, use <a class="reference internal" href="ram_concept.concretes.html#ram_concept.concretes.Concretes.add_concrete" title="ram_concept.concretes.Concretes.add_concrete"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Concretes.add_concrete</span></code></a>.
+To see all <cite>Concretes</cite> that exist in a <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>, use <a class="reference internal" href="ram_concept.concretes.html#ram_concept.concretes.Concretes.concretes" title="ram_concept.concretes.Concretes.concretes"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Concretes.concretes</span></code></a>.</p>
+<p>One awkward part of dealing with Concrete properties is that they have to be consistent at all points in time:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>fc_initial &lt;= fc_final</p></li>
+<li><p>fcu_initial &lt;= fcu_final</p></li>
+<li><p>user_Ec_initial &lt; user_Ec_final</p></li>
+</ul>
+</div></blockquote>
+<p>Attempting to set a value that violates one of the above constraints will raise an exception.</p>
+<p>The cube and cylinder concrete strengths have an implied relationship between them. Setting the cube strength will also
+modify the related cylinder strength and vis-versa. This is typically of no concern as a <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> only uses one design code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.concrete.Concrete.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the concrete mix from the Model. The last concrete mix in a Model cannot be deleted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.USE_UNIT_MASS_INSTEAD">
+<span class="sig-name descname"><span class="pre">USE_UNIT_MASS_INSTEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.7976931348623157e+308</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.USE_UNIT_MASS_INSTEAD" title="Permalink to this definition">¶</a></dt>
+<dd><p>A flag value for <cite>unit_mass_for_loads</cite> to indicate that the <cite>unit_mass</cite> value should be considered for load calculations.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.coefficient_of_thermal_expansion">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">coefficient_of_thermal_expansion</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.coefficient_of_thermal_expansion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coefficient of thermal expansion</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.fc_final">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fc_final</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.fc_final" title="Permalink to this definition">¶</a></dt>
+<dd><p>Final concrete cylinder strength</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.fc_initial">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fc_initial</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.fc_initial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Early age concrete cylinder strength</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.fcu_final">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fcu_final</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.fcu_final" title="Permalink to this definition">¶</a></dt>
+<dd><p>Final concrete cube strength</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.fcu_initial">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fcu_initial</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.fcu_initial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Early age concrete cube strength</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.concrete.Concrete.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.poissons_ratio">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">poissons_ratio</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.poissons_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Poisson’s ratio</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.concrete.Concrete.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.unit_mass">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unit_mass</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.unit_mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concrete density (mass/volume)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.unit_unit_mass_for_loads">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unit_unit_mass_for_loads</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.unit_unit_mass_for_loads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concrete density (mass/volume) for self-weight calculations (USE_UNIT_MASS_INSTEAD is flag value for ‘use <cite>unit_mass</cite> instead’)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.use_code_Ec">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_code_Ec</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.use_code_Ec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Code calculated values used instead of user_Ec_initial and user_Ec_final.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.user_Ec_final">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">user_Ec_final</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.user_Ec_final" title="Permalink to this definition">¶</a></dt>
+<dd><p>Final concrete modulus of elasticity, when not calculating that value per code</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.concrete.Concrete.user_Ec_initial">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">user_Ec_initial</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.concrete.Concrete.user_Ec_initial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Early age concrete modulus of elasticity, when not calculating that value per code</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.concrete module</a><ul>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete"><code class="docutils literal notranslate"><span class="pre">Concrete</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.delete"><code class="docutils literal notranslate"><span class="pre">Concrete.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.USE_UNIT_MASS_INSTEAD"><code class="docutils literal notranslate"><span class="pre">Concrete.USE_UNIT_MASS_INSTEAD</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.coefficient_of_thermal_expansion"><code class="docutils literal notranslate"><span class="pre">Concrete.coefficient_of_thermal_expansion</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.fc_final"><code class="docutils literal notranslate"><span class="pre">Concrete.fc_final</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.fc_initial"><code class="docutils literal notranslate"><span class="pre">Concrete.fc_initial</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.fcu_final"><code class="docutils literal notranslate"><span class="pre">Concrete.fcu_final</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.fcu_initial"><code class="docutils literal notranslate"><span class="pre">Concrete.fcu_initial</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.model"><code class="docutils literal notranslate"><span class="pre">Concrete.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.name"><code class="docutils literal notranslate"><span class="pre">Concrete.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.number"><code class="docutils literal notranslate"><span class="pre">Concrete.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.poissons_ratio"><code class="docutils literal notranslate"><span class="pre">Concrete.poissons_ratio</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.uid"><code class="docutils literal notranslate"><span class="pre">Concrete.uid</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.unit_mass"><code class="docutils literal notranslate"><span class="pre">Concrete.unit_mass</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.unit_unit_mass_for_loads"><code class="docutils literal notranslate"><span class="pre">Concrete.unit_unit_mass_for_loads</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.use_code_Ec"><code class="docutils literal notranslate"><span class="pre">Concrete.use_code_Ec</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.user_Ec_final"><code class="docutils literal notranslate"><span class="pre">Concrete.user_Ec_final</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concrete.Concrete.user_Ec_initial"><code class="docutils literal notranslate"><span class="pre">Concrete.user_Ec_initial</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.concrete module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

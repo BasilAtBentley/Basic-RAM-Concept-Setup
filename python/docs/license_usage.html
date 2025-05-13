@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>License Usage &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">License Usage</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="license-usage">
+<span id="id1"></span><h1>License Usage<a class="headerlink" href="#license-usage" title="Permalink to this heading">¶</a></h1>
+<section id="api-usage-is-same-as-regular-usage">
+<h2>API Usage is Same as Regular Usage<a class="headerlink" href="#api-usage-is-same-as-regular-usage" title="Permalink to this heading">¶</a></h2>
+<p>For licensing purposes, running RAM Concept through the API is considered the same as running it through the user interface.
+CONNECT Edition products (such as recent releases of RAM Concept) track usage to the CONNECTED User (the person who has signed into
+the CONNECTION Client on the machine).</p>
+<p>For details on the licensing system in general, see the  <a class="reference external" href="https://www.bentley.com/en/subscription-services-portal/subscription-entitlement-service">Subscription Entitlement Service webpage</a>.</p>
+<p>Note - The RAM Concept Post Tension License was consolidated into the base RAM Concept License in April 2023.</p>
+</section>
+<section id="licensing-failures">
+<h2>Licensing Failures<a class="headerlink" href="#licensing-failures" title="Permalink to this heading">¶</a></h2>
+<p>Failure to successfully obtain a license will result in exceptions being raised by the API. The exception message will provide additional details.</p>
+<p>The most common licensing failures are caused by:</p>
+<ul class="simple">
+<li><p>No CONNECTED User signed in</p></li>
+<li><p>Trial licenses expired</p></li>
+<li><p>No licenses available (either all in-use, or account administrator has not allowed the CONNECTED User to use the license)</p></li>
+<li><p>No network connectivity (and offline usage has been disallowed by the account administrator).</p></li>
+</ul>
+</section>
+<section id="abandoned-server-processes">
+<h2>“Abandoned” Server Processes<a class="headerlink" href="#abandoned-server-processes" title="Permalink to this heading">¶</a></h2>
+<p>Successfully creating a Concept object in the API corresponds to creating a running “server” instance of RAM Concept.
+This server instance consumes a license for as long as it is running.
+The server instance can be shut down by calling the <a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept.shut_down" title="ram_concept.concept.Concept.shut_down"><code class="xref py py-class docutils literal notranslate"><span class="pre">shut_down</span></code></a> method.</p>
+<p>If your script crashes (or you simply forget to call <cite>shut_down</cite>), the RAM Concept server continues running, as it has not yet been told to shut down.
+There is an <cite>inactivity_timeout_seconds</cite> parameter in <a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept.start_concept" title="ram_concept.concept.Concept.start_concept"><code class="xref py py-class docutils literal notranslate"><span class="pre">start_concept</span></code></a> that can be used to control how long the server will run without input.
+The default setting for the inactivity period is one hour.</p>
+<p>Starting another RAM Concept server (under the same CONNECTED user) while an abandoned one is still running does NOT consume an additional license. Only one license is consumed.</p>
+</section>
+<section id="troubleshooting-api-licensing-issues">
+<h2>Troubleshooting API Licensing Issues<a class="headerlink" href="#troubleshooting-api-licensing-issues" title="Permalink to this heading">¶</a></h2>
+<p>As the API uses exactly the same licensing as the user interface, the best way to troubleshoot API licensing problems is to run RAM Concept
+through the user interface on the same machine.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">License Usage</a><ul>
+<li><a class="reference internal" href="#api-usage-is-same-as-regular-usage">API Usage is Same as Regular Usage</a></li>
+<li><a class="reference internal" href="#licensing-failures">Licensing Failures</a></li>
+<li><a class="reference internal" href="#abandoned-server-processes">“Abandoned” Server Processes</a></li>
+<li><a class="reference internal" href="#troubleshooting-api-licensing-issues">Troubleshooting API Licensing Issues</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">License Usage</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

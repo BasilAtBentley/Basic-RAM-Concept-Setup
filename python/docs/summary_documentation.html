@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Summary Documentation &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Summary Documentation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="summary-documentation">
+<span id="id1"></span><h1>Summary Documentation<a class="headerlink" href="#summary-documentation" title="Permalink to this heading">¶</a></h1>
+<section id="entry-point-concept-and-model">
+<h2>Entry Point - Concept and Model<a class="headerlink" href="#entry-point-concept-and-model" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept" title="ram_concept.concept.Concept"><code class="xref py py-class docutils literal notranslate"><span class="pre">Concept</span></code></a> - The RAM Concept process serving the API.</p></li>
+<li><p><a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> - The in-memory data in the the <a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept" title="ram_concept.concept.Concept"><code class="xref py py-class docutils literal notranslate"><span class="pre">Concept</span></code></a> process.</p></li>
+</ul>
+</section>
+<section id="ram-concept-data-model">
+<h2>RAM Concept Data Model<a class="headerlink" href="#ram-concept-data-model" title="Permalink to this heading">¶</a></h2>
+<p>The outline below shows the containment hierarchy of the data within a <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<ul>
+<li><p><a class="reference internal" href="ram_concept.concretes.html#ram_concept.concretes.Concretes" title="ram_concept.concretes.Concretes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Concretes</span></code></a> - The container for all <a class="reference internal" href="ram_concept.concrete.html#ram_concept.concrete.Concrete" title="ram_concept.concrete.Concrete"><code class="xref py py-class docutils literal notranslate"><span class="pre">Concrete</span></code></a> mixes.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.concrete.html#ram_concept.concrete.Concrete" title="ram_concept.concrete.Concrete"><code class="xref py py-class docutils literal notranslate"><span class="pre">Concrete</span></code></a> - A concrete mix.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.strand_materials.html#ram_concept.strand_materials.StrandMaterials" title="ram_concept.strand_materials.StrandMaterials"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrandMaterials</span></code></a> - The container for all <a class="reference internal" href="ram_concept.strand_material.html#ram_concept.strand_material.StrandMaterial" title="ram_concept.strand_material.StrandMaterial"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrandMaterial</span></code></a> s.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.strand_material.html#ram_concept.strand_material.StrandMaterial" title="ram_concept.strand_material.StrandMaterial"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrandMaterial</span></code></a> - A Strand Material.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.duct_systems.html#ram_concept.duct_systems.DuctSystems" title="ram_concept.duct_systems.DuctSystems"><code class="xref py py-class docutils literal notranslate"><span class="pre">DuctSystems</span></code></a> - The container for all <a class="reference internal" href="ram_concept.duct_system.html#ram_concept.duct_system.DuctSystem" title="ram_concept.duct_system.DuctSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">DuctSystem</span></code></a> s.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.duct_system.html#ram_concept.duct_system.DuctSystem" title="ram_concept.duct_system.DuctSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">DuctSystem</span></code></a> - A Duct System.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.anchor_systems.html#ram_concept.anchor_systems.AnchorSystems" title="ram_concept.anchor_systems.AnchorSystems"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnchorSystems</span></code></a> - The container for all <a class="reference internal" href="ram_concept.anchor_system.html#ram_concept.anchor_system.AnchorSystem" title="ram_concept.anchor_system.AnchorSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnchorSystem</span></code></a> s.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.anchor_system.html#ram_concept.anchor_system.AnchorSystem" title="ram_concept.anchor_system.AnchorSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnchorSystem</span></code></a> - An Anchor System.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.pt_systems.html#ram_concept.pt_systems.PTSystems" title="ram_concept.pt_systems.PTSystems"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystems</span></code></a> - The container for all <a class="reference internal" href="ram_concept.pt_system.html#ram_concept.pt_system.PTSystem" title="ram_concept.pt_system.PTSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystem</span></code></a> s.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.pt_system.html#ram_concept.pt_system.PTSystem" title="ram_concept.pt_system.PTSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystem</span></code></a> - A PT System.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.signs.html#ram_concept.signs.Signs" title="ram_concept.signs.Signs"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signs</span></code></a> - Settings for API (and user) sign conventions.</p></li>
+<li><p><a class="reference internal" href="ram_concept.units.html#ram_concept.units.Units" title="ram_concept.units.Units"><code class="xref py py-class docutils literal notranslate"><span class="pre">Units</span></code></a> - Settings for API (and user) units.</p></li>
+<li><p><a class="reference internal" href="ram_concept.calc_options.html#ram_concept.calc_options.CalcOptions" title="ram_concept.calc_options.CalcOptions"><code class="xref py py-class docutils literal notranslate"><span class="pre">CalcOptions</span></code></a> - Settings for meshing and calculations.</p></li>
+<li><p><a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> - The manager of RAM Concept’s CAD system.</p>
+<blockquote>
+<div><ul>
+<li><p><a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> - There is always exactly 1 Structure (“Mesh Input”) layer</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.beam.html#ram_concept.beam.Beam" title="ram_concept.beam.Beam"><code class="xref py py-class docutils literal notranslate"><span class="pre">Beam</span></code></a> - <cite>Beams</cite> on the <cite>StructureLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.column.html#ram_concept.column.Column" title="ram_concept.column.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a> - <cite>Columns</cite> on the <cite>StructureLayer</cite> (tracked by above/below slab)</p></li>
+<li><p><a class="reference internal" href="ram_concept.slab_area.html#ram_concept.slab_area.SlabArea" title="ram_concept.slab_area.SlabArea"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlabArea</span></code></a> - <cite>SlabAreas</cite> on the <cite>StructureLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.slab_opening.html#ram_concept.slab_opening.SlabOpening" title="ram_concept.slab_opening.SlabOpening"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlabOpening</span></code></a> - <cite>SlabOpenings</cite> on the <cite>StructureLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.wall.html#ram_concept.wall.Wall" title="ram_concept.wall.Wall"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wall</span></code></a> - <cite>Walls</cite> on the <cite>StructureLayer</cite> (tracked by above/below slab)</p></li>
+<li><p><a class="reference internal" href="ram_concept.point_spring.html#ram_concept.point_spring.PointSpring" title="ram_concept.point_spring.PointSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointSpring</span></code></a> - <cite>PointSprings</cite> on the <cite>StructureLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.line_spring.html#ram_concept.line_spring.LineSpring" title="ram_concept.line_spring.LineSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineSpring</span></code></a> - <cite>LineSprings</cite> on the <cite>StructureLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.area_spring.html#ram_concept.area_spring.AreaSpring" title="ram_concept.area_spring.AreaSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">AreaSpring</span></code></a> - <cite>AreaSprings</cite> on the <cite>StructureLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.point_support.html#ram_concept.point_support.PointSupport" title="ram_concept.point_support.PointSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointSupport</span></code></a> - <cite>PointSupports</cite> on the <cite>StructureLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.line_support.html#ram_concept.line_support.LineSupport" title="ram_concept.line_support.LineSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineSupport</span></code></a> - <cite>LineSupports</cite> on the <cite>StructureLayer</cite></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.element_layer.html#ram_concept.element_layer.ElementLayer" title="ram_concept.element_layer.ElementLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElementLayer</span></code></a> - There is always exactly 1 Element layer. It’s contents are read-only.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.ColumnElement" title="ram_concept.elements.ColumnElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColumnElement</span></code></a> - <cite>ColumnElement</cite> on the <cite>ElementLayer</cite> (tracked by above/below slab)</p></li>
+<li><p><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.SlabElement" title="ram_concept.elements.SlabElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlabElement</span></code></a> - <cite>SlabElements</cite> on the <cite>ElementLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.WallElement" title="ram_concept.elements.WallElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">WallElement</span></code></a> - <cite>WallElements</cite> on the <cite>ElementLayer</cite> (tracked by above/below slab)</p></li>
+<li><p><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.WallElementGroup" title="ram_concept.elements.WallElementGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">WallElementGroup</span></code></a> - <cite>WallElementGroups</cite> on the <cite>ElementLayer</cite> (tracked by above/below slab)</p></li>
+<li><p><a class="reference internal" href="ram_concept.point_spring.html#ram_concept.point_spring.PointSpring" title="ram_concept.point_spring.PointSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointSpring</span></code></a> - <cite>PointSprings</cite> on the <cite>ElementLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.line_spring.html#ram_concept.line_spring.LineSpring" title="ram_concept.line_spring.LineSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineSpring</span></code></a> - <cite>LineSprings</cite> on the <cite>ElementLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.area_spring.html#ram_concept.area_spring.AreaSpring" title="ram_concept.area_spring.AreaSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">AreaSpring</span></code></a> - <cite>AreaSprings</cite> on the <cite>ElementLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.point_support.html#ram_concept.point_support.PointSupport" title="ram_concept.point_support.PointSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointSupport</span></code></a> - <cite>PointSupports</cite> on the <cite>ElementLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.line_support.html#ram_concept.line_support.LineSupport" title="ram_concept.line_support.LineSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineSupport</span></code></a> - <cite>LineSupports</cite> on the <cite>ElementLayer</cite></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.force_loading_layer.html#ram_concept.force_loading_layer.ForceLoadingLayer" title="ram_concept.force_loading_layer.ForceLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoadingLayer</span></code></a> - Multiple <cite>ForceLoadingLayers</cite> (always Self-Dead, Balance, Hyperstatic + any editable <cite>ForceLoadingLayers</cite>)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointLoad</span></code></a> - <cite>PointLoads</cite> on the <cite>ForceLoadingLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.line_load.html#ram_concept.line_load.LineLoad" title="ram_concept.line_load.LineLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineLoad</span></code></a> - <cite>LineLoads</cite> on the <cite>ForceLoadingLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.area_load.html#ram_concept.area_load.AreaLoad" title="ram_concept.area_load.AreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">AreaLoad</span></code></a> - <cite>AreaLoads</cite> on the <cite>ForceLoadingLayer</cite></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.shrinkage_loading_layer.html#ram_concept.shrinkage_loading_layer.ShrinkageLoadingLayer" title="ram_concept.shrinkage_loading_layer.ShrinkageLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShrinkageLoadingLayer</span></code></a> - Any number of <cite>ShrinkageLoadingLayers</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.shrinkage_area_load.html#ram_concept.shrinkage_area_load.ShrinkageAreaLoad" title="ram_concept.shrinkage_area_load.ShrinkageAreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShrinkageAreaLoad</span></code></a> - <cite>ShrinkageAreaLoads</cite> on the <cite>ShrinkageLoadingLayer</cite></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.temperature_loading_layer.html#ram_concept.temperature_loading_layer.TemperatureLoadingLayer" title="ram_concept.temperature_loading_layer.TemperatureLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemperatureLoadingLayer</span></code></a> - Any number of <cite>TemperatureLoadingLayers</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.temperature_area_load.html#ram_concept.temperature_area_load.TemperatureAreaLoad" title="ram_concept.temperature_area_load.TemperatureAreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemperatureAreaLoad</span></code></a> - <cite>TemperatureAreaLoads</cite> on the <cite>TemperatureLoadingLayer</cite></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.load_combo_layer.html#ram_concept.load_combo_layer.LoadComboLayer" title="ram_concept.load_combo_layer.LoadComboLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoadComboLayer</span></code></a> - Any number of <cite>LoadComboLayers</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.load_factor.html#ram_concept.load_factor.LoadFactor" title="ram_concept.load_factor.LoadFactor"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoadFactor</span></code></a> - <cite>LoadFactors</cite> for the <cite>LoadComboLayer</cite></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.tendon_layer.html#ram_concept.tendon_layer.TendonLayer" title="ram_concept.tendon_layer.TendonLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonLayer</span></code></a> - The 4 <cite>TendonLayers</cite> (manual, generated) x (longitude, latitude).</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.tendon_segment.html#ram_concept.tendon_segment.TendonSegment" title="ram_concept.tendon_segment.TendonSegment"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonSegment</span></code></a> - <cite>TendonSegments</cite> on the <cite>TendonLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.jack.html#ram_concept.jack.Jack" title="ram_concept.jack.Jack"><code class="xref py py-class docutils literal notranslate"><span class="pre">Jack</span></code></a> - <cite>Jacks</cite> on the  <cite>TendonLayer</cite></p></li>
+<li><p><a class="reference internal" href="ram_concept.tendon_node.html#ram_concept.tendon_node.TendonNode" title="ram_concept.tendon_node.TendonNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonNode</span></code></a> - <cite>TendonNodes</cite> on the  <cite>TendonLayer</cite> (added and removed automatically)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.beam.html#ram_concept.beam.DefaultBeam" title="ram_concept.beam.DefaultBeam"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultBeam</span></code></a> - The singleton settings for <cite>Beams</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.column.html#ram_concept.column.DefaultColumn" title="ram_concept.column.DefaultColumn"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultColumn</span></code></a> - The singleton settings for <cite>Columns</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.slab_area.html#ram_concept.slab_area.DefaultSlabArea" title="ram_concept.slab_area.DefaultSlabArea"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultSlabArea</span></code></a> - The singleton settings for <cite>SlabAreas</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.slab_opening.html#ram_concept.slab_opening.DefaultSlabOpening" title="ram_concept.slab_opening.DefaultSlabOpening"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultSlabOpening</span></code></a> - The singleton settings for <cite>SlabOpenings</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.wall.html#ram_concept.wall.DefaultWall" title="ram_concept.wall.DefaultWall"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultWall</span></code></a> - The singleton settings for <cite>Walls</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.point_spring.html#ram_concept.point_spring.DefaultPointSpring" title="ram_concept.point_spring.DefaultPointSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultPointSpring</span></code></a> - The singleton settings for <cite>PointSprings</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.line_spring.html#ram_concept.line_spring.DefaultLineSpring" title="ram_concept.line_spring.DefaultLineSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultLineSpring</span></code></a> - The singleton settings for <cite>LineSprings</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.area_spring.html#ram_concept.area_spring.DefaultAreaSpring" title="ram_concept.area_spring.DefaultAreaSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultAreaSpring</span></code></a> - The singleton settings for <cite>AreaSprings</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.point_support.html#ram_concept.point_support.DefaultPointSupport" title="ram_concept.point_support.DefaultPointSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultPointSupport</span></code></a> - The singleton settings for <cite>PointSupports</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.line_support.html#ram_concept.line_support.DefaultLineSupport" title="ram_concept.line_support.DefaultLineSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultLineSupport</span></code></a> - The singleton settings for <cite>LineSupports</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.DefaultPointLoad" title="ram_concept.point_load.DefaultPointLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultPointLoad</span></code></a> - The singleton settings for <cite>PointLoads</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.line_load.html#ram_concept.line_load.DefaultLineLoad" title="ram_concept.line_load.DefaultLineLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultLineLoad</span></code></a> - The singleton settings for <cite>LineLoads</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.area_load.html#ram_concept.area_load.DefaultAreaLoad" title="ram_concept.area_load.DefaultAreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultAreaLoad</span></code></a> - The singleton settings for <cite>AreaLoads</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.shrinkage_area_load.html#ram_concept.shrinkage_area_load.DefaultShrinkageAreaLoad" title="ram_concept.shrinkage_area_load.DefaultShrinkageAreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultShrinkageAreaLoad</span></code></a> - The singleton settings for <cite>ShrinkageAreaLoads</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.temperature_area_load.html#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad" title="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad</span></code></a> - The singleton settings for <cite>TemperatureAreaLoads</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.tendon_segment.html#ram_concept.tendon_segment.DefaultTendonSegment" title="ram_concept.tendon_segment.DefaultTendonSegment"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultTendonSegment</span></code></a> - The singleton settings for <cite>TendonSegments</cite> to be added.</p></li>
+<li><p><a class="reference internal" href="ram_concept.jack.html#ram_concept.jack.DefaultJack" title="ram_concept.jack.DefaultJack"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultJack</span></code></a> - The singleton settings for <cite>Jacks</cite> to be added.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="utility-classes">
+<h2>Utility Classes<a class="headerlink" href="#utility-classes" title="Permalink to this heading">¶</a></h2>
+<p>These classes assist in creating, setting and accessing the data:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.point_2D.html#ram_concept.point_2D.Point2D" title="ram_concept.point_2D.Point2D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point2D</span></code></a> - An immutable 2D point.</p></li>
+<li><p><a class="reference internal" href="ram_concept.point_3D.html#ram_concept.point_3D.Point3D" title="ram_concept.point_3D.Point3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point3D</span></code></a> - An immutable 3D point.</p></li>
+<li><p><a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineSegment2D</span></code></a> - An immutable 2D line segment.</p></li>
+<li><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon2D</span></code></a> - An immutable 2D polygon.</p></li>
+</ul>
+</section>
+<section id="abstract-data-classes">
+<h2>Abstract Data Classes<a class="headerlink" href="#abstract-data-classes" title="Permalink to this heading">¶</a></h2>
+<p>There is generally little need to understand or directly work with these abstract classes.
+The hierarchy below shows the class inheritance.</p>
+<ul>
+<li><p><a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> - Superclass for all the objects contained in the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<blockquote>
+<div><ul>
+<li><p><a class="reference internal" href="ram_concept.cad_layer.html#ram_concept.cad_layer.CadLayer" title="ram_concept.cad_layer.CadLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadLayer</span></code></a> - A layer in RAM Concept’s CAD system.</p>
+<blockquote>
+<div><ul>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">EnvelopResultLayer</span></code> - Superclass for <cite>FullResultLayer</cite></p>
+<blockquote>
+<div><ul>
+<li><p><a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.FullResultLayer" title="ram_concept.result_layers.FullResultLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullResultLayer</span></code></a> - Superclass for <cite>LoadingLayer</cite>, and <cite>LoadComboLayer</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.loading_layer.html#ram_concept.loading_layer.LoadingLayer" title="ram_concept.loading_layer.LoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoadingLayer</span></code></a> - Superclass for <cite>ForceLoadingLayer</cite>, <cite>TemperatureLoadingLayer</cite> and <cite>ShrinkageLoadingLayer</cite></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">CadEntity</span></code> - An entity (residing in a layer) in RAM Concept’s CAD system.</p>
+<blockquote>
+<div><ul>
+<li><p><a class="reference internal" href="ram_concept.concrete_member.html#ram_concept.concrete_member.ConcreteMember" title="ram_concept.concrete_member.ConcreteMember"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConcreteMember</span></code></a> - A concrete member on the StructureLayer.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.concrete_support.html#ram_concept.concrete_support.ConcreteSupport" title="ram_concept.concrete_support.ConcreteSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConcreteSupport</span></code></a> - A concrete support (<a class="reference internal" href="ram_concept.wall.html#ram_concept.wall.Wall" title="ram_concept.wall.Wall"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wall</span></code></a> or <a class="reference internal" href="ram_concept.column.html#ram_concept.column.Column" title="ram_concept.column.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a>).</p></li>
+<li><p><a class="reference internal" href="ram_concept.concrete_spanning_member.html#ram_concept.concrete_spanning_member.ConcreteSpanningMember" title="ram_concept.concrete_spanning_member.ConcreteSpanningMember"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConcreteSpanningMember</span></code></a> - A concrete spanning member (<a class="reference internal" href="ram_concept.slab_area.html#ram_concept.slab_area.SlabArea" title="ram_concept.slab_area.SlabArea"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlabArea</span></code></a> or <a class="reference internal" href="ram_concept.beam.html#ram_concept.beam.Beam" title="ram_concept.beam.Beam"><code class="xref py py-class docutils literal notranslate"><span class="pre">Beam</span></code></a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="ram_concept.force_load.html#ram_concept.force_load.ForceLoad" title="ram_concept.force_load.ForceLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoad</span></code></a> - A load on a <cite>ForceLoadingLayer</cite>.</p></li>
+<li><p><a class="reference internal" href="ram_concept.spring.html#ram_concept.spring.Spring" title="ram_concept.spring.Spring"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spring</span></code></a> - A spring on the <cite>StructureLayer</cite> or <cite>ElementLayer</cite>.</p></li>
+<li><p><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.Element" title="ram_concept.elements.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> - An <cite>Element</cite> on the <cite>ElementLayer</cite>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Summary Documentation</a><ul>
+<li><a class="reference internal" href="#entry-point-concept-and-model">Entry Point - Concept and Model</a></li>
+<li><a class="reference internal" href="#ram-concept-data-model">RAM Concept Data Model</a></li>
+<li><a class="reference internal" href="#utility-classes">Utility Classes</a></li>
+<li><a class="reference internal" href="#abstract-data-classes">Abstract Data Classes</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Summary Documentation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

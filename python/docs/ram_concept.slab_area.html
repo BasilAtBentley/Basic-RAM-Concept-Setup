@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.slab_area module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.slab_area module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.slab_area">
+<span id="ram-concept-slab-area-module"></span><h1>ram_concept.slab_area module<a class="headerlink" href="#module-ram_concept.slab_area" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultSlabArea</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.slab_area.SlabArea" title="ram_concept.slab_area.SlabArea"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlabArea</span></code></a></p>
+<p><cite>DefaultSlabArea</cite> represents a <cite>SlabArea</cite> that stores the default values for future <cite>SlabAreas</cite> that are created.</p>
+<p>An <cite>Exception</cite> will be raised if the <cite>location</cite> property of <cite>DefaultSlabArea</cite> is accessed.</p>
+<p>There is only 1 and always 1 <cite>DefaultSlabArea</cite> in the <cite>Model</cite>. It is accessed through <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_slab_area" title="ram_concept.cad_manager.CadManager.default_slab_area"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_slab_area</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>delete</cite> is not available for default objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.behavior">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">behavior</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.behavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>The stiffness behavior for the <cite>SlabArea</cite>. CUSTOM is required to directly set stiffness factors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ram_concept.slab_area.SlabAreaBehavior" title="ram_concept.slab_area.SlabAreaBehavior">SlabAreaBehavior</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.concrete">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">concrete</span></span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.concrete" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="ram_concept.concrete.html#ram_concept.concrete.Concrete" title="ram_concept.concrete.Concrete"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Concrete</span></code></a> used by this <cite>ConcreteMember</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.kFr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFr</span></span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.kFr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for axial forces in the r-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.kFs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFs</span></span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.kFs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for axial forces in the s-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.kMr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMr</span></span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.kMr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for bending moments about the r-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.kMrs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMrs</span></span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.kMrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for twisting moments about the r-s axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.kMs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMs</span></span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.kMs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for bending moments about the s-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.kVrs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kVrs</span></span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.kVrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for in-plane shear forces along the r-s axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Polygon2D</span></code></a> location of the <cite>SlabArea</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D">Polygon2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.priority">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">priority</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.priority" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relative priority of this vs other items (<cite>SlabAreas</cite>, <cite>Beams</cite>, <cite>SlabOpenings</cite>) (used in meshing)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.r_axis">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">r_axis</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.r_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>CCW/ACW angle from 3 o’clock to the r-axis (for value of zero, the r-axis is parallel to the global x-axis).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.thickness">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">thickness</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thickness of the slab or beam</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.toc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">toc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.toc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Top of concrete elevation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.DefaultSlabArea.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.slab_area.DefaultSlabArea.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SlabArea</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.slab_area.SlabArea" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.concrete_spanning_member.html#ram_concept.concrete_spanning_member.ConcreteSpanningMember" title="ram_concept.concrete_spanning_member.ConcreteSpanningMember"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConcreteSpanningMember</span></code></a></p>
+<p>SlabArea represents a polygon-shaped slab in the CAD system.</p>
+<p>SlabAreas are always located on the <a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> (“Mesh Input” layer).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>CadEntity</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.behavior">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">behavior</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabArea.behavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>The stiffness behavior for the <cite>SlabArea</cite>. CUSTOM is required to directly set stiffness factors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ram_concept.slab_area.SlabAreaBehavior" title="ram_concept.slab_area.SlabAreaBehavior">SlabAreaBehavior</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.concrete">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">concrete</span></span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.concrete" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="ram_concept.concrete.html#ram_concept.concrete.Concrete" title="ram_concept.concrete.Concrete"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Concrete</span></code></a> used by this <cite>ConcreteMember</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.kFr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFr</span></span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.kFr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for axial forces in the r-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.kFs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFs</span></span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.kFs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for axial forces in the s-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.kMr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMr</span></span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.kMr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for bending moments about the r-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.kMrs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMrs</span></span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.kMrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for twisting moments about the r-s axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.kMs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMs</span></span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.kMs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for bending moments about the s-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.kVrs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kVrs</span></span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.kVrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for in-plane shear forces along the r-s axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Polygon2D</span></code></a> location of the <cite>SlabArea</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D">Polygon2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabArea.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabArea.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.priority">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">priority</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabArea.priority" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relative priority of this vs other items (<cite>SlabAreas</cite>, <cite>Beams</cite>, <cite>SlabOpenings</cite>) (used in meshing)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.r_axis">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">r_axis</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabArea.r_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>CCW/ACW angle from 3 o’clock to the r-axis (for value of zero, the r-axis is parallel to the global x-axis).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.thickness">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">thickness</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabArea.thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thickness of the slab or beam</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.toc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">toc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabArea.toc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Top of concrete elevation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabArea.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.slab_area.SlabArea.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabAreaBehavior">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SlabAreaBehavior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.slab_area.SlabAreaBehavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>For specifying stiffness behaviors for <cite>SlabArea</cite>.</p>
+<p>Note that the CUSTOM behavior must be set before setting individual stiffness factors.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabAreaBehavior.CUSTOM">
+<span class="sig-name descname"><span class="pre">CUSTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'custom'</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabAreaBehavior.CUSTOM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabAreaBehavior.NO_TORION_SLAB">
+<span class="sig-name descname"><span class="pre">NO_TORION_SLAB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'no-torsion</span> <span class="pre">two-way</span> <span class="pre">slab'</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabAreaBehavior.NO_TORION_SLAB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabAreaBehavior.ONE_WAY_SLAB">
+<span class="sig-name descname"><span class="pre">ONE_WAY_SLAB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'one-way</span> <span class="pre">slab'</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabAreaBehavior.ONE_WAY_SLAB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.slab_area.SlabAreaBehavior.TWO_WAY_SLAB">
+<span class="sig-name descname"><span class="pre">TWO_WAY_SLAB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'two-way</span> <span class="pre">slab'</span></em><a class="headerlink" href="#ram_concept.slab_area.SlabAreaBehavior.TWO_WAY_SLAB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.slab_area module</a><ul>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.delete"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.behavior"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.behavior</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.concrete"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.concrete</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.kFr"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.kFr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.kFs"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.kFs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.kMr"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.kMr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.kMrs"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.kMrs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.kMs"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.kMs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.kVrs"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.kVrs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.location"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.model"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.name"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.number"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.priority"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.priority</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.r_axis"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.r_axis</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.thickness"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.thickness</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.toc"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.toc</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.DefaultSlabArea.uid"><code class="docutils literal notranslate"><span class="pre">DefaultSlabArea.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea"><code class="docutils literal notranslate"><span class="pre">SlabArea</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.delete"><code class="docutils literal notranslate"><span class="pre">SlabArea.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.behavior"><code class="docutils literal notranslate"><span class="pre">SlabArea.behavior</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.concrete"><code class="docutils literal notranslate"><span class="pre">SlabArea.concrete</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.kFr"><code class="docutils literal notranslate"><span class="pre">SlabArea.kFr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.kFs"><code class="docutils literal notranslate"><span class="pre">SlabArea.kFs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.kMr"><code class="docutils literal notranslate"><span class="pre">SlabArea.kMr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.kMrs"><code class="docutils literal notranslate"><span class="pre">SlabArea.kMrs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.kMs"><code class="docutils literal notranslate"><span class="pre">SlabArea.kMs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.kVrs"><code class="docutils literal notranslate"><span class="pre">SlabArea.kVrs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.location"><code class="docutils literal notranslate"><span class="pre">SlabArea.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.model"><code class="docutils literal notranslate"><span class="pre">SlabArea.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.name"><code class="docutils literal notranslate"><span class="pre">SlabArea.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.number"><code class="docutils literal notranslate"><span class="pre">SlabArea.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.priority"><code class="docutils literal notranslate"><span class="pre">SlabArea.priority</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.r_axis"><code class="docutils literal notranslate"><span class="pre">SlabArea.r_axis</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.thickness"><code class="docutils literal notranslate"><span class="pre">SlabArea.thickness</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.toc"><code class="docutils literal notranslate"><span class="pre">SlabArea.toc</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabArea.uid"><code class="docutils literal notranslate"><span class="pre">SlabArea.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabAreaBehavior"><code class="docutils literal notranslate"><span class="pre">SlabAreaBehavior</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabAreaBehavior.CUSTOM"><code class="docutils literal notranslate"><span class="pre">SlabAreaBehavior.CUSTOM</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabAreaBehavior.NO_TORION_SLAB"><code class="docutils literal notranslate"><span class="pre">SlabAreaBehavior.NO_TORION_SLAB</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabAreaBehavior.ONE_WAY_SLAB"><code class="docutils literal notranslate"><span class="pre">SlabAreaBehavior.ONE_WAY_SLAB</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_area.SlabAreaBehavior.TWO_WAY_SLAB"><code class="docutils literal notranslate"><span class="pre">SlabAreaBehavior.TWO_WAY_SLAB</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.slab_area module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

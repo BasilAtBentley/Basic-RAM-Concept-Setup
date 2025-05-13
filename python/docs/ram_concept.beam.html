@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.beam module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.beam module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.beam">
+<span id="ram-concept-beam-module"></span><h1>ram_concept.beam module<a class="headerlink" href="#module-ram_concept.beam" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Beam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.beam.Beam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.concrete_spanning_member.html#ram_concept.concrete_spanning_member.ConcreteSpanningMember" title="ram_concept.concrete_spanning_member.ConcreteSpanningMember"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConcreteSpanningMember</span></code></a></p>
+<p><cite>Beam</cite> represents a beam along a line segment in the CAD system.</p>
+<p><cite>Beams</cite> are always located on the <a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> (“Mesh Input” layer).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.beam.Beam.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>CadEntity</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.behavior">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">behavior</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.beam.Beam.behavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>The stiffness behavior for the <cite>Beam</cite>. CUSTOM is required to directly set stiffness factors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ram_concept.beam.BeamBehavior" title="ram_concept.beam.BeamBehavior">BeamBehavior</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.concrete">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">concrete</span></span><a class="headerlink" href="#ram_concept.beam.Beam.concrete" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="ram_concept.concrete.html#ram_concept.concrete.Concrete" title="ram_concept.concrete.Concrete"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Concrete</span></code></a> used by this <cite>ConcreteMember</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.kFr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFr</span></span><a class="headerlink" href="#ram_concept.beam.Beam.kFr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for axial forces in the r-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.kFs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFs</span></span><a class="headerlink" href="#ram_concept.beam.Beam.kFs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for axial forces in the s-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.kMr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMr</span></span><a class="headerlink" href="#ram_concept.beam.Beam.kMr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for bending moments about the r-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.kMrs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMrs</span></span><a class="headerlink" href="#ram_concept.beam.Beam.kMrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for twisting moments about the r-s axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.kMs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMs</span></span><a class="headerlink" href="#ram_concept.beam.Beam.kMs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for bending moments about the s-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.kVrs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kVrs</span></span><a class="headerlink" href="#ram_concept.beam.Beam.kVrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for in-plane shear forces along the r-s axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.beam.Beam.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LineSegment2D</span></code></a> location of the <cite>Beam</cite> spine</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D">LineSegment2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.mesh_as_slab">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mesh_as_slab</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.beam.Beam.mesh_as_slab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Meshing algorithms consider the beam exactly the same as a <cite>SlabArea</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.beam.Beam.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.beam.Beam.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.beam.Beam.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.priority">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">priority</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.beam.Beam.priority" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relative priority of this vs other items (<cite>SlabAreas</cite>, <cite>Beams</cite>, <cite>SlabOpenings</cite>) (used in meshing)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.thickness">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">thickness</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.beam.Beam.thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thickness of the slab or beam</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.toc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">toc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.beam.Beam.toc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Top of concrete elevation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.beam.Beam.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.Beam.width">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.beam.Beam.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Width of the <cite>Beam</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.beam.BeamBehavior">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BeamBehavior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.beam.BeamBehavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>For specifying stiffness behaviors for <cite>Beam</cite>.</p>
+<p>Note that the CUSTOM behavior must be set before setting individual stiffness factors.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.beam.BeamBehavior.CUSTOM">
+<span class="sig-name descname"><span class="pre">CUSTOM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'custom'</span></em><a class="headerlink" href="#ram_concept.beam.BeamBehavior.CUSTOM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.beam.BeamBehavior.NO_TORSION_BEAM">
+<span class="sig-name descname"><span class="pre">NO_TORSION_BEAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'no-torsion</span> <span class="pre">two-way</span> <span class="pre">slab'</span></em><a class="headerlink" href="#ram_concept.beam.BeamBehavior.NO_TORSION_BEAM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.beam.BeamBehavior.STANDARD_BEAM">
+<span class="sig-name descname"><span class="pre">STANDARD_BEAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'two-way</span> <span class="pre">slab'</span></em><a class="headerlink" href="#ram_concept.beam.BeamBehavior.STANDARD_BEAM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultBeam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.beam.DefaultBeam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.beam.Beam" title="ram_concept.beam.Beam"><code class="xref py py-class docutils literal notranslate"><span class="pre">Beam</span></code></a></p>
+<p><cite>DefaultBeam</cite> represents a <cite>Beam</cite> that stores the default values for future <cite>Beams</cite> that are created.</p>
+<p>An <cite>Exception</cite> will be raised if the <cite>location</cite> property of <cite>DefaultBeam</cite> is accessed.</p>
+<p>There is only 1 and always 1 <cite>DefaultBeam</cite> in the <cite>Model</cite>. It is accessed through <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_beam" title="ram_concept.cad_manager.CadManager.default_beam"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_beam</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>delete</cite> is not available for default objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.behavior">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">behavior</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.beam.DefaultBeam.behavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>The stiffness behavior for the <cite>Beam</cite>. CUSTOM is required to directly set stiffness factors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ram_concept.beam.BeamBehavior" title="ram_concept.beam.BeamBehavior">BeamBehavior</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.concrete">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">concrete</span></span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.concrete" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="ram_concept.concrete.html#ram_concept.concrete.Concrete" title="ram_concept.concrete.Concrete"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Concrete</span></code></a> used by this <cite>ConcreteMember</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.kFr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFr</span></span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.kFr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for axial forces in the r-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.kFs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFs</span></span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.kFs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for axial forces in the s-axis direction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.kMr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMr</span></span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.kMr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for bending moments about the r-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.kMrs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMrs</span></span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.kMrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for twisting moments about the r-s axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.kMs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMs</span></span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.kMs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for bending moments about the s-axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.kVrs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kVrs</span></span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.kVrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stiffness multiplier for in-plane shear forces along the r-s axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LineSegment2D</span></code></a> location of the <cite>Beam</cite> spine</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D">LineSegment2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.mesh_as_slab">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mesh_as_slab</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.beam.DefaultBeam.mesh_as_slab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Meshing algorithms consider the beam exactly the same as a <cite>SlabArea</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.beam.DefaultBeam.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.beam.DefaultBeam.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.priority">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">priority</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.beam.DefaultBeam.priority" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relative priority of this vs other items (<cite>SlabAreas</cite>, <cite>Beams</cite>, <cite>SlabOpenings</cite>) (used in meshing)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.thickness">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">thickness</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.beam.DefaultBeam.thickness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thickness of the slab or beam</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.toc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">toc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.beam.DefaultBeam.toc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Top of concrete elevation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.beam.DefaultBeam.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.beam.DefaultBeam.width">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.beam.DefaultBeam.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Width of the <cite>Beam</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.beam module</a><ul>
+<li><a class="reference internal" href="#ram_concept.beam.Beam"><code class="docutils literal notranslate"><span class="pre">Beam</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.delete"><code class="docutils literal notranslate"><span class="pre">Beam.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.behavior"><code class="docutils literal notranslate"><span class="pre">Beam.behavior</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.concrete"><code class="docutils literal notranslate"><span class="pre">Beam.concrete</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.kFr"><code class="docutils literal notranslate"><span class="pre">Beam.kFr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.kFs"><code class="docutils literal notranslate"><span class="pre">Beam.kFs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.kMr"><code class="docutils literal notranslate"><span class="pre">Beam.kMr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.kMrs"><code class="docutils literal notranslate"><span class="pre">Beam.kMrs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.kMs"><code class="docutils literal notranslate"><span class="pre">Beam.kMs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.kVrs"><code class="docutils literal notranslate"><span class="pre">Beam.kVrs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.location"><code class="docutils literal notranslate"><span class="pre">Beam.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.mesh_as_slab"><code class="docutils literal notranslate"><span class="pre">Beam.mesh_as_slab</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.model"><code class="docutils literal notranslate"><span class="pre">Beam.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.name"><code class="docutils literal notranslate"><span class="pre">Beam.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.number"><code class="docutils literal notranslate"><span class="pre">Beam.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.priority"><code class="docutils literal notranslate"><span class="pre">Beam.priority</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.thickness"><code class="docutils literal notranslate"><span class="pre">Beam.thickness</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.toc"><code class="docutils literal notranslate"><span class="pre">Beam.toc</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.uid"><code class="docutils literal notranslate"><span class="pre">Beam.uid</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.Beam.width"><code class="docutils literal notranslate"><span class="pre">Beam.width</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.beam.BeamBehavior"><code class="docutils literal notranslate"><span class="pre">BeamBehavior</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.beam.BeamBehavior.CUSTOM"><code class="docutils literal notranslate"><span class="pre">BeamBehavior.CUSTOM</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.BeamBehavior.NO_TORSION_BEAM"><code class="docutils literal notranslate"><span class="pre">BeamBehavior.NO_TORSION_BEAM</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.BeamBehavior.STANDARD_BEAM"><code class="docutils literal notranslate"><span class="pre">BeamBehavior.STANDARD_BEAM</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam"><code class="docutils literal notranslate"><span class="pre">DefaultBeam</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.delete"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.behavior"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.behavior</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.concrete"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.concrete</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.kFr"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.kFr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.kFs"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.kFs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.kMr"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.kMr</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.kMrs"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.kMrs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.kMs"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.kMs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.kVrs"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.kVrs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.location"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.mesh_as_slab"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.mesh_as_slab</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.model"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.name"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.number"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.priority"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.priority</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.thickness"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.thickness</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.toc"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.toc</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.uid"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.uid</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.beam.DefaultBeam.width"><code class="docutils literal notranslate"><span class="pre">DefaultBeam.width</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.beam module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

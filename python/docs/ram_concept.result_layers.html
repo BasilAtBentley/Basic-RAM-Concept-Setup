@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.result_layers module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.result_layers module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.result_layers">
+<span id="ram-concept-result-layers-module"></span><h1>ram_concept.result_layers module<a class="headerlink" href="#module-ram_concept.result_layers" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.result_layers.EnvelopeResultLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EnvelopeResultLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.result_layers.EnvelopeResultLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.cad_layer.html#ram_concept.cad_layer.CadLayer" title="ram_concept.cad_layer.CadLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadLayer</span></code></a></p>
+<p>The abstract class represents a CadLayer that contains “enveloped” results.</p>
+<p>“Enveloped” results are those with maximum and minimum values, taken from multiple analyses.
+This contrasts with “full” results which also contain “standard” analysis values which are from
+a single analysis or a linear combination of single analyses.</p>
+<p>Result contexts labeled as “STANDARD” are not available in an <cite>EnvelopedResultLayer</cite> unless it is also
+a <a class="reference internal" href="#ram_concept.result_layers.FullResultLayer" title="ram_concept.result_layers.FullResultLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">FullResultLayer</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.result_layers.EnvelopeResultLayer.column_reaction">
+<span class="sig-name descname"><span class="pre">column_reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.result_layers.EnvelopeResultLayer.column_reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return this layer’s reaction upon that slab from the given <cite>ColumnElement</cite>, consistent with the given <cite>ReactionContext</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_element</strong> (<a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.ColumnElement" title="ram_concept.elements.ColumnElement"><em>ColumnElement</em></a>) – </p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="#ram_concept.result_layers.ReactionContext" title="ram_concept.result_layers.ReactionContext"><em>ReactionContext</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.point_5D.html#ram_concept.point_5D.Point5D" title="ram_concept.point_5D.Point5D"><em>Point5D</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.result_layers.EnvelopeResultLayer.wall_group_reaction">
+<span class="sig-name descname"><span class="pre">wall_group_reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wall_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.result_layers.EnvelopeResultLayer.wall_group_reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return this layer’s reaction upon that slab from the wall group, consistent with the given ReactionContext.
+For backward compatability, WallElement is accepted as well; THAT USAGE IS DEPRECATED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wall_group</strong> (<em>Union</em><em>[</em><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.WallElement" title="ram_concept.elements.WallElement"><em>WallElement</em></a><em>, </em><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.WallElementGroup" title="ram_concept.elements.WallElementGroup"><em>WallElementGroup</em></a><em>]</em>) – </p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="#ram_concept.result_layers.ReactionContext" title="ram_concept.result_layers.ReactionContext"><em>ReactionContext</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.point_6D.html#ram_concept.point_6D.Point6D" title="ram_concept.point_6D.Point6D">Point6D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.result_layers.EnvelopeResultLayer.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.result_layers.EnvelopeResultLayer.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.result_layers.EnvelopeResultLayer.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.result_layers.EnvelopeResultLayer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.result_layers.EnvelopeResultLayer.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.result_layers.EnvelopeResultLayer.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.result_layers.EnvelopeResultLayer.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.result_layers.EnvelopeResultLayer.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.result_layers.FullResultLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FullResultLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.result_layers.FullResultLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.result_layers.EnvelopeResultLayer" title="ram_concept.result_layers.EnvelopeResultLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnvelopeResultLayer</span></code></a></p>
+<p>The abstract class represents a CadLayer that contains both enveloped and standard results.</p>
+<p>Effectively this layer class supports all the results available through the EnvelopeResultLayer
+plus the contexts labelled as “STANDARD”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.result_layers.FullResultLayer.column_reaction">
+<span class="sig-name descname"><span class="pre">column_reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.result_layers.FullResultLayer.column_reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return this layer’s reaction upon that slab from the given <cite>ColumnElement</cite>, consistent with the given <cite>ReactionContext</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_element</strong> (<a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.ColumnElement" title="ram_concept.elements.ColumnElement"><em>ColumnElement</em></a>) – </p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="#ram_concept.result_layers.ReactionContext" title="ram_concept.result_layers.ReactionContext"><em>ReactionContext</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.point_5D.html#ram_concept.point_5D.Point5D" title="ram_concept.point_5D.Point5D"><em>Point5D</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.result_layers.FullResultLayer.wall_group_reaction">
+<span class="sig-name descname"><span class="pre">wall_group_reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wall_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.result_layers.FullResultLayer.wall_group_reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return this layer’s reaction upon that slab from the wall group, consistent with the given ReactionContext.
+For backward compatability, WallElement is accepted as well; THAT USAGE IS DEPRECATED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wall_group</strong> (<em>Union</em><em>[</em><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.WallElement" title="ram_concept.elements.WallElement"><em>WallElement</em></a><em>, </em><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.WallElementGroup" title="ram_concept.elements.WallElementGroup"><em>WallElementGroup</em></a><em>]</em>) – </p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="#ram_concept.result_layers.ReactionContext" title="ram_concept.result_layers.ReactionContext"><em>ReactionContext</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.point_6D.html#ram_concept.point_6D.Point6D" title="ram_concept.point_6D.Point6D">Point6D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.result_layers.FullResultLayer.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.result_layers.FullResultLayer.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.result_layers.FullResultLayer.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.result_layers.FullResultLayer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.result_layers.FullResultLayer.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.result_layers.FullResultLayer.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.result_layers.FullResultLayer.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.result_layers.FullResultLayer.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.result_layers.ReactionContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ReactionContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.result_layers.ReactionContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>For specifying the context of reactions upon the slab.</p>
+<p>The meaning of the values is:</p>
+<ul class="simple">
+<li><p>STANDARD: Reaction due to standard load factors and full loading (no pattern loading).</p></li>
+<li><p>MAX_MR: Reaction occuring simultaneously with the maximum Mr reaction.</p></li>
+<li><p>MIN_MR: Reaction occuring simultaneously with the minimum Mr reaction.</p></li>
+<li><p>MAX_MS: Reaction occuring simultaneously with the maximum Ms reaction.</p></li>
+<li><p>MIN_MS: Reaction occuring simultaneously with the minimum Ms reaction.</p></li>
+<li><p>MAX_FZ: Reaction occuring simultaneously with the maximum Fz reaction.</p></li>
+<li><p>MIN_FZ: Reaction occuring simultaneously with the minimum Fz reaction.</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.result_layers.ReactionContext.MAX_FZ">
+<span class="sig-name descname"><span class="pre">MAX_FZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ContextMaxFz'</span></em><a class="headerlink" href="#ram_concept.result_layers.ReactionContext.MAX_FZ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.result_layers.ReactionContext.MAX_MR">
+<span class="sig-name descname"><span class="pre">MAX_MR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ContextMaxMx'</span></em><a class="headerlink" href="#ram_concept.result_layers.ReactionContext.MAX_MR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.result_layers.ReactionContext.MAX_MS">
+<span class="sig-name descname"><span class="pre">MAX_MS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ContextMaxMy'</span></em><a class="headerlink" href="#ram_concept.result_layers.ReactionContext.MAX_MS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.result_layers.ReactionContext.MIN_FZ">
+<span class="sig-name descname"><span class="pre">MIN_FZ</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ContextMinFz'</span></em><a class="headerlink" href="#ram_concept.result_layers.ReactionContext.MIN_FZ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.result_layers.ReactionContext.MIN_MR">
+<span class="sig-name descname"><span class="pre">MIN_MR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ContextMinMx'</span></em><a class="headerlink" href="#ram_concept.result_layers.ReactionContext.MIN_MR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.result_layers.ReactionContext.MIN_MS">
+<span class="sig-name descname"><span class="pre">MIN_MS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ContextMinMy'</span></em><a class="headerlink" href="#ram_concept.result_layers.ReactionContext.MIN_MS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.result_layers.ReactionContext.STANDARD">
+<span class="sig-name descname"><span class="pre">STANDARD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ContextStandard'</span></em><a class="headerlink" href="#ram_concept.result_layers.ReactionContext.STANDARD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.result_layers module</a><ul>
+<li><a class="reference internal" href="#ram_concept.result_layers.EnvelopeResultLayer"><code class="docutils literal notranslate"><span class="pre">EnvelopeResultLayer</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.result_layers.EnvelopeResultLayer.column_reaction"><code class="docutils literal notranslate"><span class="pre">EnvelopeResultLayer.column_reaction()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.EnvelopeResultLayer.wall_group_reaction"><code class="docutils literal notranslate"><span class="pre">EnvelopeResultLayer.wall_group_reaction()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.EnvelopeResultLayer.model"><code class="docutils literal notranslate"><span class="pre">EnvelopeResultLayer.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.EnvelopeResultLayer.name"><code class="docutils literal notranslate"><span class="pre">EnvelopeResultLayer.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.EnvelopeResultLayer.number"><code class="docutils literal notranslate"><span class="pre">EnvelopeResultLayer.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.EnvelopeResultLayer.uid"><code class="docutils literal notranslate"><span class="pre">EnvelopeResultLayer.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.result_layers.FullResultLayer"><code class="docutils literal notranslate"><span class="pre">FullResultLayer</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.result_layers.FullResultLayer.column_reaction"><code class="docutils literal notranslate"><span class="pre">FullResultLayer.column_reaction()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.FullResultLayer.wall_group_reaction"><code class="docutils literal notranslate"><span class="pre">FullResultLayer.wall_group_reaction()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.FullResultLayer.model"><code class="docutils literal notranslate"><span class="pre">FullResultLayer.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.FullResultLayer.name"><code class="docutils literal notranslate"><span class="pre">FullResultLayer.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.FullResultLayer.number"><code class="docutils literal notranslate"><span class="pre">FullResultLayer.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.FullResultLayer.uid"><code class="docutils literal notranslate"><span class="pre">FullResultLayer.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.result_layers.ReactionContext"><code class="docutils literal notranslate"><span class="pre">ReactionContext</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.result_layers.ReactionContext.MAX_FZ"><code class="docutils literal notranslate"><span class="pre">ReactionContext.MAX_FZ</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.ReactionContext.MAX_MR"><code class="docutils literal notranslate"><span class="pre">ReactionContext.MAX_MR</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.ReactionContext.MAX_MS"><code class="docutils literal notranslate"><span class="pre">ReactionContext.MAX_MS</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.ReactionContext.MIN_FZ"><code class="docutils literal notranslate"><span class="pre">ReactionContext.MIN_FZ</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.ReactionContext.MIN_MR"><code class="docutils literal notranslate"><span class="pre">ReactionContext.MIN_MR</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.ReactionContext.MIN_MS"><code class="docutils literal notranslate"><span class="pre">ReactionContext.MIN_MS</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.result_layers.ReactionContext.STANDARD"><code class="docutils literal notranslate"><span class="pre">ReactionContext.STANDARD</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.result_layers module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

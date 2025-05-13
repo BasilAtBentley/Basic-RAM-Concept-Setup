@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>How to Add Materials &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Add Materials</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="how-to-add-materials">
+<span id="id1"></span><h1>How to Add Materials<a class="headerlink" href="#how-to-add-materials" title="Permalink to this heading">¶</a></h1>
+<section id="concrete-mixes">
+<h2>Concrete Mixes<a class="headerlink" href="#concrete-mixes" title="Permalink to this heading">¶</a></h2>
+<p>Concrete mixes are primarily exposed through the <a class="reference internal" href="ram_concept.concretes.html#ram_concept.concretes.Concretes" title="ram_concept.concretes.Concretes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Concretes</span></code></a> and <a class="reference internal" href="ram_concept.concrete.html#ram_concept.concrete.Concrete" title="ram_concept.concrete.Concrete"><code class="xref py py-class docutils literal notranslate"><span class="pre">Concrete</span></code></a> classes.
+Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains a single <a class="reference internal" href="ram_concept.concretes.html#ram_concept.concretes.Concretes" title="ram_concept.concretes.Concretes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Concretes</span></code></a> instance which contains at least one <a class="reference internal" href="ram_concept.concrete.html#ram_concept.concrete.Concrete" title="ram_concept.concrete.Concrete"><code class="xref py py-class docutils literal notranslate"><span class="pre">Concrete</span></code></a> instance.
+The code below shows how these classes are related and how to use them to add, remove and edit concrete mixes.</p>
+</section>
+<section id="post-tensioning-systems">
+<h2>Post-tensioning Systems<a class="headerlink" href="#post-tensioning-systems" title="Permalink to this heading">¶</a></h2>
+<p>Post-tensioning systems are primarily exposed through the <a class="reference internal" href="ram_concept.pt_systems.html#ram_concept.pt_systems.PTSystems" title="ram_concept.pt_systems.PTSystems"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystems</span></code></a> and <a class="reference internal" href="ram_concept.pt_system.html#ram_concept.pt_system.PTSystem" title="ram_concept.pt_system.PTSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystem</span></code></a> classes.
+Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains a single <a class="reference internal" href="ram_concept.pt_systems.html#ram_concept.pt_systems.PTSystems" title="ram_concept.pt_systems.PTSystems"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystems</span></code></a> instance which contains at least one <a class="reference internal" href="ram_concept.pt_system.html#ram_concept.pt_system.PTSystem" title="ram_concept.pt_system.PTSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystem</span></code></a> instance.
+The code below shows how these classes are related and how to use them to add, remove and edit post-tensioning systems.</p>
+<p>Deprecation notice:
+Certain <a class="reference internal" href="ram_concept.pt_system.html#ram_concept.pt_system.PTSystem" title="ram_concept.pt_system.PTSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystem</span></code></a> class properties have been deprecated in the current version of RAM Concept scripting API.
+The properties are now accessed through respective instances of <a class="reference internal" href="ram_concept.strand_material.html#ram_concept.strand_material.StrandMaterial" title="ram_concept.strand_material.StrandMaterial"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrandMaterial</span></code></a> class, <a class="reference internal" href="ram_concept.duct_system.html#ram_concept.duct_system.DuctSystem" title="ram_concept.duct_system.DuctSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">DuctSystem</span></code></a> class, and <a class="reference internal" href="ram_concept.anchor_system.html#ram_concept.anchor_system.AnchorSystem" title="ram_concept.anchor_system.AnchorSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnchorSystem</span></code></a>.
+Instances of these new classes could be shared by multiple <a class="reference internal" href="ram_concept.pt_system.html#ram_concept.pt_system.PTSystem" title="ram_concept.pt_system.PTSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystem</span></code></a> instances, causing any modifications to their properties wil propogate to all <a class="reference internal" href="ram_concept.pt_system.html#ram_concept.pt_system.PTSystem" title="ram_concept.pt_system.PTSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystem</span></code></a> instances that reference them.</p>
+<p>Below is a summary of the deprecated properties and their corresponding new locations:</p>
+<ul class="simple">
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Aps</span></code>: is now located under <a class="reference internal" href="ram_concept.strand_material.html#ram_concept.strand_material.StrandMaterial.Aps" title="ram_concept.strand_material.StrandMaterial.Aps"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">StrandMaterial.Aps</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Eps</span></code>: is now located under <a class="reference internal" href="ram_concept.strand_material.html#ram_concept.strand_material.StrandMaterial.Eps" title="ram_concept.strand_material.StrandMaterial.Eps"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">StrandMaterial.Eps</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Fpu</span></code>: is now located under <a class="reference internal" href="ram_concept.strand_material.html#ram_concept.strand_material.StrandMaterial.Fpu" title="ram_concept.strand_material.StrandMaterial.Fpu"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">StrandMaterial.Fpu</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Fpy</span></code>: is now located under <a class="reference internal" href="ram_concept.strand_material.html#ram_concept.strand_material.StrandMaterial.Fpy" title="ram_concept.strand_material.StrandMaterial.Fpy"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">StrandMaterial.Fpy</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">angular_friction</span></code>: is now located under <a class="reference internal" href="ram_concept.duct_system.html#ram_concept.duct_system.DuctSystem.angular_friction" title="ram_concept.duct_system.DuctSystem.angular_friction"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">DuctSystem.angular_friction</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">duct_width</span></code>: is now located under <a class="reference internal" href="ram_concept.duct_system.html#ram_concept.duct_system.DuctSystem.duct_width" title="ram_concept.duct_system.DuctSystem.duct_width"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">DuctSystem.duct_width</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">strands_per_duct</span></code>: is now located under <a class="reference internal" href="ram_concept.duct_system.html#ram_concept.duct_system.DuctSystem.strands_per_duct" title="ram_concept.duct_system.DuctSystem.strands_per_duct"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">DuctSystem.strands_per_duct</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">system_type</span></code>: is now located under <a class="reference internal" href="ram_concept.duct_system.html#ram_concept.duct_system.DuctSystem.system_type" title="ram_concept.duct_system.DuctSystem.system_type"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">DuctSystem.system_type</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">wobble_friction</span></code>: is now located under <a class="reference internal" href="ram_concept.duct_system.html#ram_concept.duct_system.DuctSystem.wobble_friction" title="ram_concept.duct_system.DuctSystem.wobble_friction"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">DuctSystem.wobble_friction</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">anchor_friction</span></code>: is now located under <a class="reference internal" href="ram_concept.anchor_system.html#ram_concept.anchor_system.AnchorSystem.anchor_friction" title="ram_concept.anchor_system.AnchorSystem.anchor_friction"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">AnchorSystem.anchor_friction</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">jack_stress</span></code>: is now located under <a class="reference internal" href="ram_concept.anchor_system.html#ram_concept.anchor_system.AnchorSystem.jack_stress" title="ram_concept.anchor_system.AnchorSystem.jack_stress"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">AnchorSystem.jack_stress</span></code></a></p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">seating_distance</span></code>: is now located under <a class="reference internal" href="ram_concept.anchor_system.html#ram_concept.anchor_system.AnchorSystem.seating_distance" title="ram_concept.anchor_system.AnchorSystem.seating_distance"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">AnchorSystem.seating_distance</span></code></a></p></li>
+</ul>
+<p>The deprecated properties in <a class="reference internal" href="ram_concept.pt_system.html#ram_concept.pt_system.PTSystem" title="ram_concept.pt_system.PTSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">PTSystem</span></code></a> class will continue to function as read-only in the current version, but will be completely removed in a future release.</p>
+<section id="strand-materials">
+<h3>Strand Materials<a class="headerlink" href="#strand-materials" title="Permalink to this heading">¶</a></h3>
+<p>Post-tensioning systems are primarily exposed through the <a class="reference internal" href="ram_concept.strand_materials.html#ram_concept.strand_materials.StrandMaterials" title="ram_concept.strand_materials.StrandMaterials"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrandMaterials</span></code></a> and <a class="reference internal" href="ram_concept.strand_material.html#ram_concept.strand_material.StrandMaterial" title="ram_concept.strand_material.StrandMaterial"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrandMaterial</span></code></a> classes.
+Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains a single <a class="reference internal" href="ram_concept.strand_materials.html#ram_concept.strand_materials.StrandMaterials" title="ram_concept.strand_materials.StrandMaterials"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrandMaterials</span></code></a> instance which contains at least one <a class="reference internal" href="ram_concept.strand_material.html#ram_concept.strand_material.StrandMaterial" title="ram_concept.strand_material.StrandMaterial"><code class="xref py py-class docutils literal notranslate"><span class="pre">StrandMaterial</span></code></a> instance.
+The code below shows how these classes are related and how to use them to add, remove and edit post-tensioning systems.</p>
+</section>
+<section id="duct-systems">
+<h3>Duct Systems<a class="headerlink" href="#duct-systems" title="Permalink to this heading">¶</a></h3>
+<p>Post-tensioning systems are primarily exposed through the <a class="reference internal" href="ram_concept.duct_systems.html#ram_concept.duct_systems.DuctSystems" title="ram_concept.duct_systems.DuctSystems"><code class="xref py py-class docutils literal notranslate"><span class="pre">DuctSystems</span></code></a> and <a class="reference internal" href="ram_concept.duct_system.html#ram_concept.duct_system.DuctSystem" title="ram_concept.duct_system.DuctSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">DuctSystem</span></code></a> classes.
+Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains a single <a class="reference internal" href="ram_concept.duct_systems.html#ram_concept.duct_systems.DuctSystems" title="ram_concept.duct_systems.DuctSystems"><code class="xref py py-class docutils literal notranslate"><span class="pre">DuctSystems</span></code></a> instance which contains at least one <a class="reference internal" href="ram_concept.duct_system.html#ram_concept.duct_system.DuctSystem" title="ram_concept.duct_system.DuctSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">DuctSystem</span></code></a> instance.
+The code below shows how these classes are related and how to use them to add, remove and edit post-tensioning systems.</p>
+</section>
+<section id="anchor-systems">
+<h3>Anchor Systems<a class="headerlink" href="#anchor-systems" title="Permalink to this heading">¶</a></h3>
+<p>Anchor systems are primarily exposed through the <a class="reference internal" href="ram_concept.anchor_systems.html#ram_concept.anchor_systems.AnchorSystems" title="ram_concept.anchor_systems.AnchorSystems"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnchorSystems</span></code></a> and <a class="reference internal" href="ram_concept.anchor_system.html#ram_concept.anchor_system.AnchorSystem" title="ram_concept.anchor_system.AnchorSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnchorSystem</span></code></a> classes.
+Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains a single <a class="reference internal" href="ram_concept.anchor_systems.html#ram_concept.anchor_systems.AnchorSystems" title="ram_concept.anchor_systems.AnchorSystems"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnchorSystems</span></code></a> instance which contains at least one <a class="reference internal" href="ram_concept.anchor_system.html#ram_concept.anchor_system.AnchorSystem" title="ram_concept.anchor_system.AnchorSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnchorSystem</span></code></a> instance.
+The code below shows how these classes are related and how to use them to add, remove and edit post-tensioning systems.</p>
+</section>
+</section>
+<section id="the-code">
+<h2>The Code<a class="headerlink" href="#the-code" title="Permalink to this heading">¶</a></h2>
+<p>Here’s the code for working with concrete mixes and PT systems from the Walkthrough example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="kn">from</span> <span class="nn">ram_concept.anchor_system</span> <span class="kn">import</span> <span class="n">AnchorSystem</span>
+<span class="kn">from</span> <span class="nn">ram_concept.anchor_system</span> <span class="kn">import</span> <span class="n">AnchorType</span>
+<span class="kn">from</span> <span class="nn">ram_concept.anchor_systems</span> <span class="kn">import</span> <span class="n">AnchorSystems</span>
+<span class="kn">from</span> <span class="nn">ram_concept.concrete</span> <span class="kn">import</span> <span class="n">Concrete</span>
+<span class="kn">from</span> <span class="nn">ram_concept.concretes</span> <span class="kn">import</span> <span class="n">Concretes</span>
+<span class="kn">from</span> <span class="nn">ram_concept.duct_system</span> <span class="kn">import</span> <span class="n">DuctSystem</span>
+<span class="kn">from</span> <span class="nn">ram_concept.duct_system</span> <span class="kn">import</span> <span class="n">DuctShape</span>
+<span class="kn">from</span> <span class="nn">ram_concept.duct_system</span> <span class="kn">import</span> <span class="n">DuctType</span>
+<span class="kn">from</span> <span class="nn">ram_concept.duct_systems</span> <span class="kn">import</span> <span class="n">DuctSystems</span>
+<span class="kn">from</span> <span class="nn">ram_concept.model</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">ram_concept.pt_system</span> <span class="kn">import</span> <span class="n">PTSystem</span>
+<span class="kn">from</span> <span class="nn">ram_concept.pt_systems</span> <span class="kn">import</span> <span class="n">PTSystems</span>
+<span class="kn">from</span> <span class="nn">ram_concept.duct_system</span> <span class="kn">import</span> <span class="n">PTSystemType</span>
+<span class="kn">from</span> <span class="nn">ram_concept.strand_material</span> <span class="kn">import</span> <span class="n">StrandMaterial</span>
+<span class="kn">from</span> <span class="nn">ram_concept.strand_materials</span> <span class="kn">import</span> <span class="n">StrandMaterials</span>
+
+
+<span class="k">def</span> <span class="nf">add_materials</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds materials required for the structure.&quot;&quot;&quot;</span>
+
+    <span class="c1"># CONCRETE MIXES</span>
+
+    <span class="c1"># add a 45 MPa concrete mix</span>
+    <span class="c1"># note: adding a concrete mix with the name of an existing concrete mix will raise an exception</span>
+    <span class="n">concretes</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">concretes</span>
+    <span class="n">concrete_mix</span> <span class="o">=</span> <span class="n">concretes</span><span class="o">.</span><span class="n">add_concrete</span><span class="p">(</span><span class="s2">&quot;45 MPa&quot;</span><span class="p">)</span>
+    <span class="n">concrete_mix</span><span class="o">.</span><span class="n">fc_final</span> <span class="o">=</span> <span class="mi">45000000</span>
+    <span class="n">concrete_mix</span><span class="o">.</span><span class="n">fc_initial</span> <span class="o">=</span> <span class="mi">30000000</span>
+    <span class="n">concrete_mix</span><span class="o">.</span><span class="n">poissons_ratio</span> <span class="o">=</span> <span class="mf">0.2</span>
+    <span class="n">concrete_mix</span><span class="o">.</span><span class="n">unit_mass</span> <span class="o">=</span> <span class="mi">2450</span>
+    <span class="n">concrete_mix</span><span class="o">.</span><span class="n">unit_unit_mass_for_loads</span> <span class="o">=</span> <span class="mi">2500</span>
+    <span class="n">concrete_mix</span><span class="o">.</span><span class="n">use_code_Ec</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># you can optionally delete the materials that come by default that you don&#39;t want</span>
+    <span class="c1"># but you must leave at least 1 (attempting to delete the last one will raise an exception)</span>
+    <span class="n">all_concretes</span> <span class="o">=</span> <span class="n">concretes</span><span class="o">.</span><span class="n">concretes</span>
+    <span class="k">for</span> <span class="n">concrete</span> <span class="ow">in</span> <span class="n">all_concretes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">concrete</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;45 MPa&quot;</span><span class="p">:</span>
+            <span class="n">concrete</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+    <span class="c1"># PT SYSTEMS</span>
+
+    <span class="c1"># add a Strand Material</span>
+    <span class="c1"># note: adding a Strand Material with the name of an existing Strand Material will raise an exception</span>
+    <span class="n">strand_materials</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">strand_materials</span>
+    <span class="n">strand_material</span> <span class="o">=</span> <span class="n">strand_materials</span><span class="o">.</span><span class="n">add_strand_material</span><span class="p">(</span><span class="s2">&quot;13mm Strand&quot;</span><span class="p">)</span>
+    <span class="n">strand_material</span><span class="o">.</span><span class="n">Aps</span> <span class="o">=</span> <span class="mf">100e-6</span>
+    <span class="n">strand_material</span><span class="o">.</span><span class="n">Eps</span> <span class="o">=</span> <span class="mf">195000e6</span>
+    <span class="n">strand_material</span><span class="o">.</span><span class="n">Fpy</span> <span class="o">=</span> <span class="mf">1564e6</span>
+    <span class="n">strand_material</span><span class="o">.</span><span class="n">Fpu</span> <span class="o">=</span> <span class="mf">1840e6</span>
+
+    <span class="c1"># add a Duct System</span>
+    <span class="c1"># note: adding a Duct System with the name of an existing Duct System will raise an exception</span>
+    <span class="n">duct_systems</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">duct_systems</span>
+    <span class="n">duct_system</span> <span class="o">=</span> <span class="n">duct_systems</span><span class="o">.</span><span class="n">add_duct_system</span><span class="p">(</span><span class="s2">&quot;4s Flat&quot;</span><span class="p">)</span>
+    <span class="n">duct_system</span><span class="o">.</span><span class="n">system_type</span> <span class="o">=</span> <span class="n">PTSystemType</span><span class="o">.</span><span class="n">BONDED</span>
+    <span class="n">duct_system</span><span class="o">.</span><span class="n">duct_width</span> <span class="o">=</span> <span class="mf">70e-3</span>
+    <span class="n">duct_system</span><span class="o">.</span><span class="n">strands_per_duct</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">duct_system</span><span class="o">.</span><span class="n">wobble_friction</span> <span class="o">=</span> <span class="mf">0.005</span>
+    <span class="n">duct_system</span><span class="o">.</span><span class="n">angular_friction</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span> <span class="c1"># due to API consistent units this is per-degree, not per radian</span>
+    <span class="n">duct_system</span><span class="o">.</span><span class="n">duct_height</span> <span class="o">=</span> <span class="mf">35e-3</span>
+    <span class="n">duct_system</span><span class="o">.</span><span class="n">duct_shape</span> <span class="o">=</span> <span class="n">DuctShape</span><span class="o">.</span><span class="n">FLAT</span>
+    <span class="n">duct_system</span><span class="o">.</span><span class="n">duct_type</span> <span class="o">=</span> <span class="n">DuctType</span><span class="o">.</span><span class="n">CORRUGATED_STEEL</span>
+
+    <span class="c1"># add a Anchor System</span>
+    <span class="c1"># note: adding a Anchor System with the name of an existing Anchor System will raise an exception</span>
+    <span class="n">anchor_systems</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">anchor_systems</span>
+    <span class="n">anchor_system</span> <span class="o">=</span> <span class="n">anchor_systems</span><span class="o">.</span><span class="n">add_anchor_system</span><span class="p">(</span><span class="s2">&quot;FA Multi&quot;</span><span class="p">)</span>
+    <span class="n">anchor_system</span><span class="o">.</span><span class="n">anchor_type</span> <span class="o">=</span> <span class="n">AnchorType</span><span class="o">.</span><span class="n">FLAT_MULTI_PLANE</span>
+    <span class="n">anchor_system</span><span class="o">.</span><span class="n">anchor_friction</span> <span class="o">=</span> <span class="mf">0.02</span>
+    <span class="n">anchor_system</span><span class="o">.</span><span class="n">jack_stress</span> <span class="o">=</span> <span class="mf">1564e6</span>
+    <span class="n">anchor_system</span><span class="o">.</span><span class="n">seating_distance</span> <span class="o">=</span> <span class="mf">6e-3</span>
+
+    <span class="c1"># add a PT System</span>
+    <span class="c1"># note: adding a PT System with the name of an existing PT System will raise an exception</span>
+    <span class="n">pt_systems</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">pt_systems</span>
+    <span class="n">pt_system</span> <span class="o">=</span> <span class="n">pt_systems</span><span class="o">.</span><span class="n">add_pt_system</span><span class="p">(</span><span class="s2">&quot;13mm Bonded&quot;</span><span class="p">)</span>
+    <span class="n">pt_system</span><span class="o">.</span><span class="n">strand_material</span> <span class="o">=</span> <span class="n">strand_material</span>
+    <span class="n">pt_system</span><span class="o">.</span><span class="n">duct_system</span> <span class="o">=</span> <span class="n">duct_system</span>
+    <span class="n">pt_system</span><span class="o">.</span><span class="n">anchor_system</span> <span class="o">=</span> <span class="n">anchor_system</span>
+    <span class="n">pt_system</span><span class="o">.</span><span class="n">Fse</span> <span class="o">=</span> <span class="mf">1100e6</span>
+    <span class="n">pt_system</span><span class="o">.</span><span class="n">min_curvature_radius</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">pt_system</span><span class="o">.</span><span class="n">long_term_losses</span> <span class="o">=</span> <span class="mf">150e6</span>
+
+    <span class="c1"># you can optionally delete the materials that come by default that you don&#39;t want</span>
+    <span class="c1"># but you must leave at least 1 (attempting to delete the last one will raise an exception)</span>
+    <span class="n">all_strand_materials</span> <span class="o">=</span> <span class="n">strand_materials</span><span class="o">.</span><span class="n">strand_materials</span>
+    <span class="k">for</span> <span class="n">strand_material</span> <span class="ow">in</span> <span class="n">all_strand_materials</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">strand_material</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;13mm Strand&quot;</span><span class="p">:</span>
+            <span class="n">strand_material</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+    <span class="n">all_duct_systems</span> <span class="o">=</span> <span class="n">duct_systems</span><span class="o">.</span><span class="n">duct_systems</span>
+    <span class="k">for</span> <span class="n">duct_system</span> <span class="ow">in</span> <span class="n">all_duct_systems</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">duct_system</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;4s Flat&quot;</span><span class="p">:</span>
+            <span class="n">duct_system</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+    <span class="n">all_anchor_systems</span> <span class="o">=</span> <span class="n">anchor_systems</span><span class="o">.</span><span class="n">anchor_systems</span>
+    <span class="k">for</span> <span class="n">anchor_system</span> <span class="ow">in</span> <span class="n">all_anchor_systems</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">anchor_system</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;FA Multi&quot;</span><span class="p">:</span>
+            <span class="n">anchor_system</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+    <span class="n">all_pt_systems</span> <span class="o">=</span> <span class="n">pt_systems</span><span class="o">.</span><span class="n">pt_systems</span>
+    <span class="k">for</span> <span class="n">pt_system</span> <span class="ow">in</span> <span class="n">all_pt_systems</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pt_system</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;13mm Bonded&quot;</span><span class="p">:</span>
+            <span class="n">pt_system</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">How to Add Materials</a><ul>
+<li><a class="reference internal" href="#concrete-mixes">Concrete Mixes</a></li>
+<li><a class="reference internal" href="#post-tensioning-systems">Post-tensioning Systems</a><ul>
+<li><a class="reference internal" href="#strand-materials">Strand Materials</a></li>
+<li><a class="reference internal" href="#duct-systems">Duct Systems</a></li>
+<li><a class="reference internal" href="#anchor-systems">Anchor Systems</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-code">The Code</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Add Materials</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

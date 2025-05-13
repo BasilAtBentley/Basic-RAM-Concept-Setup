@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>How to Add Loadings and Loads &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Add Loadings and Loads</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="how-to-add-loadings-and-loads">
+<span id="how-to-add-loads"></span><h1>How to Add Loadings and Loads<a class="headerlink" href="#how-to-add-loadings-and-loads" title="Permalink to this heading">¶</a></h1>
+<section id="the-cad-manager">
+<h2>The CAD Manager<a class="headerlink" href="#the-cad-manager" title="Permalink to this heading">¶</a></h2>
+<p>Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains a single <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> instance which manages RAM Concept’s CAD layer system.</p>
+<p>In addition to managing the layers, <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> manages the <cite>default items</cite> that contain settings for the CAD items that will be created.
+For example the <cite>default_point_load</cite> property contains the settings for any future <a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointLoad</span></code></a> s that will be created.</p>
+</section>
+<section id="loading-layers">
+<h2>Loading Layers<a class="headerlink" href="#loading-layers" title="Permalink to this heading">¶</a></h2>
+<p>There are three types of loading layers:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.force_loading_layer.html#ram_concept.force_loading_layer.ForceLoadingLayer" title="ram_concept.force_loading_layer.ForceLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoadingLayer</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.shrinkage_loading_layer.html#ram_concept.shrinkage_loading_layer.ShrinkageLoadingLayer" title="ram_concept.shrinkage_loading_layer.ShrinkageLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShrinkageLoadingLayer</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.temperature_loading_layer.html#ram_concept.temperature_loading_layer.TemperatureLoadingLayer" title="ram_concept.temperature_loading_layer.TemperatureLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemperatureLoadingLayer</span></code></a></p></li>
+</ul>
+<p>All three loading layer types have a common (abstract) base class: <a class="reference internal" href="ram_concept.loading_layer.html#ram_concept.loading_layer.LoadingLayer" title="ram_concept.loading_layer.LoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoadingLayer</span></code></a>.</p>
+<p><a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> provides methods for adding new loading layers (e.g. <cite>add_force_loading_layer()</cite>)
+and properties for accessing the existing loading layers (e.g. <cite>force_loading_layers</cite>). Methods for finding a loading layer by name are also
+provided (e.g. <cite>force_loading_layer(name)</cite>).</p>
+</section>
+<section id="force-loading-layers">
+<h2>Force Loading Layers<a class="headerlink" href="#force-loading-layers" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> can contain any number of <a class="reference internal" href="ram_concept.force_loading_layer.html#ram_concept.force_loading_layer.ForceLoadingLayer" title="ram_concept.force_loading_layer.ForceLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoadingLayer</span></code></a> s
+(<cite>Self-Dead</cite>, <cite>Balance</cite> and <cite>Hyperstatic</cite> always exist and can’t be deleted). Each <a class="reference internal" href="ram_concept.force_loading_layer.html#ram_concept.force_loading_layer.ForceLoadingLayer" title="ram_concept.force_loading_layer.ForceLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoadingLayer</span></code></a>
+can contain these force-based loads:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointLoad</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.line_load.html#ram_concept.line_load.LineLoad" title="ram_concept.line_load.LineLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineLoad</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.area_load.html#ram_concept.area_load.AreaLoad" title="ram_concept.area_load.AreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">AreaLoad</span></code></a></p></li>
+</ul>
+<section id="adding-new-items">
+<h3>Adding New Items<a class="headerlink" href="#adding-new-items" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference internal" href="ram_concept.force_loading_layer.html#ram_concept.force_loading_layer.ForceLoadingLayer" title="ram_concept.force_loading_layer.ForceLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoadingLayer</span></code></a> has methods available to add all of the items that it can contain. For example, there is an <cite>add_point_load()</cite>
+for adding <a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointLoad</span></code></a> s.</p>
+<p><a class="reference internal" href="ram_concept.force_loading_layer.html#ram_concept.force_loading_layer.ForceLoadingLayer" title="ram_concept.force_loading_layer.ForceLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoadingLayer</span></code></a> also has a convenience method <cite>add_point_loads()</cite>
+for adding multiple <a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">PointLoad</span></code></a> s simultaneously. That method is particularly well suited to spreadsheet input.</p>
+</section>
+<section id="existing-items">
+<h3>Existing Items<a class="headerlink" href="#existing-items" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference internal" href="ram_concept.force_loading_layer.html#ram_concept.force_loading_layer.ForceLoadingLayer" title="ram_concept.force_loading_layer.ForceLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoadingLayer</span></code></a> has properties available to access all of the items that it can contain. For example, there is an <cite>area_loads</cite>
+property for accessing the <a class="reference internal" href="ram_concept.area_load.html#ram_concept.area_load.AreaLoad" title="ram_concept.area_load.AreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">AreaLoad</span></code></a> s.</p>
+</section>
+</section>
+<section id="temperature-and-shrinkage-loading-layers">
+<h2>Temperature and Shrinkage Loading Layers<a class="headerlink" href="#temperature-and-shrinkage-loading-layers" title="Permalink to this heading">¶</a></h2>
+<p>Temperature and Shrinkage loading layers operate similarly to Force Loading Layers:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.shrinkage_loading_layer.html#ram_concept.shrinkage_loading_layer.ShrinkageLoadingLayer" title="ram_concept.shrinkage_loading_layer.ShrinkageLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShrinkageLoadingLayer</span></code></a> s contain <a class="reference internal" href="ram_concept.shrinkage_area_load.html#ram_concept.shrinkage_area_load.ShrinkageAreaLoad" title="ram_concept.shrinkage_area_load.ShrinkageAreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShrinkageAreaLoad</span></code></a> s</p></li>
+<li><p><a class="reference internal" href="ram_concept.temperature_loading_layer.html#ram_concept.temperature_loading_layer.TemperatureLoadingLayer" title="ram_concept.temperature_loading_layer.TemperatureLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemperatureLoadingLayer</span></code></a> s contain <a class="reference internal" href="ram_concept.temperature_area_load.html#ram_concept.temperature_area_load.TemperatureAreaLoad" title="ram_concept.temperature_area_load.TemperatureAreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemperatureAreaLoad</span></code></a> s</p></li>
+</ul>
+</section>
+<section id="the-code">
+<h2>The Code<a class="headerlink" href="#the-code" title="Permalink to this heading">¶</a></h2>
+<p>Here’s the code for adding loads from the Walkthrough example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ram_concept.area_load</span> <span class="kn">import</span> <span class="n">AreaLoad</span>
+<span class="kn">from</span> <span class="nn">ram_concept.cad_manager</span> <span class="kn">import</span> <span class="n">CadManager</span>
+<span class="kn">from</span> <span class="nn">ram_concept.force_loading_layer</span> <span class="kn">import</span> <span class="n">ForceLoadingLayer</span>
+<span class="kn">from</span> <span class="nn">ram_concept.line_load</span> <span class="kn">import</span> <span class="n">DefaultLineLoad</span>
+<span class="kn">from</span> <span class="nn">ram_concept.line_load</span> <span class="kn">import</span> <span class="n">LineLoad</span>
+<span class="kn">from</span> <span class="nn">ram_concept.line_segment_2D</span> <span class="kn">import</span> <span class="n">LineSegment2D</span>
+<span class="kn">from</span> <span class="nn">ram_concept.model</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">ram_concept.point_load</span> <span class="kn">import</span> <span class="n">PointLoad</span>
+<span class="kn">from</span> <span class="nn">ram_concept.point_2D</span> <span class="kn">import</span> <span class="n">Point2D</span>
+<span class="kn">from</span> <span class="nn">ram_concept.polygon_2D</span> <span class="kn">import</span> <span class="n">Polygon2D</span>
+<span class="kn">from</span> <span class="nn">ram_concept.slab_area</span> <span class="kn">import</span> <span class="n">SlabArea</span>
+
+<span class="k">def</span> <span class="nf">add_loads</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds loads to the 16m x 16m structure &quot;&quot;&quot;</span>
+
+    <span class="c1"># The structure created is a simple 16m x 16m square, with 8m spans:</span>
+
+    <span class="c1">#  cbbbbbbbcbbbbbbbc</span>
+    <span class="c1">#  |               |</span>
+    <span class="c1">#  |               |</span>
+    <span class="c1">#  w       c       w</span>
+    <span class="c1">#  w               w</span>
+    <span class="c1">#  w               w</span>
+    <span class="c1">#  wwwwwwwwwwwwwwwww</span>
+
+    <span class="c1"># in this code, we depend upon the standard loading names, we could also find loading by looking at their loading types instead</span>
+    <span class="c1"># note that new loadings can be added and (most) loadings can be deleted</span>
+
+    <span class="c1"># in addition to self-dead, we want to add Other Dead and Reducible live loadings</span>
+
+    <span class="n">cad_manager</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">cad_manager</span>
+    <span class="n">dead_ldg</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">force_loading_layer</span><span class="p">(</span><span class="s2">&quot;Other Dead Loading&quot;</span><span class="p">)</span>
+    <span class="n">live_ldg</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">force_loading_layer</span><span class="p">(</span><span class="s2">&quot;Live (Reducible) Loading&quot;</span><span class="p">)</span>
+
+    <span class="c1"># for convenience below</span>
+    <span class="n">corner_pt1</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">corner_pt2</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">corner_pt3</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">corner_pt4</span> <span class="o">=</span> <span class="n">Point2D</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+
+    <span class="c1"># ADD A PERIMETER DEAD LOAD</span>
+
+    <span class="n">default_line_load</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">default_line_load</span>
+
+    <span class="n">default_line_load</span><span class="o">.</span><span class="n">elevation</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">default_line_load</span><span class="o">.</span><span class="n">set_load_values</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">10000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># remember we set signs all positive...so negative Fz load is downward</span>
+
+    <span class="n">dead_ldg</span><span class="o">.</span><span class="n">add_line_load</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">corner_pt1</span><span class="p">,</span> <span class="n">corner_pt2</span><span class="p">))</span>
+    <span class="n">dead_ldg</span><span class="o">.</span><span class="n">add_line_load</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">corner_pt2</span><span class="p">,</span> <span class="n">corner_pt3</span><span class="p">))</span>
+    <span class="n">dead_ldg</span><span class="o">.</span><span class="n">add_line_load</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">corner_pt3</span><span class="p">,</span> <span class="n">corner_pt4</span><span class="p">))</span>
+    <span class="n">dead_ldg</span><span class="o">.</span><span class="n">add_line_load</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">corner_pt4</span><span class="p">,</span> <span class="n">corner_pt1</span><span class="p">))</span>
+
+    <span class="c1"># ADD UNIFORM DEAD LOAD</span>
+
+    <span class="n">whole_slab_polygon</span> <span class="o">=</span> <span class="n">Polygon2D</span><span class="p">([</span><span class="n">corner_pt1</span><span class="p">,</span> <span class="n">corner_pt2</span><span class="p">,</span> <span class="n">corner_pt3</span><span class="p">,</span> <span class="n">corner_pt4</span><span class="p">])</span>
+
+    <span class="n">dead_area_load</span> <span class="o">=</span> <span class="n">dead_ldg</span><span class="o">.</span><span class="n">add_area_load</span><span class="p">(</span><span class="n">whole_slab_polygon</span><span class="p">)</span>
+    <span class="n">dead_area_load</span><span class="o">.</span><span class="n">elevation</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">dead_area_load</span><span class="o">.</span><span class="n">set_load_values</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># ADD UNIFORM LIVE LOAD</span>
+
+    <span class="n">live_area_load</span> <span class="o">=</span> <span class="n">live_ldg</span><span class="o">.</span><span class="n">add_area_load</span><span class="p">(</span><span class="n">whole_slab_polygon</span><span class="p">)</span>
+    <span class="n">live_area_load</span><span class="o">.</span><span class="n">elevation</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">live_area_load</span><span class="o">.</span><span class="n">set_load_values</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">5000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># ADD POINT LIVE LOAD (just to complete the example)</span>
+
+    <span class="n">live_point_load</span> <span class="o">=</span> <span class="n">live_ldg</span><span class="o">.</span><span class="n">add_point_load</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+    <span class="n">live_point_load</span><span class="o">.</span><span class="n">elevation</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">live_point_load</span><span class="o">.</span><span class="n">zero_load_values</span><span class="p">()</span>
+    <span class="n">live_point_load</span><span class="o">.</span><span class="n">Fz</span> <span class="o">=</span> <span class="o">-</span><span class="mi">50000</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">How to Add Loadings and Loads</a><ul>
+<li><a class="reference internal" href="#the-cad-manager">The CAD Manager</a></li>
+<li><a class="reference internal" href="#loading-layers">Loading Layers</a></li>
+<li><a class="reference internal" href="#force-loading-layers">Force Loading Layers</a><ul>
+<li><a class="reference internal" href="#adding-new-items">Adding New Items</a></li>
+<li><a class="reference internal" href="#existing-items">Existing Items</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#temperature-and-shrinkage-loading-layers">Temperature and Shrinkage Loading Layers</a></li>
+<li><a class="reference internal" href="#the-code">The Code</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Add Loadings and Loads</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

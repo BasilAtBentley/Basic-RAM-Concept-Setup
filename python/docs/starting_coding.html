@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Starting Coding &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Starting Coding</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="starting-coding">
+<span id="id1"></span><h1>Starting Coding<a class="headerlink" href="#starting-coding" title="Permalink to this heading">¶</a></h1>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<p>If you haven’t already, install the API using these instructions: <a class="reference internal" href="installing_the_api.html#installing-the-api"><span class="std std-ref">Installing the API</span></a></p>
+<p>It is assumed that you have a development tool available for writing scripts:</p>
+<ul class="simple">
+<li><p>We recommend Visual Studio Code (it’s free and high quality): <a class="reference external" href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></p></li>
+<li><p>These instructions show how to set up Visual Studio Code for Python: <a class="reference external" href="https://code.visualstudio.com/docs/languages/python">https://code.visualstudio.com/docs/languages/python</a></p></li>
+</ul>
+</section>
+<section id="your-first-script">
+<h2>Your First Script<a class="headerlink" href="#your-first-script" title="Permalink to this heading">¶</a></h2>
+<p>Try coding and running this script. Does it work in your development setup?:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ram_concept.concept</span> <span class="kn">import</span> <span class="n">Concept</span>
+
+<span class="n">concept</span> <span class="o">=</span> <span class="n">Concept</span><span class="o">.</span><span class="n">start_concept</span><span class="p">(</span><span class="n">headless</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">concept</span><span class="o">.</span><span class="n">ping</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RAM Concept responded: &quot;</span> <span class="o">+</span> <span class="n">response</span><span class="p">)</span>
+
+<span class="n">concept</span><span class="o">.</span><span class="n">shut_down</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="a-more-realistic-script">
+<h2>A More Realistic Script<a class="headerlink" href="#a-more-realistic-script" title="Permalink to this heading">¶</a></h2>
+<p>If the previous tiny script is working. Take a look at the <em>walkthrough</em> example installed in the <em>python\examples\walkthrough</em> folder. That example will lead you by the hand through all the coding you need to do to create and analyze a real structure through the API.</p>
+<ul class="simple">
+<li><p>Run the walkthrough example as-is to re-verify your development setup is working.</p></li>
+<li><p>Copy the walkthrough example, and start experimenting….</p></li>
+</ul>
+<p>You may want to use the <em>walkthrough</em> sample as a starting point for all of your scripting projects.</p>
+</section>
+<section id="debugging-your-scripts">
+<h2>Debugging Your Scripts<a class="headerlink" href="#debugging-your-scripts" title="Permalink to this heading">¶</a></h2>
+<p>Your development environment will provide tools to debug your scripts; the RAM Concept API provides one additional tool that can help: running scripts with RAM Concept open. To use this tool start the RAM Concept process with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">concept</span> <span class="o">=</span> <span class="n">Concept</span><span class="o">.</span><span class="n">start_concept</span><span class="p">(</span><span class="n">headless</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will cause a visible RAM Concept process to be created; one with a Scripting Server window as shown below:</p>
+<img alt="_images/python_debugging.png" src="_images/python_debugging.png" />
+<p>The Scripting Server window is mostly self-explanatory:</p>
+<ul class="simple">
+<li><p>The main pane shows the commands that are sent to RAM Concept and the responses RAM Concept provides.</p></li>
+<li><p>The <em>Pause</em> button causes the Scripting Server to pause serving the API (after the completion of any running command).</p></li>
+<li><p>The <em>Resume</em> button causes the Scripting Server to resume serving the API.</p></li>
+</ul>
+<p>A common way to work when trying to debug scripts is:</p>
+<ol class="arabic simple">
+<li><p>Set a breakpoint in the script in your development environment.</p></li>
+<li><p>When the breakpoint is hit (the script is stopped), go to the RAM Concept window.</p></li>
+<li><p>Click on the <em>Pause</em> button.</p></li>
+<li><p>Use RAM Concept’s normal features to investigate the state of the RAM Concept model.</p></li>
+<li><p>Click on the <em>Resume</em> button.</p></li>
+<li><p>Continue the script (past the breakpoint) in your development environment.</p></li>
+</ol>
+<p>One word of caution: if the script tries to shut down RAM Concept, it will succeed.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Starting Coding</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#your-first-script">Your First Script</a></li>
+<li><a class="reference internal" href="#a-more-realistic-script">A More Realistic Script</a></li>
+<li><a class="reference internal" href="#debugging-your-scripts">Debugging Your Scripts</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Starting Coding</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

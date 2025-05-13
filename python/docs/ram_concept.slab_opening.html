@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.slab_opening module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.slab_opening module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.slab_opening">
+<span id="ram-concept-slab-opening-module"></span><h1>ram_concept.slab_opening module<a class="headerlink" href="#module-ram_concept.slab_opening" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.DefaultSlabOpening">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultSlabOpening</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.slab_opening.DefaultSlabOpening" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.slab_opening.SlabOpening" title="ram_concept.slab_opening.SlabOpening"><code class="xref py py-class docutils literal notranslate"><span class="pre">SlabOpening</span></code></a></p>
+<p><cite>DefaultSlabOpening</cite> represents a <cite>SlabOpening</cite> that stores the default values for future <cite>SlabOpenings</cite> that are created.</p>
+<p>An <cite>Exception</cite> will be raised if the <cite>location</cite> property of <cite>DefaultSlabOpening</cite> is accessed.</p>
+<p>There is only 1 and always 1 <cite>DefaultSlabOpening</cite> in the <cite>Model</cite>. It is accessed through <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_slab_opening" title="ram_concept.cad_manager.CadManager.default_slab_opening"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_slab_opening</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.DefaultSlabOpening.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.slab_opening.DefaultSlabOpening.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>delete</cite> is not available for default objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.DefaultSlabOpening.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.slab_opening.DefaultSlabOpening.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Polygon2D</span></code></a> location of the <cite>SlabOpening</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D">Polygon2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.DefaultSlabOpening.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.slab_opening.DefaultSlabOpening.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.DefaultSlabOpening.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.slab_opening.DefaultSlabOpening.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.DefaultSlabOpening.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.slab_opening.DefaultSlabOpening.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.DefaultSlabOpening.priority">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">priority</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.slab_opening.DefaultSlabOpening.priority" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relative priority of this vs other items (<cite>SlabAreas</cite>, <cite>Beams</cite>, <cite>SlabOpenings</cite>) (used in meshing)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.DefaultSlabOpening.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.slab_opening.DefaultSlabOpening.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.SlabOpening">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SlabOpening</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.slab_opening.SlabOpening" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.cad_entity.html#ram_concept.cad_entity.CadEntity" title="ram_concept.cad_entity.CadEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadEntity</span></code></a></p>
+<p>SlabOpening represents a polygon-shaped opening in the slab in the CAD system.</p>
+<p><cite>SlabOpenings</cite> are always located on the <a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> (“Mesh Input” layer).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.SlabOpening.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.slab_opening.SlabOpening.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>CadEntity</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.SlabOpening.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.slab_opening.SlabOpening.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Polygon2D</span></code></a> location of the <cite>SlabOpening</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D">Polygon2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.SlabOpening.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.slab_opening.SlabOpening.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.SlabOpening.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.slab_opening.SlabOpening.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.SlabOpening.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.slab_opening.SlabOpening.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.SlabOpening.priority">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">priority</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.slab_opening.SlabOpening.priority" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relative priority of this vs other items (<cite>SlabAreas</cite>, <cite>Beams</cite>, <cite>SlabOpenings</cite>) (used in meshing)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.slab_opening.SlabOpening.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.slab_opening.SlabOpening.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.slab_opening module</a><ul>
+<li><a class="reference internal" href="#ram_concept.slab_opening.DefaultSlabOpening"><code class="docutils literal notranslate"><span class="pre">DefaultSlabOpening</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.slab_opening.DefaultSlabOpening.delete"><code class="docutils literal notranslate"><span class="pre">DefaultSlabOpening.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.DefaultSlabOpening.location"><code class="docutils literal notranslate"><span class="pre">DefaultSlabOpening.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.DefaultSlabOpening.model"><code class="docutils literal notranslate"><span class="pre">DefaultSlabOpening.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.DefaultSlabOpening.name"><code class="docutils literal notranslate"><span class="pre">DefaultSlabOpening.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.DefaultSlabOpening.number"><code class="docutils literal notranslate"><span class="pre">DefaultSlabOpening.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.DefaultSlabOpening.priority"><code class="docutils literal notranslate"><span class="pre">DefaultSlabOpening.priority</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.DefaultSlabOpening.uid"><code class="docutils literal notranslate"><span class="pre">DefaultSlabOpening.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.SlabOpening"><code class="docutils literal notranslate"><span class="pre">SlabOpening</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.slab_opening.SlabOpening.delete"><code class="docutils literal notranslate"><span class="pre">SlabOpening.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.SlabOpening.location"><code class="docutils literal notranslate"><span class="pre">SlabOpening.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.SlabOpening.model"><code class="docutils literal notranslate"><span class="pre">SlabOpening.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.SlabOpening.name"><code class="docutils literal notranslate"><span class="pre">SlabOpening.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.SlabOpening.number"><code class="docutils literal notranslate"><span class="pre">SlabOpening.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.SlabOpening.priority"><code class="docutils literal notranslate"><span class="pre">SlabOpening.priority</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.slab_opening.SlabOpening.uid"><code class="docutils literal notranslate"><span class="pre">SlabOpening.uid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.slab_opening module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

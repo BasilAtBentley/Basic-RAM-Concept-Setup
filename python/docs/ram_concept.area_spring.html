@@ -1,0 +1,726 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.area_spring module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.area_spring module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.area_spring">
+<span id="ram-concept-area-spring-module"></span><h1>ram_concept.area_spring module<a class="headerlink" href="#module-ram_concept.area_spring" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AreaSpring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_spring.AreaSpring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.spring.html#ram_concept.spring.Spring" title="ram_concept.spring.Spring"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spring</span></code></a></p>
+<p><cite>AreaSpring</cite> is an polygon-shaped spring that provides support to slabs.</p>
+<p><cite>AreaSprings</cite> are always located on the <a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> (“Mesh Input” layer).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>CadEntity</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.set_spring_stiffnesses">
+<span class="sig-name descname"><span class="pre">set_spring_stiffnesses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kFr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kFs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kFz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kMr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kMs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.set_spring_stiffnesses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the given (uniform) spring stiffness</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kFr</strong> (<em>float</em>) – </p></li>
+<li><p><strong>kFs</strong> (<em>float</em>) – </p></li>
+<li><p><strong>kFz</strong> (<em>float</em>) – </p></li>
+<li><p><strong>kMr</strong> (<em>float</em>) – </p></li>
+<li><p><strong>kMs</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.zero_spring_stiffnesses">
+<span class="sig-name descname"><span class="pre">zero_spring_stiffnesses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.zero_spring_stiffnesses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets all spring stiffnesses to zero</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.angle">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">angle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The counter-clockwise angle of the spring r-axis (about the z-axis), with angle 0 being parallel to the x-axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.elevation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.elevation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation of the spring relative to the soffit of the slab or beam it is applied to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kFr0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFr0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kFr0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in r-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kFr1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFr1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kFr1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in r-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kFr2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFr2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kFr2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in r-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kFs0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFs0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kFs0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in s-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kFs1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFs1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kFs1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in s-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kFs2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFs2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kFs2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in s-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kFz0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFz0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kFz0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in z-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kFz1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFz1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kFz1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in z-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kFz2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFz2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kFz2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in z-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kMr0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMr0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kMr0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about r-axis at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kMr1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMr1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kMr1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about r-axis at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kMr2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMr2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kMr2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about r-axis at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kMs0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMs0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kMs0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about s-axis at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kMs1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMs1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kMs1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about s-axis at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.kMs2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMs2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.kMs2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about s-axis at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only :any:Polygon2D location of this <cite>AreaSpring</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D">Polygon2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.AreaSpring.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.area_spring.AreaSpring.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultAreaSpring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.area_spring.AreaSpring" title="ram_concept.area_spring.AreaSpring"><code class="xref py py-class docutils literal notranslate"><span class="pre">AreaSpring</span></code></a></p>
+<p><cite>DefaultAreaSpring</cite> represents a <cite>AreaSpring</cite> that stores the default values for future <cite>AreaSprings</cite> that are created.</p>
+<p>An <cite>Exception</cite> will be raised if the <cite>location</cite> property of <cite>DefaultAreaSpring</cite> is accessed.</p>
+<p>There is only 1 and always 1 <cite>DefaultAreaSpring</cite> in the <cite>Model</cite>. It is accessed through <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_area_spring" title="ram_concept.cad_manager.CadManager.default_area_spring"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_area_spring</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>delete</cite> is not available for default objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.set_spring_stiffnesses">
+<span class="sig-name descname"><span class="pre">set_spring_stiffnesses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kFr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kFs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kFz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kMr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kMs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.set_spring_stiffnesses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the given (uniform) spring stiffness</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kFr</strong> (<em>float</em>) – </p></li>
+<li><p><strong>kFs</strong> (<em>float</em>) – </p></li>
+<li><p><strong>kFz</strong> (<em>float</em>) – </p></li>
+<li><p><strong>kMr</strong> (<em>float</em>) – </p></li>
+<li><p><strong>kMs</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.zero_spring_stiffnesses">
+<span class="sig-name descname"><span class="pre">zero_spring_stiffnesses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.zero_spring_stiffnesses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets all spring stiffnesses to zero</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.angle">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">angle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The counter-clockwise angle of the spring r-axis (about the z-axis), with angle 0 being parallel to the x-axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.elevation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.elevation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation of the spring relative to the soffit of the slab or beam it is applied to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kFr0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFr0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kFr0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in r-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kFr1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFr1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kFr1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in r-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kFr2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFr2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kFr2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in r-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kFs0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFs0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kFs0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in s-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kFs1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFs1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kFs1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in s-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kFs2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFs2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kFs2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in s-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kFz0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFz0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kFz0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in z-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kFz1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFz1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kFz1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in z-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kFz2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kFz2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kFz2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lateral spring stiffness in z-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kMr0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMr0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kMr0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about r-axis at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kMr1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMr1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kMr1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about r-axis at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kMr2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMr2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kMr2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about r-axis at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kMs0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMs0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kMs0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about s-axis at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kMs1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMs1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kMs1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about s-axis at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.kMs2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kMs2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.kMs2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational spring stiffness about s-axis at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only :any:Polygon2D location of this <cite>AreaSpring</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D">Polygon2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_spring.DefaultAreaSpring.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.area_spring.DefaultAreaSpring.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.area_spring module</a><ul>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring"><code class="docutils literal notranslate"><span class="pre">AreaSpring</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.delete"><code class="docutils literal notranslate"><span class="pre">AreaSpring.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.set_spring_stiffnesses"><code class="docutils literal notranslate"><span class="pre">AreaSpring.set_spring_stiffnesses()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.zero_spring_stiffnesses"><code class="docutils literal notranslate"><span class="pre">AreaSpring.zero_spring_stiffnesses()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.angle"><code class="docutils literal notranslate"><span class="pre">AreaSpring.angle</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.elevation"><code class="docutils literal notranslate"><span class="pre">AreaSpring.elevation</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kFr0"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kFr0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kFr1"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kFr1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kFr2"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kFr2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kFs0"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kFs0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kFs1"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kFs1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kFs2"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kFs2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kFz0"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kFz0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kFz1"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kFz1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kFz2"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kFz2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kMr0"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kMr0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kMr1"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kMr1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kMr2"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kMr2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kMs0"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kMs0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kMs1"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kMs1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.kMs2"><code class="docutils literal notranslate"><span class="pre">AreaSpring.kMs2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.location"><code class="docutils literal notranslate"><span class="pre">AreaSpring.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.model"><code class="docutils literal notranslate"><span class="pre">AreaSpring.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.name"><code class="docutils literal notranslate"><span class="pre">AreaSpring.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.number"><code class="docutils literal notranslate"><span class="pre">AreaSpring.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.AreaSpring.uid"><code class="docutils literal notranslate"><span class="pre">AreaSpring.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.delete"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.set_spring_stiffnesses"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.set_spring_stiffnesses()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.zero_spring_stiffnesses"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.zero_spring_stiffnesses()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.angle"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.angle</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.elevation"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.elevation</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kFr0"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kFr0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kFr1"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kFr1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kFr2"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kFr2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kFs0"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kFs0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kFs1"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kFs1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kFs2"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kFs2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kFz0"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kFz0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kFz1"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kFz1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kFz2"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kFz2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kMr0"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kMr0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kMr1"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kMr1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kMr2"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kMr2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kMs0"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kMs0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kMs1"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kMs1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.kMs2"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.kMs2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.location"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.model"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.name"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.number"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_spring.DefaultAreaSpring.uid"><code class="docutils literal notranslate"><span class="pre">DefaultAreaSpring.uid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.area_spring module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

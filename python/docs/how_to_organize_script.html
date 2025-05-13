@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>How to Organize a Script &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Organize a Script</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="how-to-organize-a-script">
+<span id="how-to-organize-script"></span><h1>How to Organize a Script<a class="headerlink" href="#how-to-organize-a-script" title="Permalink to this heading">¶</a></h1>
+<section id="starting-and-shutting-down-ram-concept">
+<h2>Starting and Shutting Down RAM Concept<a class="headerlink" href="#starting-and-shutting-down-ram-concept" title="Permalink to this heading">¶</a></h2>
+<p>In your scripts, you can’t perform any RAM Concept tasks until you start a RAM Concept process, so that tends to happen at the very beginning of a script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">concept</span> <span class="o">=</span> <span class="n">Concept</span><span class="o">.</span><span class="n">start_concept</span><span class="p">(</span><span class="n">headless</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And at the end of your script, you’ll want to shut down the RAM Concept process:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">concept</span><span class="o">.</span><span class="n">shut_down</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If you forget to shut RAM Concept down (or an uncaught exception causes your script to terminate), RAM Concept will eventually shut itself down after a period of inactivity.</p>
+</section>
+<section id="creating-reading-and-saving-files">
+<h2>Creating, Reading and Saving Files<a class="headerlink" href="#creating-reading-and-saving-files" title="Permalink to this heading">¶</a></h2>
+<p>There’s not much your script can do without having an open data model in the RAM Concept process, so you’ll either open an existing file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">concept</span><span class="o">.</span><span class="n">open_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or you’ll or create a new model:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">concept</span><span class="o">.</span><span class="n">new_model</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setup_new_model</span><span class="p">(</span><span class="n">DesignCode</span><span class="o">.</span><span class="n">ACI318_14SI</span><span class="p">,</span> <span class="n">StructureType</span><span class="o">.</span><span class="n">ELEVATED</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the case of creating a new model, you will want to call <em>setup_new_model()</em> to provide the standards set of loadings, load cases, plans, etc.
+The <em>new_model()</em> method creates a bare-bones (almost useless) model.</p>
+<p>After you have made modifications to the model, you’ll likely want to save it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">save_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="setting-and-restoring-the-unit-and-sign-conventions">
+<h2>Setting and Restoring the Unit and Sign Conventions<a class="headerlink" href="#setting-and-restoring-the-unit-and-sign-conventions" title="Permalink to this heading">¶</a></h2>
+<p>For a new model (not a opened file) you will want to set the sign and unit conventions to something pleasant for the user to work with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">units</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">units</span>
+<span class="n">units</span><span class="o">.</span><span class="n">set_SI_user_units</span><span class="p">()</span>
+
+<span class="n">signs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">signs</span>
+<span class="n">signs</span><span class="o">.</span><span class="n">set_standard_signs</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The API unit and sign conventions are the same as the user interface unit and sign conventions. In your scripts, you’ll want to set the API to use predictable units and signs,
+but you don’t want to alter the signs and units of the user interface. The API provides a way to save and restore the unit and sign conventions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># save user units</span>
+<span class="n">units</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">units</span>
+<span class="n">saved_units</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">get_units</span><span class="p">()</span>
+
+<span class="c1"># save user signs</span>
+<span class="n">signs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">signs</span>
+<span class="n">saved_signs</span> <span class="o">=</span> <span class="n">signs</span><span class="o">.</span><span class="n">get_signs</span><span class="p">()</span>
+
+<span class="c1"># set units and signs for API</span>
+<span class="n">units</span><span class="o">.</span><span class="n">set_SI_API_units</span><span class="p">()</span> <span class="c1"># meters, degrees, Newtons, kilograms, seconds, Celsius</span>
+<span class="n">signs</span><span class="o">.</span><span class="n">set_standard_signs</span><span class="p">()</span> <span class="c1"># all positive in axis direction</span>
+
+<span class="c1"># ... your model-related logic is here</span>
+
+<span class="c1"># restore user units and signs</span>
+<span class="n">units</span><span class="o">.</span><span class="n">set_units</span><span class="p">(</span><span class="n">saved_units</span><span class="p">)</span>
+<span class="n">signs</span><span class="o">.</span><span class="n">set_signs</span><span class="p">(</span><span class="n">saved_signs</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="the-code">
+<h2>The Code<a class="headerlink" href="#the-code" title="Permalink to this heading">¶</a></h2>
+<p>Here’s the code from the Walkthrough example showing the overall structure of a typical script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python Imports</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># RAM Concept API imports</span>
+<span class="kn">from</span> <span class="nn">ram_concept.concept</span> <span class="kn">import</span> <span class="n">Concept</span>
+<span class="kn">from</span> <span class="nn">ram_concept.model</span> <span class="kn">import</span> <span class="n">DesignCode</span>
+<span class="kn">from</span> <span class="nn">ram_concept.model</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">ram_concept.model</span> <span class="kn">import</span> <span class="n">StructureType</span>
+
+<span class="c1"># Walkthrough imports</span>
+<span class="kn">from</span> <span class="nn">add_loads</span> <span class="kn">import</span> <span class="n">add_loads</span>
+<span class="kn">from</span> <span class="nn">add_materials</span> <span class="kn">import</span> <span class="n">add_materials</span>
+<span class="kn">from</span> <span class="nn">add_pt</span> <span class="kn">import</span> <span class="n">add_pt</span>
+<span class="kn">from</span> <span class="nn">add_structure</span> <span class="kn">import</span> <span class="n">add_structure</span>
+<span class="kn">from</span> <span class="nn">get_reactions</span> <span class="kn">import</span> <span class="n">get_reactions</span>
+<span class="kn">from</span> <span class="nn">get_tendon_profiles</span> <span class="kn">import</span> <span class="n">get_tendon_profiles</span>
+
+<span class="n">user_directory</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">())</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">user_directory</span><span class="p">,</span> <span class="s2">&quot;Walkthrough.cpt&quot;</span><span class="p">)</span>
+
+<span class="c1"># STARTUP RAM CONCEPT AND CREATE A FILE</span>
+
+<span class="c1"># The first thing to do is always to start a RAM Concept process to act as a server.</span>
+<span class="c1"># In production, you will normally want to use a headless server, but for debugging you might want to run RAM Concept with a GUI.</span>
+<span class="n">concept</span> <span class="o">=</span> <span class="n">Concept</span><span class="o">.</span><span class="n">start_concept</span><span class="p">(</span><span class="n">headless</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#concept = Concept.start_concept(headless=False)</span>
+
+<span class="c1"># You&#39;ll either want to open a file or create a new one.</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">concept</span><span class="o">.</span><span class="n">new_model</span><span class="p">()</span>
+<span class="c1">#model = concept.open_file(file_path)</span>
+
+<span class="c1"># If this is a new file/model, you will want to initialize it for the desired code, structure type and unit system.</span>
+<span class="c1"># The bare-bones file/model created by new_model() is extremely minimal (almost useless)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">setup_new_model</span><span class="p">(</span><span class="n">DesignCode</span><span class="o">.</span><span class="n">ACI318_14SI</span><span class="p">,</span> <span class="n">StructureType</span><span class="o">.</span><span class="n">ELEVATED</span><span class="p">)</span>
+
+<span class="c1"># SETUP / SAVE UNITS AND SIGNS</span>
+
+<span class="c1"># Set the units to something appropriate for the user (if this was an existing file you would assume the units are ok)</span>
+<span class="n">units</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">units</span>
+<span class="n">units</span><span class="o">.</span><span class="n">set_SI_user_units</span><span class="p">()</span>
+
+<span class="c1"># Save the units, as you are about to change them and want to restore them before saving the file</span>
+<span class="n">saved_units</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">get_units</span><span class="p">()</span>
+
+<span class="c1"># Set the units to something predictable for the API (the API uses the same units as the UI)</span>
+<span class="n">units</span><span class="o">.</span><span class="n">set_SI_API_units</span><span class="p">()</span> <span class="c1"># meters, degrees, Newtons, kilograms, seconds, Celsius</span>
+
+<span class="c1"># Set the signs to something appropriate for the user (if this was an existing file you would assume the units are ok)</span>
+<span class="n">signs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">signs</span>
+<span class="n">signs</span><span class="o">.</span><span class="n">set_standard_signs</span><span class="p">()</span>
+
+<span class="c1"># Save the signs, as you are about to change them and want to restore them before saving the file</span>
+<span class="n">saved_signs</span> <span class="o">=</span> <span class="n">signs</span><span class="o">.</span><span class="n">get_signs</span><span class="p">()</span>
+
+<span class="c1"># Set the signs to somethign predictable for the API (the API uses the same units as the UI)</span>
+<span class="n">signs</span><span class="o">.</span><span class="n">set_positive_signs</span><span class="p">()</span>
+
+<span class="c1"># XXXXXXXXXXXX INTERESTING WORK STARTS HERE XXXXXXXXXXXXXXXX</span>
+
+<span class="c1"># The structure created is a simple 16m x 16m square, with 8m spans:</span>
+
+<span class="c1">#  cbbbbbbbcbbbbbbbc</span>
+<span class="c1">#  |               |</span>
+<span class="c1">#  |               |</span>
+<span class="c1">#  w       c       w</span>
+<span class="c1">#  w               w</span>
+<span class="c1">#  w               w</span>
+<span class="c1">#  wwwwwwwwwwwwwwwww</span>
+
+<span class="n">add_materials</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">add_structure</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">add_loads</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">add_pt</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">calc_all</span><span class="p">()</span>
+
+<span class="n">get_reactions</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">get_tendon_profiles</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+<span class="c1"># XXXXXXXXXXXX INTERESTING WORK ENDS HERE XXXXXXXXXXXXXXXX</span>
+
+<span class="c1"># RESTORE THE UNITS AND SIGNS</span>
+
+<span class="c1"># restore the units to the initial user-friendly units</span>
+<span class="n">units</span><span class="o">.</span><span class="n">set_units</span><span class="p">(</span><span class="n">saved_units</span><span class="p">)</span>
+
+<span class="c1"># restore the signs to the initial user-friendly signs</span>
+<span class="n">signs</span><span class="o">.</span><span class="n">set_signs</span><span class="p">(</span><span class="n">saved_signs</span><span class="p">)</span>
+
+<span class="c1"># SAVE THE FILE</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">save_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># SHUT DOWN RAM CONCEPT</span>
+
+<span class="n">concept</span><span class="o">.</span><span class="n">shut_down</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">How to Organize a Script</a><ul>
+<li><a class="reference internal" href="#starting-and-shutting-down-ram-concept">Starting and Shutting Down RAM Concept</a></li>
+<li><a class="reference internal" href="#creating-reading-and-saving-files">Creating, Reading and Saving Files</a></li>
+<li><a class="reference internal" href="#setting-and-restoring-the-unit-and-sign-conventions">Setting and Restoring the Unit and Sign Conventions</a></li>
+<li><a class="reference internal" href="#the-code">The Code</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Organize a Script</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

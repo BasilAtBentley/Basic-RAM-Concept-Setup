@@ -1,0 +1,4 @@
+[2025-05-12 21:11:50] Starting script. Model path: C:\Users\Basil.Chemais\Code\RAM Concept Setup\Concept Model.cpt
+[2025-05-12 21:11:59] RAM Concept responded: PONG
+[2025-05-12 21:12:00] Model opened successfully: C:\Users\Basil.Chemais\Code\RAM Concept Setup\Concept Model.cpt
+[2025-05-12 21:12:00] Script completed and RAM Concept shut down.

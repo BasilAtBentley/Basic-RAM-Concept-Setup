@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.area_load module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.area_load module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.area_load">
+<span id="ram-concept-area-load-module"></span><h1>ram_concept.area_load module<a class="headerlink" href="#module-ram_concept.area_load" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AreaLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_load.AreaLoad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.force_load.html#ram_concept.force_load.ForceLoad" title="ram_concept.force_load.ForceLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoad</span></code></a></p>
+<p><cite>AreaLoad</cite> is an polygon-shaped load that is applied to slabs.</p>
+<p><cite>AreaLoads</cite> are always located on a <cite>ForceLoadingLayer</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_load.AreaLoad.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>CadEntity</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.set_load_values">
+<span class="sig-name descname"><span class="pre">set_load_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Fx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Fy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Fz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">My</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_load.AreaLoad.set_load_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the given (uniform) load values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Fx</strong> (<em>float</em>) – </p></li>
+<li><p><strong>Fy</strong> (<em>float</em>) – </p></li>
+<li><p><strong>Fz</strong> (<em>float</em>) – </p></li>
+<li><p><strong>Mx</strong> (<em>float</em>) – </p></li>
+<li><p><strong>My</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.zero_load_values">
+<span class="sig-name descname"><span class="pre">zero_load_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_load.AreaLoad.zero_load_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets all load values to zero</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Fx0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fx0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Fx0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the x-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Fx1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fx1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Fx1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the x-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Fx2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fx2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Fx2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the x-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Fy0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fy0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Fy0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the y-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Fy1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fy1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Fy1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the y-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Fy2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fy2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Fy2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the y-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Fz0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fz0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Fz0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the z-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Fz1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fz1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Fz1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the z-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Fz2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fz2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Fz2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the z-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Mx0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mx0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Mx0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the x-axis at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Mx1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mx1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Mx1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the x-axis at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.Mx2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mx2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.Mx2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the x-axis at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.My0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">My0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.My0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the y-axis at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.My1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">My1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.My1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the y-axis at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.My2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">My2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.My2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the y-axis at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.elevation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.elevation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation of the load relative to the surface of the slab or beam it is applied to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.area_load.AreaLoad.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Polygon2D</span></code></a> location of this <cite>AreaLoad</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D">Polygon2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.area_load.AreaLoad.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.area_load.AreaLoad.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.AreaLoad.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.area_load.AreaLoad.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultAreaLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.area_load.AreaLoad" title="ram_concept.area_load.AreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">AreaLoad</span></code></a></p>
+<p><cite>DefaultAreaLoad</cite> represents a <cite>AreaLoad</cite> that stores the default values for future <cite>AreaLoads</cite> that are created.</p>
+<p>An <cite>Exception</cite> will be raised if the <cite>location</cite> property of <cite>DefaultAreaLoad</cite> is accessed.</p>
+<p>There is only 1 and always 1 <cite>DefaultAreaLoad</cite> in the <cite>Model</cite>. It is accessed through <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_area_load" title="ram_concept.cad_manager.CadManager.default_area_load"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_area_load</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>delete</cite> is not available for default objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.set_load_values">
+<span class="sig-name descname"><span class="pre">set_load_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Fx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Fy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Fz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">My</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.set_load_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the given (uniform) load values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Fx</strong> (<em>float</em>) – </p></li>
+<li><p><strong>Fy</strong> (<em>float</em>) – </p></li>
+<li><p><strong>Fz</strong> (<em>float</em>) – </p></li>
+<li><p><strong>Mx</strong> (<em>float</em>) – </p></li>
+<li><p><strong>My</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.zero_load_values">
+<span class="sig-name descname"><span class="pre">zero_load_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.zero_load_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets all load values to zero</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Fx0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fx0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Fx0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the x-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Fx1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fx1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Fx1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the x-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Fx2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fx2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Fx2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the x-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Fy0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fy0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Fy0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the y-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Fy1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fy1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Fy1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the y-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Fy2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fy2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Fy2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the y-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Fz0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fz0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Fz0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the z-axis direction at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Fz1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fz1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Fz1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the z-axis direction at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Fz2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Fz2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Fz2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Force value in the z-axis direction at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Mx0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mx0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Mx0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the x-axis at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Mx1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mx1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Mx1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the x-axis at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.Mx2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Mx2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.Mx2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the x-axis at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.My0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">My0</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.My0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the y-axis at first point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.My1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">My1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.My1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the y-axis at second point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.My2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">My2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.My2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moment value about the y-axis at third point in shape</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.elevation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.elevation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation of the load relative to the surface of the slab or beam it is applied to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Polygon2D</span></code></a> location of this <cite>AreaLoad</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D">Polygon2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.area_load.DefaultAreaLoad.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.area_load.DefaultAreaLoad.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.area_load module</a><ul>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad"><code class="docutils literal notranslate"><span class="pre">AreaLoad</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.delete"><code class="docutils literal notranslate"><span class="pre">AreaLoad.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.set_load_values"><code class="docutils literal notranslate"><span class="pre">AreaLoad.set_load_values()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.zero_load_values"><code class="docutils literal notranslate"><span class="pre">AreaLoad.zero_load_values()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Fx0"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Fx0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Fx1"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Fx1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Fx2"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Fx2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Fy0"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Fy0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Fy1"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Fy1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Fy2"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Fy2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Fz0"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Fz0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Fz1"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Fz1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Fz2"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Fz2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Mx0"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Mx0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Mx1"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Mx1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.Mx2"><code class="docutils literal notranslate"><span class="pre">AreaLoad.Mx2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.My0"><code class="docutils literal notranslate"><span class="pre">AreaLoad.My0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.My1"><code class="docutils literal notranslate"><span class="pre">AreaLoad.My1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.My2"><code class="docutils literal notranslate"><span class="pre">AreaLoad.My2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.elevation"><code class="docutils literal notranslate"><span class="pre">AreaLoad.elevation</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.location"><code class="docutils literal notranslate"><span class="pre">AreaLoad.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.model"><code class="docutils literal notranslate"><span class="pre">AreaLoad.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.name"><code class="docutils literal notranslate"><span class="pre">AreaLoad.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.number"><code class="docutils literal notranslate"><span class="pre">AreaLoad.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.AreaLoad.uid"><code class="docutils literal notranslate"><span class="pre">AreaLoad.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.delete"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.set_load_values"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.set_load_values()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.zero_load_values"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.zero_load_values()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Fx0"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Fx0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Fx1"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Fx1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Fx2"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Fx2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Fy0"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Fy0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Fy1"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Fy1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Fy2"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Fy2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Fz0"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Fz0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Fz1"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Fz1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Fz2"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Fz2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Mx0"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Mx0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Mx1"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Mx1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.Mx2"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.Mx2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.My0"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.My0</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.My1"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.My1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.My2"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.My2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.elevation"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.elevation</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.location"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.model"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.name"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.number"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.area_load.DefaultAreaLoad.uid"><code class="docutils literal notranslate"><span class="pre">DefaultAreaLoad.uid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.area_load module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.force_loading_layer module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.force_loading_layer module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.force_loading_layer">
+<span id="ram-concept-force-loading-layer-module"></span><h1>ram_concept.force_loading_layer module<a class="headerlink" href="#module-ram_concept.force_loading_layer" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ForceLoadingLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.loading_layer.html#ram_concept.loading_layer.LoadingLayer" title="ram_concept.loading_layer.LoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoadingLayer</span></code></a></p>
+<p><cite>ForceLoadingLayer</cite> represents a named layer that contains force-defining loads, and their results.</p>
+<p>Some <cite>ForceLoadingLayers</cite> (balance, self-dead and hyperstatic) are read-only. Modification operations
+attempted on those layers will result in exceptions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.add_area_load">
+<span class="sig-name descname"><span class="pre">add_area_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.add_area_load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a <a class="reference internal" href="ram_concept.area_load.html#ram_concept.area_load.AreaLoad" title="ram_concept.area_load.AreaLoad"><code class="xref any py py-class docutils literal notranslate"><span class="pre">AreaLoad</span></code></a> at the given location, copying properties from <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_area_load" title="ram_concept.cad_manager.CadManager.default_area_load"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_area_load</span></code></a>.</p>
+<p>Note that the location will be snapped to the nearest 0.1mm.
+An Exception will be raised if this <cite>ForceLoadingLayer</cite> is read-only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>location</strong> (<a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D"><em>Polygon2D</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.area_load.html#ram_concept.area_load.AreaLoad" title="ram_concept.area_load.AreaLoad">AreaLoad</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.add_line_load">
+<span class="sig-name descname"><span class="pre">add_line_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.add_line_load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a <a class="reference internal" href="ram_concept.line_load.html#ram_concept.line_load.LineLoad" title="ram_concept.line_load.LineLoad"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LineLoad</span></code></a> at the given location, copying properties from <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_line_load" title="ram_concept.cad_manager.CadManager.default_line_load"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_line_load</span></code></a>.</p>
+<p>Note that the location will be snapped to the nearest 0.1mm.
+An Exception will be raised if this <cite>ForceLoadingLayer</cite> is read-only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>location</strong> (<a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D"><em>LineSegment2D</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.line_load.html#ram_concept.line_load.LineLoad" title="ram_concept.line_load.LineLoad">LineLoad</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.add_point_load">
+<span class="sig-name descname"><span class="pre">add_point_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.add_point_load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a <a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad"><code class="xref any py py-class docutils literal notranslate"><span class="pre">PointLoad</span></code></a> at the given location, copying properties from <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_point_load" title="ram_concept.cad_manager.CadManager.default_point_load"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_point_load</span></code></a>.</p>
+<p>Note that the location will be snapped to the nearest 0.1mm.
+An Exception will be raised if this <cite>ForceLoadingLayer</cite> is read-only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>location</strong> (<a class="reference internal" href="ram_concept.point_2D.html#ram_concept.point_2D.Point2D" title="ram_concept.point_2D.Point2D"><em>Point2D</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad">PointLoad</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.add_point_loads">
+<span class="sig-name descname"><span class="pre">add_point_loads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elevation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Fx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Fy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Fz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">My</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.add_point_loads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a set of <a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad"><code class="xref any py py-class docutils literal notranslate"><span class="pre">PointLoad</span></code></a> at the given coordinates with the given values. All non-<cite>None</cite> parameters must be Lists of same length.
+<cite>None</cite> values are replaced by zero values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>y</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>elevation</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>Fx</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>Fy</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>Fz</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>Mx</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>My</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad">PointLoad</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.column_reaction">
+<span class="sig-name descname"><span class="pre">column_reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.column_reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return this layer’s reaction upon that slab from the given <cite>ColumnElement</cite>, consistent with the given <cite>ReactionContext</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_element</strong> (<a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.ColumnElement" title="ram_concept.elements.ColumnElement"><em>ColumnElement</em></a>) – </p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.ReactionContext" title="ram_concept.result_layers.ReactionContext"><em>ReactionContext</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.point_5D.html#ram_concept.point_5D.Point5D" title="ram_concept.point_5D.Point5D"><em>Point5D</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>ForceLoadingLayer</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<p>An Exception will be raised if this <cite>ForceLoadingLayer</cite> is read-only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.wall_group_reaction">
+<span class="sig-name descname"><span class="pre">wall_group_reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wall_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.wall_group_reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return this layer’s reaction upon that slab from the wall group, consistent with the given ReactionContext.
+For backward compatability, WallElement is accepted as well; THAT USAGE IS DEPRECATED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wall_group</strong> (<em>Union</em><em>[</em><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.WallElement" title="ram_concept.elements.WallElement"><em>WallElement</em></a><em>, </em><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.WallElementGroup" title="ram_concept.elements.WallElementGroup"><em>WallElementGroup</em></a><em>]</em>) – </p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.ReactionContext" title="ram_concept.result_layers.ReactionContext"><em>ReactionContext</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.point_6D.html#ram_concept.point_6D.Point6D" title="ram_concept.point_6D.Point6D">Point6D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.analysis_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">analysis_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="ram_concept.loading_layer.html#ram_concept.loading_layer.LoadingAnalysisType" title="ram_concept.loading_layer.LoadingAnalysisType"><span class="pre">LoadingAnalysisType</span></a></em><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.analysis_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.loading_layer.html#ram_concept.loading_layer.LoadingAnalysisType" title="ram_concept.loading_layer.LoadingAnalysisType"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LoadingAnalysisType</span></code></a> of this <cite>LoadingLayer</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.area_loads">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">area_loads</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ram_concept.cad_entity.html#ram_concept.cad_entity.CadEntity" title="ram_concept.cad_entity.CadEntity"><span class="pre">CadEntity</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.area_loads" title="Permalink to this definition">¶</a></dt>
+<dd><p>All the <a class="reference internal" href="ram_concept.area_load.html#ram_concept.area_load.AreaLoad" title="ram_concept.area_load.AreaLoad"><code class="xref any py py-class docutils literal notranslate"><span class="pre">AreaLoad</span></code></a> on this layer.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.line_loads">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">line_loads</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ram_concept.cad_entity.html#ram_concept.cad_entity.CadEntity" title="ram_concept.cad_entity.CadEntity"><span class="pre">CadEntity</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.line_loads" title="Permalink to this definition">¶</a></dt>
+<dd><p>All the <a class="reference internal" href="ram_concept.line_load.html#ram_concept.line_load.LineLoad" title="ram_concept.line_load.LineLoad"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LineLoad</span></code></a> on this layer.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.loading_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">loading_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="ram_concept.loading_layer.html#ram_concept.loading_layer.LoadingType" title="ram_concept.loading_layer.LoadingType"><span class="pre">LoadingType</span></a></em><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.loading_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.loading_layer.html#ram_concept.loading_layer.LoadingType" title="ram_concept.loading_layer.LoadingType"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LoadingType</span></code></a> of this <cite>LoadingLayer</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.point_loads">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">point_loads</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="ram_concept.cad_entity.html#ram_concept.cad_entity.CadEntity" title="ram_concept.cad_entity.CadEntity"><span class="pre">CadEntity</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.point_loads" title="Permalink to this definition">¶</a></dt>
+<dd><p>All the <a class="reference internal" href="ram_concept.point_load.html#ram_concept.point_load.PointLoad" title="ram_concept.point_load.PointLoad"><code class="xref any py py-class docutils literal notranslate"><span class="pre">PointLoad</span></code></a> on this layer.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.force_loading_layer.ForceLoadingLayer.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.force_loading_layer.ForceLoadingLayer.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.force_loading_layer module</a><ul>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.add_area_load"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.add_area_load()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.add_line_load"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.add_line_load()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.add_point_load"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.add_point_load()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.add_point_loads"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.add_point_loads()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.column_reaction"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.column_reaction()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.delete"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.wall_group_reaction"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.wall_group_reaction()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.analysis_type"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.analysis_type</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.area_loads"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.area_loads</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.line_loads"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.line_loads</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.loading_type"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.loading_type</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.model"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.name"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.number"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.point_loads"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.point_loads</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.force_loading_layer.ForceLoadingLayer.uid"><code class="docutils literal notranslate"><span class="pre">ForceLoadingLayer.uid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.force_loading_layer module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

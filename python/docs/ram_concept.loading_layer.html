@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.loading_layer module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.loading_layer module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.loading_layer">
+<span id="ram-concept-loading-layer-module"></span><h1>ram_concept.loading_layer module<a class="headerlink" href="#module-ram_concept.loading_layer" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingAnalysisType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LoadingAnalysisType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingAnalysisType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>For specifying analysis types for <a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer" title="ram_concept.loading_layer.LoadingLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LoadingLayer</span></code></a>.</p>
+<p>The available values are:</p>
+<ul class="simple">
+<li><p>NORMAL: standard analysis for the type of loading (force, strain, shrinkage)</p></li>
+<li><p>HYPERSTATIC: special value only allowed on hyperstatic loading types (never attempt to set this value)</p></li>
+<li><p>SELF_EQUILIBRIUM: force analysis with all support removed (applied loads must be in self-equilibrium)</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingAnalysisType.valid_for_loading_cause">
+<span class="sig-name descname"><span class="pre">valid_for_loading_cause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_cause</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingAnalysisType.valid_for_loading_cause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if this LoadingAnalysisType is valid for the given load_cause.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>load_cause</strong> (<a class="reference internal" href="#ram_concept.loading_layer.LoadingCause" title="ram_concept.loading_layer.LoadingCause"><em>LoadingCause</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingAnalysisType.HYPERSTATIC">
+<span class="sig-name descname"><span class="pre">HYPERSTATIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'hyperstatic'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingAnalysisType.HYPERSTATIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingAnalysisType.NORMAL">
+<span class="sig-name descname"><span class="pre">NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'normal'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingAnalysisType.NORMAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingAnalysisType.SELF_EQUILIBRIUM">
+<span class="sig-name descname"><span class="pre">SELF_EQUILIBRIUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'floating'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingAnalysisType.SELF_EQUILIBRIUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LoadingCause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>The cause of a loading upon the structure.</p>
+<p>The available values are:</p>
+<ul class="simple">
+<li><p>SELF_DEAD: loads due to the weight of the structure</p></li>
+<li><p>BALANCE: loads due to the force of the tendons and anchors upon the structure</p></li>
+<li><p>HYPERSTATIC: theoretical load due to restraint of post-tensioning</p></li>
+<li><p>STRESSING_DEAD: dead loads in place at time of stressing of the tendons</p></li>
+<li><p>OTHER_DEAD: dead loads not included in SELF_DEAD or STRESSING_DEAD</p></li>
+<li><p>LIVE_REDUCIBLE: loads defined as reducible in the applicable buildingcode</p></li>
+<li><p>LIVE_UNREDUCIBLE: loads defined as unreducible in the applicable building code</p></li>
+<li><p>LIVE_STORAGE: loads from storage</p></li>
+<li><p>LIVE_PARKING: loads from vehicle parking</p></li>
+<li><p>LIVE_ROOF: loads on roof</p></li>
+<li><p>SNOW: loads from snow</p></li>
+<li><p>OTHER_GRAVITY: gravity loads of no specified type</p></li>
+<li><p>TEMPERATURE: temperature change loads</p></li>
+<li><p>SHRINKAGE: shrinkage strain loads</p></li>
+<li><p>WIND_SERVICE: wind loads defined at service limit state levels</p></li>
+<li><p>WIND_ULTIMATE: wind loads defined at strength limit state levels</p></li>
+<li><p>SEISMIC_SERVICE: seismic loads defined at service limit state levels</p></li>
+<li><p>SEISMIC_ULTIMATE: seismic loads defined at strength limit state levels</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.can_have_hyperstatic_analysis">
+<span class="sig-name descname"><span class="pre">can_have_hyperstatic_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.can_have_hyperstatic_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>This loadings of this cause can use LoadingAnalysisType.HYPERSTATIC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.can_have_indexed_variations">
+<span class="sig-name descname"><span class="pre">can_have_indexed_variations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.can_have_indexed_variations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can a <a class="reference internal" href="#ram_concept.loading_layer.LoadingType" title="ram_concept.loading_layer.LoadingType"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LoadingType</span></code></a> with this <cite>LoadCause</cite> support indexed variations of the <cite>LoadCause</cite>?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.can_have_normal_analysis">
+<span class="sig-name descname"><span class="pre">can_have_normal_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.can_have_normal_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>This loadings of this cause can use LoadingAnalysisType.NORMAL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.can_have_self_equilibrium_analysis">
+<span class="sig-name descname"><span class="pre">can_have_self_equilibrium_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.can_have_self_equilibrium_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>This loadings of this cause can use LoadingAnalysisType.SELF_EQUILIBRIUM.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.can_have_transfer_variation">
+<span class="sig-name descname"><span class="pre">can_have_transfer_variation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.can_have_transfer_variation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can a <a class="reference internal" href="#ram_concept.loading_layer.LoadingType" title="ram_concept.loading_layer.LoadingType"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LoadingType</span></code></a> with this <cite>LoadCause</cite> support a transfer loading option?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.is_changable_in_loading">
+<span class="sig-name descname"><span class="pre">is_changable_in_loading</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.is_changable_in_loading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can a <a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer" title="ram_concept.loading_layer.LoadingLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LoadingLayer</span></code></a> with this <cite>LoadCause</cite> be changed to another <cite>LoadCause</cite>?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.BALANCE">
+<span class="sig-name descname"><span class="pre">BALANCE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'balance'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.BALANCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.HYPERSTATIC">
+<span class="sig-name descname"><span class="pre">HYPERSTATIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'hyperstatic'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.HYPERSTATIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.LIVE_PARKING">
+<span class="sig-name descname"><span class="pre">LIVE_PARKING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'live_parking'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.LIVE_PARKING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.LIVE_REDUCIBLE">
+<span class="sig-name descname"><span class="pre">LIVE_REDUCIBLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'live_reducible'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.LIVE_REDUCIBLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.LIVE_ROOF">
+<span class="sig-name descname"><span class="pre">LIVE_ROOF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'live_roof'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.LIVE_ROOF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.LIVE_STORAGE">
+<span class="sig-name descname"><span class="pre">LIVE_STORAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'live_storage'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.LIVE_STORAGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.LIVE_UNREDUCIBLE">
+<span class="sig-name descname"><span class="pre">LIVE_UNREDUCIBLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'live_unreducible'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.LIVE_UNREDUCIBLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.OTHER_DEAD">
+<span class="sig-name descname"><span class="pre">OTHER_DEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'other_dead'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.OTHER_DEAD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.OTHER_GRAVITY">
+<span class="sig-name descname"><span class="pre">OTHER_GRAVITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'other'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.OTHER_GRAVITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.SEISMIC_SERVICE">
+<span class="sig-name descname"><span class="pre">SEISMIC_SERVICE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'seismic_service_'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.SEISMIC_SERVICE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.SEISMIC_ULTIMATE">
+<span class="sig-name descname"><span class="pre">SEISMIC_ULTIMATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'seismic_ultimate_'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.SEISMIC_ULTIMATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.SELF_DEAD">
+<span class="sig-name descname"><span class="pre">SELF_DEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'self_dead'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.SELF_DEAD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.SHRINKAGE">
+<span class="sig-name descname"><span class="pre">SHRINKAGE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'shrinkage'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.SHRINKAGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.SNOW">
+<span class="sig-name descname"><span class="pre">SNOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'snow'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.SNOW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.STRESSING_DEAD">
+<span class="sig-name descname"><span class="pre">STRESSING_DEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'stressing_dead'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.STRESSING_DEAD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.TEMPERATURE">
+<span class="sig-name descname"><span class="pre">TEMPERATURE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'temperature'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.TEMPERATURE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.WIND_SERVICE">
+<span class="sig-name descname"><span class="pre">WIND_SERVICE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'wind_service_'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.WIND_SERVICE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingCause.WIND_ULTIMATE">
+<span class="sig-name descname"><span class="pre">WIND_ULTIMATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'wind_ultimate_'</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingCause.WIND_ULTIMATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LoadingLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.FullResultLayer" title="ram_concept.result_layers.FullResultLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullResultLayer</span></code></a></p>
+<p>LoadingLayer is an abstract superclass for <a class="reference internal" href="ram_concept.force_loading_layer.html#ram_concept.force_loading_layer.ForceLoadingLayer" title="ram_concept.force_loading_layer.ForceLoadingLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ForceLoadingLayer</span></code></a>, <a class="reference internal" href="ram_concept.temperature_loading_layer.html#ram_concept.temperature_loading_layer.TemperatureLoadingLayer" title="ram_concept.temperature_loading_layer.TemperatureLoadingLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TemperatureLoadingLayer</span></code></a> and <a class="reference internal" href="ram_concept.shrinkage_loading_layer.html#ram_concept.shrinkage_loading_layer.ShrinkageLoadingLayer" title="ram_concept.shrinkage_loading_layer.ShrinkageLoadingLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ShrinkageLoadingLayer</span></code></a>.</p>
+<p>It is NOT a superclass for <code class="xref any docutils literal notranslate"><span class="pre">MassLoadingLayer</span></code> as that layer does not actually define a loading that can be analyzed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingLayer.column_reaction">
+<span class="sig-name descname"><span class="pre">column_reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column_element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingLayer.column_reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return this layer’s reaction upon that slab from the given <cite>ColumnElement</cite>, consistent with the given <cite>ReactionContext</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column_element</strong> (<a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.ColumnElement" title="ram_concept.elements.ColumnElement"><em>ColumnElement</em></a>) – </p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.ReactionContext" title="ram_concept.result_layers.ReactionContext"><em>ReactionContext</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.point_5D.html#ram_concept.point_5D.Point5D" title="ram_concept.point_5D.Point5D"><em>Point5D</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingLayer.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingLayer.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>LoadingLayer</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingLayer.wall_group_reaction">
+<span class="sig-name descname"><span class="pre">wall_group_reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wall_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingLayer.wall_group_reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return this layer’s reaction upon that slab from the wall group, consistent with the given ReactionContext.
+For backward compatability, WallElement is accepted as well; THAT USAGE IS DEPRECATED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wall_group</strong> (<em>Union</em><em>[</em><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.WallElement" title="ram_concept.elements.WallElement"><em>WallElement</em></a><em>, </em><a class="reference internal" href="ram_concept.elements.html#ram_concept.elements.WallElementGroup" title="ram_concept.elements.WallElementGroup"><em>WallElementGroup</em></a><em>]</em>) – </p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.ReactionContext" title="ram_concept.result_layers.ReactionContext"><em>ReactionContext</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.point_6D.html#ram_concept.point_6D.Point6D" title="ram_concept.point_6D.Point6D">Point6D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingLayer.analysis_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">analysis_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ram_concept.loading_layer.LoadingAnalysisType" title="ram_concept.loading_layer.LoadingAnalysisType"><span class="pre">LoadingAnalysisType</span></a></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingLayer.analysis_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#ram_concept.loading_layer.LoadingAnalysisType" title="ram_concept.loading_layer.LoadingAnalysisType"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LoadingAnalysisType</span></code></a> of this <cite>LoadingLayer</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingLayer.loading_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">loading_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#ram_concept.loading_layer.LoadingType" title="ram_concept.loading_layer.LoadingType"><span class="pre">LoadingType</span></a></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingLayer.loading_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#ram_concept.loading_layer.LoadingType" title="ram_concept.loading_layer.LoadingType"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LoadingType</span></code></a> of this <cite>LoadingLayer</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingLayer.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.loading_layer.LoadingLayer.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingLayer.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingLayer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingLayer.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.loading_layer.LoadingLayer.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingLayer.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.loading_layer.LoadingLayer.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LoadingType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cause</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_transfer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.loading_layer.LoadingType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An immutable value holding the type of a <a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer" title="ram_concept.loading_layer.LoadingLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LoadingLayer</span></code></a>.</p>
+<p>This is effectively a combination of:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ram_concept.loading_layer.LoadingType.cause" title="ram_concept.loading_layer.LoadingType.cause"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">cause</span></code></a> : what is causing the load?</p></li>
+<li><p><a class="reference internal" href="#ram_concept.loading_layer.LoadingType.is_transfer" title="ram_concept.loading_layer.LoadingType.is_transfer"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">is_transfer</span></code></a> : is this a transfer load (applied to this level from other levels)</p></li>
+<li><p><a class="reference internal" href="#ram_concept.loading_layer.LoadingType.index" title="ram_concept.loading_layer.LoadingType.index"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">LoadingType.index</span></code></a> : if this <cite>LoadingType</cite> is indexable, what is its index? (0 for no index)</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cause</strong> (<a class="reference internal" href="#ram_concept.loading_layer.LoadingCause" title="ram_concept.loading_layer.LoadingCause"><em>LoadingCause</em></a>) – </p></li>
+<li><p><strong>is_transfer</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>index</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingType.cause">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cause</span></span><a class="headerlink" href="#ram_concept.loading_layer.LoadingType.cause" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#ram_concept.loading_layer.LoadingCause" title="ram_concept.loading_layer.LoadingCause"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LoadingCause</span></code></a> of this <cite>LoadingType</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingType.index">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">index</span></span><a class="headerlink" href="#ram_concept.loading_layer.LoadingType.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>The index of the variation of of the <a class="reference internal" href="#ram_concept.loading_layer.LoadingType.cause" title="ram_concept.loading_layer.LoadingType.cause"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">cause</span></code></a> (0 if not an indexed variation)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.loading_layer.LoadingType.is_transfer">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_transfer</span></span><a class="headerlink" href="#ram_concept.loading_layer.LoadingType.is_transfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this loading a transfer variation of the <a class="reference internal" href="#ram_concept.loading_layer.LoadingType.cause" title="ram_concept.loading_layer.LoadingType.cause"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">cause</span></code></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.loading_layer module</a><ul>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingAnalysisType"><code class="docutils literal notranslate"><span class="pre">LoadingAnalysisType</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingAnalysisType.valid_for_loading_cause"><code class="docutils literal notranslate"><span class="pre">LoadingAnalysisType.valid_for_loading_cause()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingAnalysisType.HYPERSTATIC"><code class="docutils literal notranslate"><span class="pre">LoadingAnalysisType.HYPERSTATIC</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingAnalysisType.NORMAL"><code class="docutils literal notranslate"><span class="pre">LoadingAnalysisType.NORMAL</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingAnalysisType.SELF_EQUILIBRIUM"><code class="docutils literal notranslate"><span class="pre">LoadingAnalysisType.SELF_EQUILIBRIUM</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause"><code class="docutils literal notranslate"><span class="pre">LoadingCause</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.can_have_hyperstatic_analysis"><code class="docutils literal notranslate"><span class="pre">LoadingCause.can_have_hyperstatic_analysis()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.can_have_indexed_variations"><code class="docutils literal notranslate"><span class="pre">LoadingCause.can_have_indexed_variations()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.can_have_normal_analysis"><code class="docutils literal notranslate"><span class="pre">LoadingCause.can_have_normal_analysis()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.can_have_self_equilibrium_analysis"><code class="docutils literal notranslate"><span class="pre">LoadingCause.can_have_self_equilibrium_analysis()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.can_have_transfer_variation"><code class="docutils literal notranslate"><span class="pre">LoadingCause.can_have_transfer_variation()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.is_changable_in_loading"><code class="docutils literal notranslate"><span class="pre">LoadingCause.is_changable_in_loading()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.BALANCE"><code class="docutils literal notranslate"><span class="pre">LoadingCause.BALANCE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.HYPERSTATIC"><code class="docutils literal notranslate"><span class="pre">LoadingCause.HYPERSTATIC</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.LIVE_PARKING"><code class="docutils literal notranslate"><span class="pre">LoadingCause.LIVE_PARKING</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.LIVE_REDUCIBLE"><code class="docutils literal notranslate"><span class="pre">LoadingCause.LIVE_REDUCIBLE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.LIVE_ROOF"><code class="docutils literal notranslate"><span class="pre">LoadingCause.LIVE_ROOF</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.LIVE_STORAGE"><code class="docutils literal notranslate"><span class="pre">LoadingCause.LIVE_STORAGE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.LIVE_UNREDUCIBLE"><code class="docutils literal notranslate"><span class="pre">LoadingCause.LIVE_UNREDUCIBLE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.OTHER_DEAD"><code class="docutils literal notranslate"><span class="pre">LoadingCause.OTHER_DEAD</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.OTHER_GRAVITY"><code class="docutils literal notranslate"><span class="pre">LoadingCause.OTHER_GRAVITY</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.SEISMIC_SERVICE"><code class="docutils literal notranslate"><span class="pre">LoadingCause.SEISMIC_SERVICE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.SEISMIC_ULTIMATE"><code class="docutils literal notranslate"><span class="pre">LoadingCause.SEISMIC_ULTIMATE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.SELF_DEAD"><code class="docutils literal notranslate"><span class="pre">LoadingCause.SELF_DEAD</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.SHRINKAGE"><code class="docutils literal notranslate"><span class="pre">LoadingCause.SHRINKAGE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.SNOW"><code class="docutils literal notranslate"><span class="pre">LoadingCause.SNOW</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.STRESSING_DEAD"><code class="docutils literal notranslate"><span class="pre">LoadingCause.STRESSING_DEAD</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.TEMPERATURE"><code class="docutils literal notranslate"><span class="pre">LoadingCause.TEMPERATURE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.WIND_SERVICE"><code class="docutils literal notranslate"><span class="pre">LoadingCause.WIND_SERVICE</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingCause.WIND_ULTIMATE"><code class="docutils literal notranslate"><span class="pre">LoadingCause.WIND_ULTIMATE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer"><code class="docutils literal notranslate"><span class="pre">LoadingLayer</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer.column_reaction"><code class="docutils literal notranslate"><span class="pre">LoadingLayer.column_reaction()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer.delete"><code class="docutils literal notranslate"><span class="pre">LoadingLayer.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer.wall_group_reaction"><code class="docutils literal notranslate"><span class="pre">LoadingLayer.wall_group_reaction()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer.analysis_type"><code class="docutils literal notranslate"><span class="pre">LoadingLayer.analysis_type</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer.loading_type"><code class="docutils literal notranslate"><span class="pre">LoadingLayer.loading_type</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer.model"><code class="docutils literal notranslate"><span class="pre">LoadingLayer.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer.name"><code class="docutils literal notranslate"><span class="pre">LoadingLayer.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer.number"><code class="docutils literal notranslate"><span class="pre">LoadingLayer.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingLayer.uid"><code class="docutils literal notranslate"><span class="pre">LoadingLayer.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingType"><code class="docutils literal notranslate"><span class="pre">LoadingType</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingType.cause"><code class="docutils literal notranslate"><span class="pre">LoadingType.cause</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingType.index"><code class="docutils literal notranslate"><span class="pre">LoadingType.index</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.loading_layer.LoadingType.is_transfer"><code class="docutils literal notranslate"><span class="pre">LoadingType.is_transfer</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.loading_layer module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

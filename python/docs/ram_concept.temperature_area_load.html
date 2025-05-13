@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.temperature_area_load module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.temperature_area_load module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.temperature_area_load">
+<span id="ram-concept-temperature-area-load-module"></span><h1>ram_concept.temperature_area_load module<a class="headerlink" href="#module-ram_concept.temperature_area_load" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultTemperatureAreaLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad" title="ram_concept.temperature_area_load.TemperatureAreaLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemperatureAreaLoad</span></code></a></p>
+<p><cite>DefaultTemperatureAreaLoad</cite> represents a <cite>TemperatureAreaLoad</cite> that stores the default values for future <cite>TemperatureAreaLoad</cite> that are created.</p>
+<p>An <cite>Exception</cite> will be raised if the <cite>location</cite> property of <cite>DefaultTemperatureAreaLoad</cite> is accessed.</p>
+<p>There is only 1 and always 1 <cite>DefaultTemperatureAreaLoad</cite> in the <cite>Model</cite>. It is accessed through <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_temperature_area_load" title="ram_concept.cad_manager.CadManager.default_temperature_area_load"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_temperature_area_load</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>delete</cite> is not available for default objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.set_temperature_change">
+<span class="sig-name descname"><span class="pre">set_temperature_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature_change</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.set_temperature_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the given (uniform top and bottom) temperature change</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>temperature_change</strong> (<em>float</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Polygon2D</span></code></a> location of this <cite>TemperatureAreaLoad</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D">Polygon2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.temperature_change_at_bottom">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">temperature_change_at_bottom</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.temperature_change_at_bottom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temperature change at bottom of slab.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.temperature_change_at_top">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">temperature_change_at_top</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.temperature_change_at_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temperature change at top of slab.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.TemperatureAreaLoad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TemperatureAreaLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.temperature_area_load.TemperatureAreaLoad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.cad_entity.html#ram_concept.cad_entity.CadEntity" title="ram_concept.cad_entity.CadEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadEntity</span></code></a></p>
+<p><cite>TemperatureAreaLoad</cite> is an polygon-shaped temperature-change that is applied to slabs.</p>
+<p><cite>TemperatureAreaLoad</cite> are always located on a <a class="reference internal" href="ram_concept.temperature_loading_layer.html#ram_concept.temperature_loading_layer.TemperatureLoadingLayer" title="ram_concept.temperature_loading_layer.TemperatureLoadingLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TemperatureLoadingLayer</span></code></a> (and are created via <a class="reference internal" href="ram_concept.temperature_loading_layer.html#ram_concept.temperature_loading_layer.TemperatureLoadingLayer.add_temperature_area_load" title="ram_concept.temperature_loading_layer.TemperatureLoadingLayer.add_temperature_area_load"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">TemperatureLoadingLayer.add_temperature_area_load</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.TemperatureAreaLoad.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>CadEntity</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.TemperatureAreaLoad.set_temperature_change">
+<span class="sig-name descname"><span class="pre">set_temperature_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature_change</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.set_temperature_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the given (uniform top and bottom) temperature change</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>temperature_change</strong> (<em>float</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.TemperatureAreaLoad.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Polygon2D</span></code></a> location of this <cite>TemperatureAreaLoad</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.polygon_2D.html#ram_concept.polygon_2D.Polygon2D" title="ram_concept.polygon_2D.Polygon2D">Polygon2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.TemperatureAreaLoad.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.TemperatureAreaLoad.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.TemperatureAreaLoad.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.TemperatureAreaLoad.temperature_change_at_bottom">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">temperature_change_at_bottom</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.temperature_change_at_bottom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temperature change at bottom of slab.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.TemperatureAreaLoad.temperature_change_at_top">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">temperature_change_at_top</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.temperature_change_at_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temperature change at top of slab.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.temperature_area_load.TemperatureAreaLoad.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.temperature_area_load module</a><ul>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad"><code class="docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.delete"><code class="docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.set_temperature_change"><code class="docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad.set_temperature_change()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.location"><code class="docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.model"><code class="docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.name"><code class="docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.number"><code class="docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.temperature_change_at_bottom"><code class="docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad.temperature_change_at_bottom</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.temperature_change_at_top"><code class="docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad.temperature_change_at_top</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.DefaultTemperatureAreaLoad.uid"><code class="docutils literal notranslate"><span class="pre">DefaultTemperatureAreaLoad.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad"><code class="docutils literal notranslate"><span class="pre">TemperatureAreaLoad</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.delete"><code class="docutils literal notranslate"><span class="pre">TemperatureAreaLoad.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.set_temperature_change"><code class="docutils literal notranslate"><span class="pre">TemperatureAreaLoad.set_temperature_change()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.location"><code class="docutils literal notranslate"><span class="pre">TemperatureAreaLoad.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.model"><code class="docutils literal notranslate"><span class="pre">TemperatureAreaLoad.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.name"><code class="docutils literal notranslate"><span class="pre">TemperatureAreaLoad.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.number"><code class="docutils literal notranslate"><span class="pre">TemperatureAreaLoad.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.temperature_change_at_bottom"><code class="docutils literal notranslate"><span class="pre">TemperatureAreaLoad.temperature_change_at_bottom</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.temperature_change_at_top"><code class="docutils literal notranslate"><span class="pre">TemperatureAreaLoad.temperature_change_at_top</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.temperature_area_load.TemperatureAreaLoad.uid"><code class="docutils literal notranslate"><span class="pre">TemperatureAreaLoad.uid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.temperature_area_load module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.column module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.column module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.column">
+<span id="ram-concept-column-module"></span><h1>ram_concept.column module<a class="headerlink" href="#module-ram_concept.column" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.column.Column">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.column.Column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.concrete_support.html#ram_concept.concrete_support.ConcreteSupport" title="ram_concept.concrete_support.ConcreteSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConcreteSupport</span></code></a></p>
+<p><cite>Column</cite> represents an column at a point in the CAD system.</p>
+<p><cite>Columns</cite> are always located on the <a class="reference internal" href="ram_concept.structure_layer.html#ram_concept.structure_layer.StructureLayer" title="ram_concept.structure_layer.StructureLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StructureLayer</span></code></a> (“Mesh Input” layer).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.column.Column.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.column.Column.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>CadEntity</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.angle">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">angle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.Column.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The plan view angle of the column (at 0, the ‘b’ dimension is along x-axis)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.b">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">b</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.Column.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width of the column (if zero, column is round)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.below_slab">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">below_slab</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.Column.below_slab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this support below the slab? (above the slab if false)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.compressible">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compressible</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.Column.compressible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the support compressible? (if False, the support is infinitely rigid vertically)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.concrete">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">concrete</span></span><a class="headerlink" href="#ram_concept.column.Column.concrete" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="ram_concept.concrete.html#ram_concept.concrete.Concrete" title="ram_concept.concrete.Concrete"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Concrete</span></code></a> used by this <cite>ConcreteMember</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.d">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">d</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.Column.d" title="Permalink to this definition">¶</a></dt>
+<dd><p>The depth of the column (diameter if b=0)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.fixed_far">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fixed_far</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.Column.fixed_far" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational fixity of the support at the end away from the slab</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.fixed_near">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fixed_near</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.Column.fixed_near" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational fixity of the support to the slab</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.height">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.Column.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertical dimension of the support</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.i_factor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">i_factor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.Column.i_factor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The bending stiffness multiplier (or ‘crack factor’)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.llr_max_reduction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">llr_max_reduction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.Column.llr_max_reduction" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum allowed (by user) live load reduction percentage for this support (0-&gt;100).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.column.Column.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.point_2D.html#ram_concept.point_2D.Point2D" title="ram_concept.point_2D.Point2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Point2D</span></code></a> location of the Column</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.point_2D.html#ram_concept.point_2D.Point2D" title="ram_concept.point_2D.Point2D">Point2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.column.Column.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.column.Column.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.column.Column.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.roller">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">roller</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.Column.roller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the far end of the column free to move laterally?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.specified_LLR_levels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">specified_LLR_levels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.column.Column.specified_LLR_levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user specified number of levels being supported (for live load reduction calculation purposes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.specified_influence_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">specified_influence_area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.Column.specified_influence_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user specified influences area being supported (for live load reduction calculation purposes, if the live load reduction code uses influence area)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.specified_trib_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">specified_trib_area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.Column.specified_trib_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user specified tributary area being supported (for live load reduction calculation purposes, if the live load reduction code uses tributary area)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.column.Column.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.Column.use_specified_LLR_parameters">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_specified_LLR_parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.Column.use_specified_LLR_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified live load reduction parameters instead of the calculated ones (use the calculated ones if false).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultColumn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.column.DefaultColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.column.Column" title="ram_concept.column.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a></p>
+<p><cite>DefaultColumn</cite> represents a <cite>Column</cite> that stores the default values for future <cite>Columns</cite> that are created.</p>
+<p>An <cite>Exception</cite> will be raised if the <cite>location</cite> property of <cite>DefaultColumn</cite> is accessed.</p>
+<p>There is only 1 and always 1 <cite>DefaultColumn</cite> in the <cite>Model</cite>. It is accessed through <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_column" title="ram_concept.cad_manager.CadManager.default_column"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_column</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.column.DefaultColumn.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>delete</cite> is not available for default objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.angle">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">angle</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The plan view angle of the column (at 0, the ‘b’ dimension is along x-axis)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.b">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">b</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width of the column (if zero, column is round)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.below_slab">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">below_slab</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.below_slab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this support below the slab? (above the slab if false)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.compressible">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">compressible</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.compressible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the support compressible? (if False, the support is infinitely rigid vertically)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.concrete">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">concrete</span></span><a class="headerlink" href="#ram_concept.column.DefaultColumn.concrete" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="ram_concept.concrete.html#ram_concept.concrete.Concrete" title="ram_concept.concrete.Concrete"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Concrete</span></code></a> used by this <cite>ConcreteMember</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.d">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">d</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.d" title="Permalink to this definition">¶</a></dt>
+<dd><p>The depth of the column (diameter if b=0)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.fixed_far">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fixed_far</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.fixed_far" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational fixity of the support at the end away from the slab</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.fixed_near">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fixed_near</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.fixed_near" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational fixity of the support to the slab</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.height">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertical dimension of the support</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.i_factor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">i_factor</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.i_factor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The bending stiffness multiplier (or ‘crack factor’)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.llr_max_reduction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">llr_max_reduction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.llr_max_reduction" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum allowed (by user) live load reduction percentage for this support (0-&gt;100).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.column.DefaultColumn.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.point_2D.html#ram_concept.point_2D.Point2D" title="ram_concept.point_2D.Point2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Point2D</span></code></a> location of the Column</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.point_2D.html#ram_concept.point_2D.Point2D" title="ram_concept.point_2D.Point2D">Point2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.column.DefaultColumn.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.roller">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">roller</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.roller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is the far end of the column free to move laterally?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.specified_LLR_levels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">specified_LLR_levels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.specified_LLR_levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user specified number of levels being supported (for live load reduction calculation purposes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.specified_influence_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">specified_influence_area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.specified_influence_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user specified influences area being supported (for live load reduction calculation purposes, if the live load reduction code uses influence area)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.specified_trib_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">specified_trib_area</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.specified_trib_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user specified tributary area being supported (for live load reduction calculation purposes, if the live load reduction code uses tributary area)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.column.DefaultColumn.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.column.DefaultColumn.use_specified_LLR_parameters">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_specified_LLR_parameters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.column.DefaultColumn.use_specified_LLR_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the specified live load reduction parameters instead of the calculated ones (use the calculated ones if false).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.column module</a><ul>
+<li><a class="reference internal" href="#ram_concept.column.Column"><code class="docutils literal notranslate"><span class="pre">Column</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.column.Column.delete"><code class="docutils literal notranslate"><span class="pre">Column.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.angle"><code class="docutils literal notranslate"><span class="pre">Column.angle</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.b"><code class="docutils literal notranslate"><span class="pre">Column.b</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.below_slab"><code class="docutils literal notranslate"><span class="pre">Column.below_slab</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.compressible"><code class="docutils literal notranslate"><span class="pre">Column.compressible</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.concrete"><code class="docutils literal notranslate"><span class="pre">Column.concrete</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.d"><code class="docutils literal notranslate"><span class="pre">Column.d</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.fixed_far"><code class="docutils literal notranslate"><span class="pre">Column.fixed_far</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.fixed_near"><code class="docutils literal notranslate"><span class="pre">Column.fixed_near</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.height"><code class="docutils literal notranslate"><span class="pre">Column.height</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.i_factor"><code class="docutils literal notranslate"><span class="pre">Column.i_factor</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.llr_max_reduction"><code class="docutils literal notranslate"><span class="pre">Column.llr_max_reduction</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.location"><code class="docutils literal notranslate"><span class="pre">Column.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.model"><code class="docutils literal notranslate"><span class="pre">Column.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.name"><code class="docutils literal notranslate"><span class="pre">Column.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.number"><code class="docutils literal notranslate"><span class="pre">Column.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.roller"><code class="docutils literal notranslate"><span class="pre">Column.roller</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.specified_LLR_levels"><code class="docutils literal notranslate"><span class="pre">Column.specified_LLR_levels</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.specified_influence_area"><code class="docutils literal notranslate"><span class="pre">Column.specified_influence_area</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.specified_trib_area"><code class="docutils literal notranslate"><span class="pre">Column.specified_trib_area</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.uid"><code class="docutils literal notranslate"><span class="pre">Column.uid</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.Column.use_specified_LLR_parameters"><code class="docutils literal notranslate"><span class="pre">Column.use_specified_LLR_parameters</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn"><code class="docutils literal notranslate"><span class="pre">DefaultColumn</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.delete"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.angle"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.angle</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.b"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.b</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.below_slab"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.below_slab</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.compressible"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.compressible</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.concrete"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.concrete</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.d"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.d</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.fixed_far"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.fixed_far</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.fixed_near"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.fixed_near</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.height"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.height</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.i_factor"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.i_factor</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.llr_max_reduction"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.llr_max_reduction</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.location"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.model"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.name"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.number"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.roller"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.roller</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.specified_LLR_levels"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.specified_LLR_levels</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.specified_influence_area"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.specified_influence_area</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.specified_trib_area"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.specified_trib_area</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.uid"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.uid</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.column.DefaultColumn.use_specified_LLR_parameters"><code class="docutils literal notranslate"><span class="pre">DefaultColumn.use_specified_LLR_parameters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.column module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

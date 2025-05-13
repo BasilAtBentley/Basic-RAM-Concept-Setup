@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.concept module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.concept module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.concept">
+<span id="ram-concept-concept-module"></span><h1>ram_concept.concept module<a class="headerlink" href="#module-ram_concept.concept" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.concept.Concept">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Concept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.concept.Concept" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Concept represents the RAM Concept process that hosts the data (“file”).</p>
+<p>A maximum of 1 Model may be managed by a Concept process at anytime. However, there can be multiple
+Concept processes active (which indirectly allows multiple Models to be active).</p>
+<p>This class should not be subclassed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.concept.Concept.attach_to_concept">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attach_to_concept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.concept.Concept.attach_to_concept" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attaches to an existing RAM Concept that will serve this API.</p>
+<p>The caller is responsible for having started the Concept process listening to the given port.</p>
+<p>Concept should have been started with the command:</p>
+<p><cite>concept.exe -apiServer -port &lt;port_number&gt; -inactivityTimeout &lt;timeout_in_seconds&gt; -version &lt;api_version&gt;</cite></p>
+<p><cite>port_number</cite> is in the 1..65535 range; <cite>api_version</cite> has the format 8.2.1</p>
+<p>This method is not commonly used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> (<em>int</em>) – The port number for the server to use</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Concept object, ready for use.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ram_concept.concept.Concept" title="ram_concept.concept.Concept">Concept</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.concept.Concept.new_model">
+<span class="sig-name descname"><span class="pre">new_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.concept.Concept.new_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new unsaved “file” in the RAM Concept process and create a Model representing it.</p>
+<p>Any currently open file is closed, and related Models become unusable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The Model representing the (unsaved) file, ready for use.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model">Model</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.concept.Concept.open_file">
+<span class="sig-name descname"><span class="pre">open_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.concept.Concept.open_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the file in the RAM Concept process and create a Model representing it.</p>
+<p>Any currently open file is closed, and related Models become unusable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – full path to the RAM Concept file to open</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Model representing the file, ready for use.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model">Model</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.concept.Concept.ping">
+<span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout_seconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.concept.Concept.ping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send the [PING] command to the RAM Concept process.</p>
+<p>The expected response is “PONG”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>timeout_seconds</strong> (<em>int</em><em> | </em><em>None</em>) – The number of seconds to wait for a response before timing out (if None, default value is used)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The response to the [PING] command (expected to be “PONG”).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.concept.Concept.shut_down">
+<span class="sig-name descname"><span class="pre">shut_down</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.concept.Concept.shut_down" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shutdown the associated Concept process. This and any related Model become unusable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.concept.Concept.start_concept">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start_concept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">headless</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_timeout_seconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inactivity_timeout_seconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.concept.Concept.start_concept" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the RAM Concept server that will serve this API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>headless</strong> (<em>bool</em>) – true to run the server headlessly, false to run the server with a GUI</p></li>
+<li><p><strong>path</strong> (<em>str</em><em> | </em><em>None</em>) – path to the RAM Concept exe to start (if None, default location will be used)</p></li>
+<li><p><strong>port</strong> (<em>int</em><em> | </em><em>None</em>) – The port number for the server to use (if None, an available port will be used)</p></li>
+<li><p><strong>start_timeout_seconds</strong> (<em>int</em><em> | </em><em>None</em>) – The number of seconds to allow the server to start up before timing out (if None, a default value is used)</p></li>
+<li><p><strong>inactivity_timeout_seconds</strong> (<em>int</em><em> | </em><em>None</em>) – The number of seconds that the server will wait for the next API command before timing out (if None, a default value is used)</p></li>
+<li><p><strong>log_file_path</strong> (<em>str</em><em> | </em><em>None</em>) – Path to a log file that is written to by the RAM Concept.exe (rarely used)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Concept object, ready for use.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ram_concept.concept.Concept" title="ram_concept.concept.Concept">Concept</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.concept module</a><ul>
+<li><a class="reference internal" href="#ram_concept.concept.Concept"><code class="docutils literal notranslate"><span class="pre">Concept</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.concept.Concept.attach_to_concept"><code class="docutils literal notranslate"><span class="pre">Concept.attach_to_concept()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concept.Concept.new_model"><code class="docutils literal notranslate"><span class="pre">Concept.new_model()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concept.Concept.open_file"><code class="docutils literal notranslate"><span class="pre">Concept.open_file()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concept.Concept.ping"><code class="docutils literal notranslate"><span class="pre">Concept.ping()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concept.Concept.shut_down"><code class="docutils literal notranslate"><span class="pre">Concept.shut_down()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.concept.Concept.start_concept"><code class="docutils literal notranslate"><span class="pre">Concept.start_concept()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.concept module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

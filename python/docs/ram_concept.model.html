@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.model module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.model module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.model">
+<span id="ram-concept-model-module"></span><h1>ram_concept.model module<a class="headerlink" href="#module-ram_concept.model" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DesignCode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.model.DesignCode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>For specifying concrete design code for new model setup.</p>
+<p>The available values are:</p>
+<ul class="simple">
+<li><p>ACI318_99US: ACI 318-99 with US customary unit defaults</p></li>
+<li><p>ACI318_99SI: ACI 318-99 with SI unit defaults</p></li>
+<li><p>ACI318_02US: ACI 318-02 with US customary unit defaults</p></li>
+<li><p>ACI318_02SI: ACI 318-02 with SI unit defaults</p></li>
+<li><p>ACI318_05US: ACI 318-05 with US customary unit defaults</p></li>
+<li><p>ACI318_05SI: ACI 318-05 with SI unit defaults</p></li>
+<li><p>ACI318_08US: ACI 318-08 with US customary unit defaults</p></li>
+<li><p>ACI318_08SI: ACI 318-08 with SI unit defaults</p></li>
+<li><p>ACI318_11US: ACI 318-11 with US customary unit defaults</p></li>
+<li><p>ACI318_11SI: ACI 318-11 with SI unit defaults</p></li>
+<li><p>ACI318_14US: ACI 318-14 with US customary unit defaults</p></li>
+<li><p>ACI318_14SI: ACI 318-14 with SI unit defaults</p></li>
+<li><p>ACI318_19US: ACI 318-19 with US customary unit defaults</p></li>
+<li><p>ACI318_19SI: ACI 318-19 with SI unit defaults</p></li>
+<li><p>AS3600_2001: AS 3600-2001</p></li>
+<li><p>AS3600_2009: AS 3600-2009</p></li>
+<li><p>AS3600_2018: AS 3600-2018</p></li>
+<li><p>BS8110_1997: BS 8110 : 1997 (Amd. #1 &amp; #2)</p></li>
+<li><p>BS8110_1997_Amd3: BS 8110 : 1997 (Amd. #1 - #3)</p></li>
+<li><p>CAN_2004: CSA A23.3-04</p></li>
+<li><p>EC2_2004UK:  Eurocode 2-2004 (UK Annex)</p></li>
+<li><p>EC2_2004: Eurocode 2-2004</p></li>
+<li><p>IS456_2000: IS 456-2000</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_02SI">
+<span class="sig-name descname"><span class="pre">ACI318_02SI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_02SI'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_02SI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_02US">
+<span class="sig-name descname"><span class="pre">ACI318_02US</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_02US'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_02US" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_05SI">
+<span class="sig-name descname"><span class="pre">ACI318_05SI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_05SI'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_05SI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_05US">
+<span class="sig-name descname"><span class="pre">ACI318_05US</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_05US'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_05US" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_08SI">
+<span class="sig-name descname"><span class="pre">ACI318_08SI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_08SI'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_08SI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_08US">
+<span class="sig-name descname"><span class="pre">ACI318_08US</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_08US'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_08US" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_11SI">
+<span class="sig-name descname"><span class="pre">ACI318_11SI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_11SI'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_11SI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_11US">
+<span class="sig-name descname"><span class="pre">ACI318_11US</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_11US'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_11US" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_14SI">
+<span class="sig-name descname"><span class="pre">ACI318_14SI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_14SI'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_14SI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_14US">
+<span class="sig-name descname"><span class="pre">ACI318_14US</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_14US'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_14US" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_19SI">
+<span class="sig-name descname"><span class="pre">ACI318_19SI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_19SI'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_19SI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_19US">
+<span class="sig-name descname"><span class="pre">ACI318_19US</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_19US'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_19US" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_99SI">
+<span class="sig-name descname"><span class="pre">ACI318_99SI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_99SI'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_99SI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.ACI318_99US">
+<span class="sig-name descname"><span class="pre">ACI318_99US</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ACI318_99US'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.ACI318_99US" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.AS3600_2001">
+<span class="sig-name descname"><span class="pre">AS3600_2001</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AS3600_2001'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.AS3600_2001" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.AS3600_2009">
+<span class="sig-name descname"><span class="pre">AS3600_2009</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AS3600_2009'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.AS3600_2009" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.AS3600_2018">
+<span class="sig-name descname"><span class="pre">AS3600_2018</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AS3600_2018'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.AS3600_2018" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.BS8110_1997">
+<span class="sig-name descname"><span class="pre">BS8110_1997</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'BS8110_1997'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.BS8110_1997" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.BS8110_1997_Amd3">
+<span class="sig-name descname"><span class="pre">BS8110_1997_Amd3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'BS8110_1997_Amd3'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.BS8110_1997_Amd3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.CAN_2004">
+<span class="sig-name descname"><span class="pre">CAN_2004</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'CAN_2004'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.CAN_2004" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.EC2_2004">
+<span class="sig-name descname"><span class="pre">EC2_2004</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'EC2_2004'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.EC2_2004" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.EC2_2004UK">
+<span class="sig-name descname"><span class="pre">EC2_2004UK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'EC2_2004UK'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.EC2_2004UK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.DesignCode.IS456_2000">
+<span class="sig-name descname"><span class="pre">IS456_2000</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'IS456_2000'</span></em><a class="headerlink" href="#ram_concept.model.DesignCode.IS456_2000" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.model.Model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">concept</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.model.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Model represents an in-memory (opened or never-saved) file in the RAM Concept process.</p>
+<p>Model is effectively a hierarchical container of <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> objects. Only the portions of the hierarchy
+that are available for scripting are exposed.</p>
+<p>There can be a maximum of 1 <cite>Model</cite> associated with any <a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept" title="ram_concept.concept.Concept"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Concept</span></code></a> process at one time. There can be
+multiple <a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept" title="ram_concept.concept.Concept"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Concept</span></code></a> processes, so multiple <cite>Models</cite> can exist simultaneously if there is a need.</p>
+<p>This class should never be be subclassed.</p>
+<p><cite>Models</cite> should ONLY be constructed via the <a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept" title="ram_concept.concept.Concept"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Concept</span></code></a> class. The methods to do that are:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept.new_model" title="ram_concept.concept.Concept.new_model"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Concept.new_model</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept.open_file" title="ram_concept.concept.Concept.open_file"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Concept.open_file</span></code></a></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>concept</strong> (<a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept" title="ram_concept.concept.Concept"><em>Concept</em></a>) – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.model.Model.calc_all">
+<span class="sig-name descname"><span class="pre">calc_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout_seconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.model.Model.calc_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate everything (except mesh, vibration and long-term deflections) in the Model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>timeout_seconds</strong> (<em>int</em><em> | </em><em>None</em>) – The number of seconds to wait for a response from the server (if None, a default value is used)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.model.Model.close_model">
+<span class="sig-name descname"><span class="pre">close_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.model.Model.close_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close this <cite>Model</cite> (file) in the RAM Concept process.</p>
+<p>The <cite>Model</cite>/file is not saved. This <cite>Model</cite> is not useful for anything after closing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.model.Model.generate_mesh">
+<span class="sig-name descname"><span class="pre">generate_mesh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.model.Model.generate_mesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Regenerate the mesh, using the Model’s meshing parameters.
+The desired element size is a property of <a class="reference internal" href="#ram_concept.model.Model.calc_options" title="ram_concept.model.Model.calc_options"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">calc_options</span></code></a> which is accessable via <a class="reference internal" href="#ram_concept.model.Model.calc_options" title="ram_concept.model.Model.calc_options"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">Model.calc_options</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.model.Model.save_file">
+<span class="sig-name descname"><span class="pre">save_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.model.Model.save_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this model to the given file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – Full path to for the location to save the file.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.model.Model.setup_new_model">
+<span class="sig-name descname"><span class="pre">setup_new_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">structure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.model.Model.setup_new_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set up a fresh/blank new model for the given code and structure type.</p>
+<p>This is intended to be called immediately after <a class="reference internal" href="ram_concept.concept.html#ram_concept.concept.Concept.new_model" title="ram_concept.concept.Concept.new_model"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Concept.new_model</span></code></a> returns this <cite>Model</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<a class="reference internal" href="#ram_concept.model.DesignCode" title="ram_concept.model.DesignCode"><em>DesignCode</em></a>) – </p></li>
+<li><p><strong>structure</strong> (<a class="reference internal" href="#ram_concept.model.StructureType" title="ram_concept.model.StructureType"><em>StructureType</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.model.Model.anchor_systems">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">anchor_systems</span></span><a class="headerlink" href="#ram_concept.model.Model.anchor_systems" title="Permalink to this definition">¶</a></dt>
+<dd><p>The singleton <a class="reference internal" href="ram_concept.anchor_systems.html#ram_concept.anchor_systems.AnchorSystems" title="ram_concept.anchor_systems.AnchorSystems"><code class="xref any py py-class docutils literal notranslate"><span class="pre">AnchorSystems</span></code></a> which manages all the <cite>AnchorSystem</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.model.Model.cad_manager">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cad_manager</span></span><a class="headerlink" href="#ram_concept.model.Model.cad_manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>The singleton <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref any py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> which manages all the CadLayers</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.model.Model.calc_options">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calc_options</span></span><a class="headerlink" href="#ram_concept.model.Model.calc_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>The singleton <a class="reference internal" href="ram_concept.calc_options.html#ram_concept.calc_options.CalcOptions" title="ram_concept.calc_options.CalcOptions"><code class="xref any py py-class docutils literal notranslate"><span class="pre">CalcOptions</span></code></a> which manages most calculation options.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.model.Model.concretes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">concretes</span></span><a class="headerlink" href="#ram_concept.model.Model.concretes" title="Permalink to this definition">¶</a></dt>
+<dd><p>The singleton <a class="reference internal" href="ram_concept.concretes.html#ram_concept.concretes.Concretes" title="ram_concept.concretes.Concretes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Concretes</span></code></a> which manages all the <cite>Concrete</cite> mixes.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.model.Model.duct_systems">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">duct_systems</span></span><a class="headerlink" href="#ram_concept.model.Model.duct_systems" title="Permalink to this definition">¶</a></dt>
+<dd><p>The singleton <a class="reference internal" href="ram_concept.duct_systems.html#ram_concept.duct_systems.DuctSystems" title="ram_concept.duct_systems.DuctSystems"><code class="xref any py py-class docutils literal notranslate"><span class="pre">DuctSystems</span></code></a> which manages all the <cite>DuctSystem</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.model.Model.pt_systems">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pt_systems</span></span><a class="headerlink" href="#ram_concept.model.Model.pt_systems" title="Permalink to this definition">¶</a></dt>
+<dd><p>The singleton <a class="reference internal" href="ram_concept.pt_systems.html#ram_concept.pt_systems.PTSystems" title="ram_concept.pt_systems.PTSystems"><code class="xref any py py-class docutils literal notranslate"><span class="pre">PTSystems</span></code></a> which manages all the <cite>PTSystem</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.model.Model.signs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">signs</span></span><a class="headerlink" href="#ram_concept.model.Model.signs" title="Permalink to this definition">¶</a></dt>
+<dd><p>The singleton <a class="reference internal" href="ram_concept.signs.html#ram_concept.signs.Signs" title="ram_concept.signs.Signs"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Signs</span></code></a> which manages sign conventions.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.model.Model.strand_materials">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">strand_materials</span></span><a class="headerlink" href="#ram_concept.model.Model.strand_materials" title="Permalink to this definition">¶</a></dt>
+<dd><p>The singleton <a class="reference internal" href="ram_concept.strand_materials.html#ram_concept.strand_materials.StrandMaterials" title="ram_concept.strand_materials.StrandMaterials"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StrandMaterials</span></code></a> which manages all the <cite>StrandMaterial</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.model.Model.units">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">units</span></span><a class="headerlink" href="#ram_concept.model.Model.units" title="Permalink to this definition">¶</a></dt>
+<dd><p>The singleton <a class="reference internal" href="ram_concept.units.html#ram_concept.units.Units" title="ram_concept.units.Units"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Units</span></code></a> which manages unit settings.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.model.StructureType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StructureType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.model.StructureType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>For specifying structure type for new model setup.</p>
+<p>The available values are:</p>
+<ul class="simple">
+<li><p>ELEVATED: Elevated slab</p></li>
+<li><p>MAT: Mat/Raft foundation</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.StructureType.ELEVATED">
+<span class="sig-name descname"><span class="pre">ELEVATED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ELEVATED'</span></em><a class="headerlink" href="#ram_concept.model.StructureType.ELEVATED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ram_concept.model.StructureType.MAT">
+<span class="sig-name descname"><span class="pre">MAT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'MAT'</span></em><a class="headerlink" href="#ram_concept.model.StructureType.MAT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.model module</a><ul>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode"><code class="docutils literal notranslate"><span class="pre">DesignCode</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_02SI"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_02SI</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_02US"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_02US</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_05SI"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_05SI</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_05US"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_05US</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_08SI"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_08SI</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_08US"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_08US</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_11SI"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_11SI</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_11US"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_11US</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_14SI"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_14SI</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_14US"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_14US</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_19SI"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_19SI</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_19US"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_19US</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_99SI"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_99SI</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.ACI318_99US"><code class="docutils literal notranslate"><span class="pre">DesignCode.ACI318_99US</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.AS3600_2001"><code class="docutils literal notranslate"><span class="pre">DesignCode.AS3600_2001</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.AS3600_2009"><code class="docutils literal notranslate"><span class="pre">DesignCode.AS3600_2009</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.AS3600_2018"><code class="docutils literal notranslate"><span class="pre">DesignCode.AS3600_2018</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.BS8110_1997"><code class="docutils literal notranslate"><span class="pre">DesignCode.BS8110_1997</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.BS8110_1997_Amd3"><code class="docutils literal notranslate"><span class="pre">DesignCode.BS8110_1997_Amd3</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.CAN_2004"><code class="docutils literal notranslate"><span class="pre">DesignCode.CAN_2004</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.EC2_2004"><code class="docutils literal notranslate"><span class="pre">DesignCode.EC2_2004</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.EC2_2004UK"><code class="docutils literal notranslate"><span class="pre">DesignCode.EC2_2004UK</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.DesignCode.IS456_2000"><code class="docutils literal notranslate"><span class="pre">DesignCode.IS456_2000</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.model.Model.calc_all"><code class="docutils literal notranslate"><span class="pre">Model.calc_all()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.close_model"><code class="docutils literal notranslate"><span class="pre">Model.close_model()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.generate_mesh"><code class="docutils literal notranslate"><span class="pre">Model.generate_mesh()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.save_file"><code class="docutils literal notranslate"><span class="pre">Model.save_file()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.setup_new_model"><code class="docutils literal notranslate"><span class="pre">Model.setup_new_model()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.anchor_systems"><code class="docutils literal notranslate"><span class="pre">Model.anchor_systems</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.cad_manager"><code class="docutils literal notranslate"><span class="pre">Model.cad_manager</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.calc_options"><code class="docutils literal notranslate"><span class="pre">Model.calc_options</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.concretes"><code class="docutils literal notranslate"><span class="pre">Model.concretes</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.duct_systems"><code class="docutils literal notranslate"><span class="pre">Model.duct_systems</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.pt_systems"><code class="docutils literal notranslate"><span class="pre">Model.pt_systems</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.signs"><code class="docutils literal notranslate"><span class="pre">Model.signs</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.strand_materials"><code class="docutils literal notranslate"><span class="pre">Model.strand_materials</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.Model.units"><code class="docutils literal notranslate"><span class="pre">Model.units</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.model.StructureType"><code class="docutils literal notranslate"><span class="pre">StructureType</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.model.StructureType.ELEVATED"><code class="docutils literal notranslate"><span class="pre">StructureType.ELEVATED</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.model.StructureType.MAT"><code class="docutils literal notranslate"><span class="pre">StructureType.MAT</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.model module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

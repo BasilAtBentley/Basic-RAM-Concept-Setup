@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ram_concept.tendon_segment module &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.tendon_segment module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-ram_concept.tendon_segment">
+<span id="ram-concept-tendon-segment-module"></span><h1>ram_concept.tendon_segment module<a class="headerlink" href="#module-ram_concept.tendon_segment" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DefaultTendonSegment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment" title="ram_concept.tendon_segment.TendonSegment"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonSegment</span></code></a></p>
+<p><cite>DefaultTendonSegment</cite> represents a <cite>TendonSegment</cite> that stores the default values for future <cite>TendonSegments</cite> that are created.</p>
+<p>An <cite>Exception</cite> will be raised if the <cite>location</cite>, <cite>node_1</cite> or <cite>node_2</cite> properties of <cite>DefaultTendonSegment</cite> are accessed.</p>
+<p>There is only 1 and always 1 <cite>DefaultTendonSegment</cite> in the <cite>Model</cite>. It is accessed through <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager.default_tendon_segment" title="ram_concept.cad_manager.CadManager.default_tendon_segment"><code class="xref any py py-attr docutils literal notranslate"><span class="pre">CadManager.default_tendon_segment</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>delete</cite> is not available for default objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.elevations_along_segment">
+<span class="sig-name descname"><span class="pre">elevations_along_segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fractional_lengths</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.elevations_along_segment" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will raise an exception, as <cite>elevations_along_segment</cite> is not available for <cite>DefaultTendonSegment</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fractional_lengths</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>List</em>[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.other_node">
+<span class="sig-name descname"><span class="pre">other_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.other_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <a class="reference internal" href="ram_concept.tendon_node.html#ram_concept.tendon_node.TendonNode" title="ram_concept.tendon_node.TendonNode"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TendonNode</span></code></a> this <cite>TendonSegment</cite> is connected to that is not the given <a class="reference internal" href="ram_concept.tendon_node.html#ram_concept.tendon_node.TendonNode" title="ram_concept.tendon_node.TendonNode"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TendonNode</span></code></a>.
+This can be helpful when determining a chain of <cite>TendonSegment`s.
+An Exception is raised if the given node is not connected to this `TendonSegment</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="ram_concept.tendon_node.html#ram_concept.tendon_node.TendonNode" title="ram_concept.tendon_node.TendonNode"><em>TendonNode</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.tendon_node.html#ram_concept.tendon_node.TendonNode" title="ram_concept.tendon_node.TendonNode"><em>TendonNode</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.auto_locate_profile_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">auto_locate_profile_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.auto_locate_profile_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically located profile 2 point (node_2) for equal balance loads</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.elevation_reference_1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation_reference_1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.elevation_reference_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>ElevationReference</cite> for <cite>node_1</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.enums.html#ram_concept.enums.ElevationReference" title="ram_concept.enums.ElevationReference"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ElevationReference</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.elevation_reference_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation_reference_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.elevation_reference_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>ElevationReference</cite> for <cite>node_2</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.enums.html#ram_concept.enums.ElevationReference" title="ram_concept.enums.ElevationReference"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ElevationReference</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.elevation_value_1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation_value_1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.elevation_value_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation value for <cite>node_1</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.elevation_value_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation_value_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.elevation_value_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation value for <cite>node_2</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.half_span_ratio_end_1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">half_span_ratio_end_1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.half_span_ratio_end_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>The (tendon) span ratio at end 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.half_span_ratio_end_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">half_span_ratio_end_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.half_span_ratio_end_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The (tendon) span ratio at end 2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.harped">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">harped</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.harped" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this <cite>TendonSegment</cite> harped? (if true, ignore <cite>inflection_ratio</cite>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.inflection_ratio">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inflection_ratio</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.inflection_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Location of inflection point as a fractional distance along this <cite>TendonSegment</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LineSegment2D</span></code></a> location of this <cite>TendonSegment</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D">LineSegment2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.node_1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_1</span></span><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.node_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>TendonNode</cite> at the start point.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.node_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_2</span></span><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.node_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>TendonNode</cite> at the end point.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.pt_system">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pt_system</span></span><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.pt_system" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="ram_concept.pt_system.html#ram_concept.pt_system.PTSystem" title="ram_concept.pt_system.PTSystem"><code class="xref any py py-class docutils literal notranslate"><span class="pre">PTSystem</span></code></a> used by this <cite>TendonSegment</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.strand_count">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">strand_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.strand_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of strands in <cite>TendonSegment</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.strand_to_duct_offset">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">strand_to_duct_offset</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.strand_to_duct_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>The offset between the strand CGS and duct CGS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.stress_at_end_1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stress_at_end_1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.stress_at_end_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stress in the <cite>TendonSegment</cite> at start point</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.stress_at_end_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stress_at_end_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.stress_at_end_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stress in the <cite>TendonSegment</cite> at end point</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.DefaultTendonSegment.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.tendon_segment.DefaultTendonSegment.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TendonSegment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="ram_concept.cad_entity.html#ram_concept.cad_entity.CadEntity" title="ram_concept.cad_entity.CadEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadEntity</span></code></a></p>
+<p><cite>TendonSegment</cite> is a tendon segment between profile points.</p>
+<p><cite>TendonSegments</cite> are always located on a <a class="reference internal" href="ram_concept.tendon_layer.html#ram_concept.tendon_layer.TendonLayer" title="ram_concept.tendon_layer.TendonLayer"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TendonLayer</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uid</strong> (<em>int</em>) – </p></li>
+<li><p><strong>model</strong> (<a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><em>Model</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this <cite>CadEntity</cite> from the <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.elevations_along_segment">
+<span class="sig-name descname"><span class="pre">elevations_along_segment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fractional_lengths</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.elevations_along_segment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines the elevations at all the given fractional distances along the <cite>TendonSegment</cite>.
+0.0 is the fractional length for end 1 and 1.0 is the fractional length at end 2.
+Values are only guaranteed to be correct after a Call All.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fractional_lengths</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>List</em>[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.other_node">
+<span class="sig-name descname"><span class="pre">other_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.other_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <a class="reference internal" href="ram_concept.tendon_node.html#ram_concept.tendon_node.TendonNode" title="ram_concept.tendon_node.TendonNode"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TendonNode</span></code></a> this <cite>TendonSegment</cite> is connected to that is not the given <a class="reference internal" href="ram_concept.tendon_node.html#ram_concept.tendon_node.TendonNode" title="ram_concept.tendon_node.TendonNode"><code class="xref any py py-class docutils literal notranslate"><span class="pre">TendonNode</span></code></a>.
+This can be helpful when determining a chain of <cite>TendonSegment`s.
+An Exception is raised if the given node is not connected to this `TendonSegment</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>node</strong> (<a class="reference internal" href="ram_concept.tendon_node.html#ram_concept.tendon_node.TendonNode" title="ram_concept.tendon_node.TendonNode"><em>TendonNode</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ram_concept.tendon_node.html#ram_concept.tendon_node.TendonNode" title="ram_concept.tendon_node.TendonNode"><em>TendonNode</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.auto_locate_profile_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">auto_locate_profile_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.auto_locate_profile_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically located profile 2 point (node_2) for equal balance loads</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.elevation_reference_1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation_reference_1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.elevation_reference_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>ElevationReference</cite> for <cite>node_1</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.enums.html#ram_concept.enums.ElevationReference" title="ram_concept.enums.ElevationReference"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ElevationReference</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.elevation_reference_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation_reference_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.elevation_reference_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>ElevationReference</cite> for <cite>node_2</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.enums.html#ram_concept.enums.ElevationReference" title="ram_concept.enums.ElevationReference"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ElevationReference</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.elevation_value_1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation_value_1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.elevation_value_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation value for <cite>node_1</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.elevation_value_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elevation_value_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.elevation_value_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The elevation value for <cite>node_2</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.half_span_ratio_end_1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">half_span_ratio_end_1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.half_span_ratio_end_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>The (tendon) span ratio at end 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.half_span_ratio_end_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">half_span_ratio_end_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.half_span_ratio_end_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The (tendon) span ratio at end 2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.harped">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">harped</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.harped" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this <cite>TendonSegment</cite> harped? (if true, ignore <cite>inflection_ratio</cite>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.inflection_ratio">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inflection_ratio</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.inflection_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Location of inflection point as a fractional distance along this <cite>TendonSegment</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only <a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D"><code class="xref any py py-class docutils literal notranslate"><span class="pre">LineSegment2D</span></code></a> location of this <cite>TendonSegment</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="ram_concept.line_segment_2D.html#ram_concept.line_segment_2D.LineSegment2D" title="ram_concept.line_segment_2D.LineSegment2D">LineSegment2D</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.model">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> that contains this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that name is not relevant in all <cite>Data</cite> subclasses)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.node_1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_1</span></span><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.node_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>TendonNode</cite> at the start point.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.node_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">node_2</span></span><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.node_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>TendonNode</cite> at the end point.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.number" title="Permalink to this definition">¶</a></dt>
+<dd><p>1-based Number of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a> (note that number is not relevant in all <cite>Data</cite> subclasses)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.pt_system">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pt_system</span></span><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.pt_system" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="ram_concept.pt_system.html#ram_concept.pt_system.PTSystem" title="ram_concept.pt_system.PTSystem"><code class="xref any py py-class docutils literal notranslate"><span class="pre">PTSystem</span></code></a> used by this <cite>TendonSegment</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.strand_count">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">strand_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.strand_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of strands in <cite>TendonSegment</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.strand_to_duct_offset">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">strand_to_duct_offset</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.strand_to_duct_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>The offset between the strand CGS and duct CGS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.stress_at_end_1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stress_at_end_1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.stress_at_end_1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stress in the <cite>TendonSegment</cite> at start point</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.stress_at_end_2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stress_at_end_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.stress_at_end_2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stress in the <cite>TendonSegment</cite> at end point</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ram_concept.tendon_segment.TendonSegment.uid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uid</span></span><a class="headerlink" href="#ram_concept.tendon_segment.TendonSegment.uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only UID of this <a class="reference internal" href="ram_concept.data.html#ram_concept.data.Data" title="ram_concept.data.Data"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ram_concept.tendon_segment module</a><ul>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.delete"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.elevations_along_segment"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.elevations_along_segment()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.other_node"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.other_node()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.auto_locate_profile_2"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.auto_locate_profile_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.elevation_reference_1"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.elevation_reference_1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.elevation_reference_2"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.elevation_reference_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.elevation_value_1"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.elevation_value_1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.elevation_value_2"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.elevation_value_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.half_span_ratio_end_1"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.half_span_ratio_end_1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.half_span_ratio_end_2"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.half_span_ratio_end_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.harped"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.harped</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.inflection_ratio"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.inflection_ratio</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.location"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.model"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.name"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.node_1"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.node_1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.node_2"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.node_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.number"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.pt_system"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.pt_system</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.strand_count"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.strand_count</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.strand_to_duct_offset"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.strand_to_duct_offset</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.stress_at_end_1"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.stress_at_end_1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.stress_at_end_2"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.stress_at_end_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.DefaultTendonSegment.uid"><code class="docutils literal notranslate"><span class="pre">DefaultTendonSegment.uid</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment"><code class="docutils literal notranslate"><span class="pre">TendonSegment</span></code></a><ul>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.delete"><code class="docutils literal notranslate"><span class="pre">TendonSegment.delete()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.elevations_along_segment"><code class="docutils literal notranslate"><span class="pre">TendonSegment.elevations_along_segment()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.other_node"><code class="docutils literal notranslate"><span class="pre">TendonSegment.other_node()</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.auto_locate_profile_2"><code class="docutils literal notranslate"><span class="pre">TendonSegment.auto_locate_profile_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.elevation_reference_1"><code class="docutils literal notranslate"><span class="pre">TendonSegment.elevation_reference_1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.elevation_reference_2"><code class="docutils literal notranslate"><span class="pre">TendonSegment.elevation_reference_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.elevation_value_1"><code class="docutils literal notranslate"><span class="pre">TendonSegment.elevation_value_1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.elevation_value_2"><code class="docutils literal notranslate"><span class="pre">TendonSegment.elevation_value_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.half_span_ratio_end_1"><code class="docutils literal notranslate"><span class="pre">TendonSegment.half_span_ratio_end_1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.half_span_ratio_end_2"><code class="docutils literal notranslate"><span class="pre">TendonSegment.half_span_ratio_end_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.harped"><code class="docutils literal notranslate"><span class="pre">TendonSegment.harped</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.inflection_ratio"><code class="docutils literal notranslate"><span class="pre">TendonSegment.inflection_ratio</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.location"><code class="docutils literal notranslate"><span class="pre">TendonSegment.location</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.model"><code class="docutils literal notranslate"><span class="pre">TendonSegment.model</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.name"><code class="docutils literal notranslate"><span class="pre">TendonSegment.name</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.node_1"><code class="docutils literal notranslate"><span class="pre">TendonSegment.node_1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.node_2"><code class="docutils literal notranslate"><span class="pre">TendonSegment.node_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.number"><code class="docutils literal notranslate"><span class="pre">TendonSegment.number</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.pt_system"><code class="docutils literal notranslate"><span class="pre">TendonSegment.pt_system</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.strand_count"><code class="docutils literal notranslate"><span class="pre">TendonSegment.strand_count</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.strand_to_duct_offset"><code class="docutils literal notranslate"><span class="pre">TendonSegment.strand_to_duct_offset</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.stress_at_end_1"><code class="docutils literal notranslate"><span class="pre">TendonSegment.stress_at_end_1</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.stress_at_end_2"><code class="docutils literal notranslate"><span class="pre">TendonSegment.stress_at_end_2</span></code></a></li>
+<li><a class="reference internal" href="#ram_concept.tendon_segment.TendonSegment.uid"><code class="docutils literal notranslate"><span class="pre">TendonSegment.uid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ram_concept.tendon_segment module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

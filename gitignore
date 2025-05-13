@@ -1,0 +1,21 @@
+# Ignore log files
+concept_log.txt
+
+# Ignore generated command scripts
+*.cmd
+
+# Ignore Excel backup files and temporary files
+*.bak
+~$*
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore VS Code settings if used
+.vscode/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>How to Add Tendons &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Add Tendons</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="how-to-add-tendons">
+<span id="id1"></span><h1>How to Add Tendons<a class="headerlink" href="#how-to-add-tendons" title="Permalink to this heading">¶</a></h1>
+<section id="the-cad-manager">
+<h2>The CAD Manager<a class="headerlink" href="#the-cad-manager" title="Permalink to this heading">¶</a></h2>
+<p>Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains a single <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> instance which manages RAM Concept’s CAD layer system.</p>
+<p>In addition to managing the layers, <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> manages the <cite>default items</cite> that contain settings for the CAD items that will be created.
+For example the <cite>default_tendons_segment</cite> property contains the settings for any future <a class="reference internal" href="ram_concept.tendon_segment.html#ram_concept.tendon_segment.TendonSegment" title="ram_concept.tendon_segment.TendonSegment"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonSegment</span></code></a> s that will be created.</p>
+</section>
+<section id="tendons-layers">
+<h2>Tendons Layers<a class="headerlink" href="#tendons-layers" title="Permalink to this heading">¶</a></h2>
+<p>Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains 4 <a class="reference internal" href="ram_concept.tendon_layer.html#ram_concept.tendon_layer.TendonLayer" title="ram_concept.tendon_layer.TendonLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonLayer</span></code></a> s defined by the 4 (2x2) permutations of these properties:</p>
+<ul class="simple">
+<li><p><cite>generated_by</cite> (PROGRAM vs USER)</p></li>
+<li><p><cite>span_set</cite> (LATITUDE vs LONGITUDE)</p></li>
+</ul>
+<p>Each <a class="reference internal" href="ram_concept.tendon_layer.html#ram_concept.tendon_layer.TendonLayer" title="ram_concept.tendon_layer.TendonLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonLayer</span></code></a> contains</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.tendon_segment.html#ram_concept.tendon_segment.TendonSegment" title="ram_concept.tendon_segment.TendonSegment"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonSegment</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.jack.html#ram_concept.jack.Jack" title="ram_concept.jack.Jack"><code class="xref py py-class docutils literal notranslate"><span class="pre">Jack</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.tendon_node.html#ram_concept.tendon_node.TendonNode" title="ram_concept.tendon_node.TendonNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonNode</span></code></a> (added and removed automatically)</p></li>
+</ul>
+</div></blockquote>
+<section id="adding-new-items">
+<h3>Adding New Items<a class="headerlink" href="#adding-new-items" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference internal" href="ram_concept.tendon_layer.html#ram_concept.tendon_layer.TendonLayer" title="ram_concept.tendon_layer.TendonLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonLayer</span></code></a> has methods available to add all of the items that it can contain. For example, there is an <cite>add_jack()</cite>
+for adding <a class="reference internal" href="ram_concept.jack.html#ram_concept.jack.Jack" title="ram_concept.jack.Jack"><code class="xref py py-class docutils literal notranslate"><span class="pre">Jack</span></code></a> s.</p>
+</section>
+<section id="existing-items">
+<h3>Existing Items<a class="headerlink" href="#existing-items" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference internal" href="ram_concept.tendon_layer.html#ram_concept.tendon_layer.TendonLayer" title="ram_concept.tendon_layer.TendonLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonLayer</span></code></a> has properties available to access all of the items that it can contain. For example, there is an <cite>tendon_segments</cite>
+property for accessing the <a class="reference internal" href="ram_concept.tendon_segment.html#ram_concept.tendon_segment.TendonSegment" title="ram_concept.tendon_segment.TendonSegment"><code class="xref py py-class docutils literal notranslate"><span class="pre">TendonSegment</span></code></a> s.</p>
+</section>
+</section>
+<section id="the-code">
+<h2>The Code<a class="headerlink" href="#the-code" title="Permalink to this heading">¶</a></h2>
+<p>Here’s the code for adding tendons from the Walkthrough example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ram_concept.enums</span> <span class="kn">import</span> <span class="n">ElevationReference</span>
+<span class="kn">from</span> <span class="nn">ram_concept.enums</span> <span class="kn">import</span> <span class="n">GeneratedBy</span>
+<span class="kn">from</span> <span class="nn">ram_concept.enums</span> <span class="kn">import</span> <span class="n">SpanSet</span>
+<span class="kn">from</span> <span class="nn">ram_concept.jack</span> <span class="kn">import</span> <span class="n">DefaultJack</span>
+<span class="kn">from</span> <span class="nn">ram_concept.jack</span> <span class="kn">import</span> <span class="n">Jack</span>
+<span class="kn">from</span> <span class="nn">ram_concept.line_segment_2D</span> <span class="kn">import</span> <span class="n">LineSegment2D</span>
+<span class="kn">from</span> <span class="nn">ram_concept.model</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">ram_concept.point_2D</span> <span class="kn">import</span> <span class="n">Point2D</span>
+<span class="kn">from</span> <span class="nn">ram_concept.pt_system</span> <span class="kn">import</span> <span class="n">PTSystem</span>
+<span class="kn">from</span> <span class="nn">ram_concept.pt_systems</span> <span class="kn">import</span> <span class="n">PTSystems</span>
+<span class="kn">from</span> <span class="nn">ram_concept.tendon_layer</span> <span class="kn">import</span> <span class="n">TendonLayer</span>
+<span class="kn">from</span> <span class="nn">ram_concept.tendon_segment</span> <span class="kn">import</span> <span class="n">DefaultTendonSegment</span>
+<span class="kn">from</span> <span class="nn">ram_concept.tendon_segment</span> <span class="kn">import</span> <span class="n">TendonSegment</span>
+
+
+<span class="k">def</span> <span class="nf">add_pt</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds post-tensioning to the 16m x 16m structure &quot;&quot;&quot;</span>
+
+    <span class="c1"># The structure created is a simple 16m x 16m square, with 8m spans:</span>
+
+    <span class="c1">#  cbbbbbbbcbbbbbbbc</span>
+    <span class="c1">#  |               |</span>
+    <span class="c1">#  |               |</span>
+    <span class="c1">#  w       c       w</span>
+    <span class="c1">#  w               w</span>
+    <span class="c1">#  w               w</span>
+    <span class="c1">#  wwwwwwwwwwwwwwwww</span>
+
+    <span class="c1"># use a banded- uniform system</span>
+    <span class="c1">#   banded from left-to-right</span>
+    <span class="c1">#   uniform from bottom-to-top</span>
+
+    <span class="n">cad_manager</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">cad_manager</span>
+
+    <span class="c1"># for convenience we&#39;ll use the PTSystem we defined earlier</span>
+    <span class="n">pt_systems</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">pt_systems</span>
+    <span class="n">pt_13mm</span> <span class="o">=</span> <span class="n">pt_systems</span><span class="o">.</span><span class="n">pt_system</span><span class="p">(</span><span class="s2">&quot;13mm Bonded&quot;</span><span class="p">)</span>
+
+    <span class="c1"># SET ALL THE PROPERTIES THAT WILL BE IDENTICAL FOR ALL TENDON SEGMENTS</span>
+    <span class="n">default_tendon_segment</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">default_tendon_segment</span>
+    <span class="n">default_tendon_segment</span><span class="o">.</span><span class="n">pt_system</span> <span class="o">=</span> <span class="n">pt_13mm</span>
+    <span class="n">default_tendon_segment</span><span class="o">.</span><span class="n">auto_locate_profile_2</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">default_tendon_segment</span><span class="o">.</span><span class="n">elevation_reference_1</span> <span class="o">=</span> <span class="n">ElevationReference</span><span class="o">.</span><span class="n">ABOVE_SOFFIT</span>
+    <span class="n">default_tendon_segment</span><span class="o">.</span><span class="n">elevation_reference_2</span> <span class="o">=</span> <span class="n">ElevationReference</span><span class="o">.</span><span class="n">ABOVE_SOFFIT</span>
+    <span class="n">default_tendon_segment</span><span class="o">.</span><span class="n">harped</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">default_tendon_segment</span><span class="o">.</span><span class="n">inflection_ratio</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="n">default_tendon_segment</span><span class="o">.</span><span class="n">strand_to_duct_offset</span> <span class="o">=</span> <span class="mf">11e-3</span>
+
+    <span class="c1"># SET ALL THE PROPERTIES THAT WILL BE IDENTICAL FOR ALL JACKS</span>
+    <span class="n">default_jack</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">default_jack</span>
+    <span class="n">default_jack</span><span class="o">.</span><span class="n">use_pt_system_defaults</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># BANDED &quot;LONGITUDE&quot; TENDONS</span>
+    <span class="n">longitude_tendon_layer</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">tendon_layer</span><span class="p">(</span><span class="n">SpanSet</span><span class="o">.</span><span class="n">LONGITUDE</span><span class="p">,</span> <span class="n">GeneratedBy</span><span class="o">.</span><span class="n">USER</span><span class="p">)</span>
+    <span class="n">x_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span> <span class="o">-</span> <span class="mf">0.1</span><span class="p">]</span>  <span class="c1"># x-coordinates for the profile points</span>
+
+    <span class="c1"># CENTER LONGITUDE TENDONS</span>
+    <span class="n">default_tendon_segment</span><span class="o">.</span><span class="n">strand_count</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">profiles</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">.140</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>  <span class="c1"># profile values for the profile points</span>
+
+    <span class="k">for</span> <span class="n">i_segment</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+        <span class="c1"># this logic just for ensuring tendons go high to low</span>
+        <span class="n">even</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_segment</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">even</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i_segment</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">i_segment</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># odd</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i_segment</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">i_segment</span>
+
+        <span class="n">x0</span> <span class="o">=</span> <span class="n">x_coords</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">x_coords</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mi">8</span>
+        <span class="n">tendon_segment</span> <span class="o">=</span> <span class="n">longitude_tendon_layer</span><span class="o">.</span><span class="n">add_tendon_segment</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="n">Point2D</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y</span><span class="p">)))</span>
+        <span class="n">tendon_segment</span><span class="o">.</span><span class="n">elevation_value_1</span> <span class="o">=</span> <span class="n">profiles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">tendon_segment</span><span class="o">.</span><span class="n">elevation_value_2</span> <span class="o">=</span> <span class="n">profiles</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+    <span class="c1"># jack</span>
+    <span class="n">jack</span> <span class="o">=</span> <span class="n">longitude_tendon_layer</span><span class="o">.</span><span class="n">add_jack</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+    <span class="c1"># TOP LONGITUDE TENDONS</span>
+    <span class="n">default_tendon_segment</span><span class="o">.</span><span class="n">strand_count</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">profiles</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">.360</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>  <span class="c1"># profile values for the profile points</span>
+
+    <span class="k">for</span> <span class="n">i_segment</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+        <span class="c1"># this logic just for ensuring tendons go high to low</span>
+        <span class="n">even</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_segment</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">even</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i_segment</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">i_segment</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># odd</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i_segment</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">i_segment</span>
+
+        <span class="n">x0</span> <span class="o">=</span> <span class="n">x_coords</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">x_coords</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mf">15.75</span>
+        <span class="n">tendon_segment</span> <span class="o">=</span> <span class="n">longitude_tendon_layer</span><span class="o">.</span><span class="n">add_tendon_segment</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="n">Point2D</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y</span><span class="p">)))</span>
+        <span class="n">tendon_segment</span><span class="o">.</span><span class="n">elevation_value_1</span> <span class="o">=</span> <span class="n">profiles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">tendon_segment</span><span class="o">.</span><span class="n">elevation_value_2</span> <span class="o">=</span> <span class="n">profiles</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+    <span class="c1"># jack</span>
+    <span class="n">jack</span> <span class="o">=</span> <span class="n">longitude_tendon_layer</span><span class="o">.</span><span class="n">add_jack</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">15.75</span><span class="p">))</span>
+
+    <span class="c1"># UNIFORM &quot;LATITUDE&quot; TENDONS</span>
+    <span class="n">latitude_tendon_layer</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">tendon_layer</span><span class="p">(</span><span class="n">SpanSet</span><span class="o">.</span><span class="n">LATITUDE</span><span class="p">,</span> <span class="n">GeneratedBy</span><span class="o">.</span><span class="n">USER</span><span class="p">)</span>
+    <span class="n">y_coords</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span> <span class="o">-</span> <span class="mf">0.1</span><span class="p">]</span>  <span class="c1"># y-coordinates for the profile points</span>
+    <span class="n">profiles</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">.160</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>  <span class="c1"># profile values for the profile points</span>
+
+    <span class="n">default_tendon_segment</span><span class="o">.</span><span class="n">strand_count</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="c1"># loop over tendons</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">:</span>
+        <span class="c1"># loop over tendon segments</span>
+        <span class="k">for</span> <span class="n">i_segment</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+            <span class="c1"># this logic just for ensuring tendons go high to low</span>
+            <span class="n">even</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_segment</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">even</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">i_segment</span>
+                <span class="n">j</span> <span class="o">=</span> <span class="n">i_segment</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span> <span class="c1"># odd</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">i_segment</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">j</span> <span class="o">=</span> <span class="n">i_segment</span>
+
+            <span class="n">y0</span> <span class="o">=</span> <span class="n">y_coords</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">y1</span> <span class="o">=</span> <span class="n">y_coords</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">tendon_segment</span> <span class="o">=</span> <span class="n">latitude_tendon_layer</span><span class="o">.</span><span class="n">add_tendon_segment</span><span class="p">(</span><span class="n">LineSegment2D</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y0</span><span class="p">),</span><span class="n">Point2D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">)))</span>
+            <span class="n">tendon_segment</span><span class="o">.</span><span class="n">elevation_value_1</span> <span class="o">=</span> <span class="n">profiles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">tendon_segment</span><span class="o">.</span><span class="n">elevation_value_2</span> <span class="o">=</span> <span class="n">profiles</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+        <span class="n">jack</span> <span class="o">=</span> <span class="n">latitude_tendon_layer</span><span class="o">.</span><span class="n">add_jack</span><span class="p">(</span><span class="n">Point2D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+
+        <span class="c1"># onto next tendon</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">How to Add Tendons</a><ul>
+<li><a class="reference internal" href="#the-cad-manager">The CAD Manager</a></li>
+<li><a class="reference internal" href="#tendons-layers">Tendons Layers</a><ul>
+<li><a class="reference internal" href="#adding-new-items">Adding New Items</a></li>
+<li><a class="reference internal" href="#existing-items">Existing Items</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-code">The Code</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Add Tendons</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>

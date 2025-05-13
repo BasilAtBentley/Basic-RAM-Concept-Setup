@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>How to Get Reactions &#8212; RAM Concept Scripting API  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Get Reactions</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="how-to-get-reactions">
+<span id="id1"></span><h1>How to Get Reactions<a class="headerlink" href="#how-to-get-reactions" title="Permalink to this heading">¶</a></h1>
+<section id="the-cad-manager">
+<h2>The CAD Manager<a class="headerlink" href="#the-cad-manager" title="Permalink to this heading">¶</a></h2>
+<p>Every <a class="reference internal" href="ram_concept.model.html#ram_concept.model.Model" title="ram_concept.model.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a> contains a single <a class="reference internal" href="ram_concept.cad_manager.html#ram_concept.cad_manager.CadManager" title="ram_concept.cad_manager.CadManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">CadManager</span></code></a> instance which manages RAM Concept’s CAD layer system.
+That <cite>CadManager</cite> can be used to access the <cite>LoadingLayers</cite> and <cite>LoadComboLayers</cite> that can provide reaction values.</p>
+</section>
+<section id="full-result-layers">
+<h2>Full Result Layers<a class="headerlink" href="#full-result-layers" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.FullResultLayer" title="ram_concept.result_layers.FullResultLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullResultLayer</span></code></a> is an abstract superclass that can provide results for all <code class="xref py py-class docutils literal notranslate"><span class="pre">ResultContext</span></code>.</p>
+<p>These four concrete classes are <a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.FullResultLayer" title="ram_concept.result_layers.FullResultLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullResultLayer</span></code></a> s:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ram_concept.force_loading_layer.html#ram_concept.force_loading_layer.ForceLoadingLayer" title="ram_concept.force_loading_layer.ForceLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForceLoadingLayer</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.shrinkage_loading_layer.html#ram_concept.shrinkage_loading_layer.ShrinkageLoadingLayer" title="ram_concept.shrinkage_loading_layer.ShrinkageLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ShrinkageLoadingLayer</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.temperature_loading_layer.html#ram_concept.temperature_loading_layer.TemperatureLoadingLayer" title="ram_concept.temperature_loading_layer.TemperatureLoadingLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemperatureLoadingLayer</span></code></a></p></li>
+<li><p><a class="reference internal" href="ram_concept.load_combo_layer.html#ram_concept.load_combo_layer.LoadComboLayer" title="ram_concept.load_combo_layer.LoadComboLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoadComboLayer</span></code></a></p></li>
+</ul>
+<p>These methods are currently available for accessing results:</p>
+<ul class="simple">
+<li><p><cite>column_reaction()</cite></p></li>
+<li><p><cite>wall_group_reaction()</cite></p></li>
+</ul>
+</section>
+<section id="envelope-result-layers">
+<h2>Envelope Result Layers<a class="headerlink" href="#envelope-result-layers" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.EnvelopeResultLayer" title="ram_concept.result_layers.EnvelopeResultLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnvelopeResultLayer</span></code></a> is the superclass of <a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.FullResultLayer" title="ram_concept.result_layers.FullResultLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullResultLayer</span></code></a> and has the same capabilities
+except that <a class="reference internal" href="ram_concept.result_layers.html#ram_concept.result_layers.EnvelopeResultLayer" title="ram_concept.result_layers.EnvelopeResultLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnvelopeResultLayer</span></code></a> cannot provide results for the <cite>STANDARD</cite> <code class="xref py py-class docutils literal notranslate"><span class="pre">ResultContext</span></code></p>
+</section>
+<section id="the-code">
+<h2>The Code<a class="headerlink" href="#the-code" title="Permalink to this heading">¶</a></h2>
+<p>Here’s the code for accessing column reactions from the Walkthrough example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ram_concept.cad_manager</span> <span class="kn">import</span> <span class="n">CadManager</span>
+<span class="kn">from</span> <span class="nn">ram_concept.elements</span> <span class="kn">import</span> <span class="n">ColumnElement</span>
+<span class="kn">from</span> <span class="nn">ram_concept.elements</span> <span class="kn">import</span> <span class="n">WallElement</span>
+<span class="kn">from</span> <span class="nn">ram_concept.elements</span> <span class="kn">import</span> <span class="n">WallElementGroup</span>
+<span class="kn">from</span> <span class="nn">ram_concept.element_layer</span> <span class="kn">import</span> <span class="n">ElementLayer</span>
+<span class="kn">from</span> <span class="nn">ram_concept.force_loading_layer</span> <span class="kn">import</span> <span class="n">ForceLoadingLayer</span>
+<span class="kn">from</span> <span class="nn">ram_concept.line_segment_2D</span> <span class="kn">import</span> <span class="n">LineSegment2D</span>
+<span class="kn">from</span> <span class="nn">ram_concept.loading_layer</span> <span class="kn">import</span> <span class="n">LoadingCause</span>
+<span class="kn">from</span> <span class="nn">ram_concept.loading_layer</span> <span class="kn">import</span> <span class="n">LoadingType</span>
+<span class="kn">from</span> <span class="nn">ram_concept.model</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">ram_concept.point_2D</span> <span class="kn">import</span> <span class="n">Point2D</span>
+<span class="kn">from</span> <span class="nn">ram_concept.result_layers</span> <span class="kn">import</span> <span class="n">ReactionContext</span>
+
+<span class="k">def</span> <span class="nf">get_reactions</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine the reactions for the 16m x 16m structure &quot;&quot;&quot;</span>
+
+    <span class="c1"># The structure created is a simple 16m x 16m square, with 8m spans:</span>
+
+    <span class="c1">#  cbbbbbbbcbbbbbbbc</span>
+    <span class="c1">#  |               |</span>
+    <span class="c1">#  |               |</span>
+    <span class="c1">#  w       c       w</span>
+    <span class="c1">#  w               w</span>
+    <span class="c1">#  w               w</span>
+    <span class="c1">#  wwwwwwwwwwwwwwwww</span>
+
+    <span class="n">cad_manager</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">cad_manager</span>
+    <span class="n">element_layer</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">element_layer</span>
+
+    <span class="c1"># get all the loadings</span>
+    <span class="n">loadings</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">force_loading_layers</span>
+
+    <span class="c1"># remove the hyperstatic loading</span>
+    <span class="k">for</span> <span class="n">loading</span> <span class="ow">in</span> <span class="n">loadings</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">loading</span><span class="o">.</span><span class="n">loading_type</span><span class="o">.</span><span class="n">cause</span> <span class="o">==</span> <span class="n">LoadingCause</span><span class="o">.</span><span class="n">HYPERSTATIC</span><span class="p">:</span>
+            <span class="n">loadings</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">loading</span><span class="p">)</span>
+            <span class="k">break</span>
+
+    <span class="c1"># get all the load combos</span>
+    <span class="n">load_combos</span> <span class="o">=</span> <span class="n">cad_manager</span><span class="o">.</span><span class="n">load_combo_layers</span>
+
+    <span class="c1"># combine the load combo layers and the loading layers, as we want reactions for both</span>
+    <span class="n">loadings_and_combos</span> <span class="o">=</span> <span class="n">loadings</span> <span class="o">+</span> <span class="n">load_combos</span>
+
+    <span class="c1"># loop through all the loadings and combos and get their reactions</span>
+    <span class="k">for</span> <span class="n">loading_or_combo</span> <span class="ow">in</span> <span class="n">loadings_and_combos</span><span class="p">:</span>
+        <span class="c1"># put a pleasant header</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="n">loading_or_combo</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; REACTIONS&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">()</span>
+
+        <span class="c1"># handle column reactions</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Column Reactions&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    x       y       Fx        Fy        Fz        Mx        My&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------------------------------------------------------&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">column_element</span> <span class="ow">in</span> <span class="n">element_layer</span><span class="o">.</span><span class="n">column_elements_below</span><span class="p">:</span>
+            <span class="n">reaction</span> <span class="o">=</span> <span class="n">loading_or_combo</span><span class="o">.</span><span class="n">column_reaction</span><span class="p">(</span><span class="n">column_element</span><span class="p">,</span> <span class="n">ReactionContext</span><span class="o">.</span><span class="n">STANDARD</span><span class="p">)</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="n">column_element</span><span class="o">.</span><span class="n">location</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:7.2f}</span><span class="s2"> </span><span class="si">{1:7.2f}</span><span class="s2"> </span><span class="si">{2:9.2g}</span><span class="s2"> </span><span class="si">{3:9.2g}</span><span class="s2"> </span><span class="si">{4:9.2g}</span><span class="s2"> </span><span class="si">{5:9.2g}</span><span class="s2"> </span><span class="si">{6:9.2g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">location</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">location</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">rot_x</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">rot_y</span><span class="p">))</span>
+
+        <span class="c1"># add a blank line between columns and walls</span>
+        <span class="nb">print</span><span class="p">()</span>
+
+        <span class="c1"># handle wall reactions</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wall Reactions&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    x       y       z     angle     Fx        Fy        Fz        Mx        My        Mz&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------------------------------------------------------------&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">wall_element_group</span> <span class="ow">in</span> <span class="n">element_layer</span><span class="o">.</span><span class="n">wall_element_groups_below</span><span class="p">:</span>
+            <span class="n">reaction</span> <span class="o">=</span> <span class="n">loading_or_combo</span><span class="o">.</span><span class="n">wall_group_reaction</span><span class="p">(</span><span class="n">wall_element_group</span><span class="p">,</span> <span class="n">ReactionContext</span><span class="o">.</span><span class="n">STANDARD</span><span class="p">)</span>
+            <span class="n">centroid</span> <span class="o">=</span> <span class="n">wall_element_group</span><span class="o">.</span><span class="n">centroid</span>
+            <span class="n">angle</span> <span class="o">=</span> <span class="n">wall_element_group</span><span class="o">.</span><span class="n">reaction_angle</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:7.2f}</span><span class="s2"> </span><span class="si">{1:7.2f}</span><span class="s2"> </span><span class="si">{2:7.2f}</span><span class="s2"> </span><span class="si">{3:7.2f}</span><span class="s2"> </span><span class="si">{4:9.2g}</span><span class="s2"> </span><span class="si">{5:9.2g}</span><span class="s2"> </span><span class="si">{6:9.2g}</span><span class="s2"> </span><span class="si">{7:9.2g}</span><span class="s2"> </span><span class="si">{8:9.2g}</span><span class="s2"> </span><span class="si">{9:9.2g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">centroid</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">centroid</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">centroid</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">rot_x</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">rot_y</span><span class="p">,</span> <span class="n">reaction</span><span class="o">.</span><span class="n">rot_z</span><span class="p">))</span>
+
+        <span class="c1"># add a couple blank lines between loadings or combos</span>
+        <span class="nb">print</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">How to Get Reactions</a><ul>
+<li><a class="reference internal" href="#the-cad-manager">The CAD Manager</a></li>
+<li><a class="reference internal" href="#full-result-layers">Full Result Layers</a></li>
+<li><a class="reference internal" href="#envelope-result-layers">Envelope Result Layers</a></li>
+<li><a class="reference internal" href="#the-code">The Code</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">RAM Concept Scripting API  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to Get Reactions</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Bentley Systems, Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    </div>
+  </body>
+</html>
