@@ -2,6 +2,8 @@
 
 This is a minimal setup for automating RAM Concept with Python.
 
+You can access the project folder by either cloning the repo to local or clicking the green code button and downloading the project folder as a a zip file.
+
 ## How It Works
 
 You define the path to your RAM Concept model (.cpt), the path to your Python script, and the location of the setup.bat. 
