@@ -6,6 +6,8 @@ You can access the project folder by either cloning the repo to local or clickin
 
 ## How It Works
 
+The first step is to open up the Excel Workbook title "Concept Calc Pad".
+
 You define the path to your RAM Concept model (.cpt), the path to your Python script, and the location of the setup.bat. 
 
 Then you click a button in Excel and it handles everything. It writes a temporary .cmd file, activates the correct environment using setup.bat, runs your script with the model path, and deletes the .cmd file after it’s done.
